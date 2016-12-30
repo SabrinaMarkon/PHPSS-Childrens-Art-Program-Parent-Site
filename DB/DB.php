@@ -107,7 +107,7 @@ CREATE TABLE `pages` (
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1;
 
 
-insert into adminsettings (sitename,domain,adminemail) values ('Junior Artists','http://juniorartists.sunshinehosting.ca','sabrina.markon@gmail.com');
+insert into adminsettings (sitename,domain,adminemail) values ('YOUR SITE NAME','http://YOURDOMAIN.COM','YOUR ADMIN EMAIL');
 
 INSERT INTO `adminnotes` (`id`, `name`, `htmlcode`) values (1, 'Admin Notes', '');
 
@@ -359,7 +359,7 @@ INSERT INTO pages (name, htmlcode) values ('Members Area Promotion Page', '');
 INSERT INTO pages (name, htmlcode) values ('Registration Page', '');
 INSERT INTO pages (name, htmlcode) values ('Thank You Page - New Member Signup', '');
 
-INSERT INTO `adminnavigation` (`adminnavtitle`, `adminnavurl`, `adminnavwindow`, `adminnavenabled`, `adminnavsequence`) values ('MAIN SITE', 'http://demoforummembersonly.phpsitescripts.com', '_blank', 'yes', 1);
+INSERT INTO `adminnavigation` (`adminnavtitle`, `adminnavurl`, `adminnavwindow`, `adminnavenabled`, `adminnavsequence`) values ('MAIN SITE', 'http://YOURDOMAIN.COM', '_blank', 'yes', 1);
 INSERT INTO `adminnavigation` (`adminnavtitle`, `adminnavurl`, `adminnavwindow`, `adminnavenabled`, `adminnavsequence`) values ('ADMIN MAIN', 'controlpanel.php', '_top', 'yes', 2);
 INSERT INTO `adminnavigation` (`adminnavtitle`, `adminnavurl`, `adminnavwindow`, `adminnavenabled`, `adminnavsequence`) values ('SITE SETTINGS', 'sitecontrol.php', '_top', 'yes', 3);
 INSERT INTO `adminnavigation` (`adminnavtitle`, `adminnavurl`, `adminnavwindow`, `adminnavenabled`, `adminnavsequence`) values ('EMAIL SIGNUP FILTER', 'signupemailcontrol.php', '_top', 'yes', 4);
