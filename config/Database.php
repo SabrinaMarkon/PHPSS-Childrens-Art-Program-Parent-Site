@@ -1,12 +1,12 @@
 <?php
 class Database
 {
-	private static $dbhost = "localhost";
-	private static $dbname = "sunshica_juniorartists";
-	private static $dbuser = "sunshica_juniora";
-	private static $dbpass = "+-TfyVN2}c)L";
+	private static $dbhost = "DATABASE_HOST";
+	private static $dbname = "DATABASE_NAME";
+	private static $dbuser = "DATABASE_USERAME";
+	private static $dbpass = "DATABASE_PASSWORD";
 	private static $dbconn = null;
-	const BASE_URL = "http://juniorartists.sunshinehosting.ca/";
+	const BASE_URL = "http://yourdomain.com/";
 
 	public function __construct() {
 		die('Action not allowed'); 
