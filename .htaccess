@@ -1,0 +1,5 @@
+Options +FollowSymLinks
+RewriteEngine On
+RewriteRule ^([A-Za-z0-9-]+)/([A-Za-z0-9-]+)[/]*$ /index.php?page=$1&referid=$2 [L,NC]
+RewriteRule ^([A-Za-z0-9]+)[/]*$ /index.php?page=$1 [L,NC]
+ErrorDocument 404 /404.php
