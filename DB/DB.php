@@ -358,6 +358,8 @@ INSERT INTO pages (name, htmlcode) values ('Members Area Profile Page', '');
 INSERT INTO pages (name, htmlcode) values ('Members Area Promotion Page', '');
 INSERT INTO pages (name, htmlcode) values ('Registration Page', '');
 INSERT INTO pages (name, htmlcode) values ('Thank You Page - New Member Signup', '');
+INSERT INTO pages (name, htmlcode) values ('Logout Page', '');
+INSERT INTO pages (name, htmlcode) values ('About Us Page', '');
 
 INSERT INTO `adminnavigation` (`adminnavtitle`, `adminnavurl`, `adminnavwindow`, `adminnavenabled`, `adminnavsequence`) values ('MAIN SITE', 'http://YOURDOMAIN.COM', '_blank', 'yes', 1);
 INSERT INTO `adminnavigation` (`adminnavtitle`, `adminnavurl`, `adminnavwindow`, `adminnavenabled`, `adminnavsequence`) values ('ADMIN MAIN', 'controlpanel.php', '_top', 'yes', 2);
