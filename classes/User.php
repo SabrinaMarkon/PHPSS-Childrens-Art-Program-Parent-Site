@@ -16,7 +16,7 @@ class User
 	private $gravatarimagelg;
 	private $usernameoremail;
 
-	public function newSignup() {
+	public function newSignup($settings) {
 
 		$username = $_POST['username'];
 		$password = $_POST['password'];
@@ -58,10 +58,10 @@ class User
 			$q->execute(array($username,$password,$accounttype,$firstname,$lastname,$email,$country,$referid,$signupip));
 			Database::disconnect();
 
-			$subject = "Welcome to " . $sitename . "!";
-			$message = "Our Login URL: " . $domain . "\nUsername: " . $username . "\nPassword: " . $password . "\n\n";
+			$subject = "Welcome to " . $settings['sitename'] . "!";
+			$message = "Our Login URL: " . $settings['domain'] . "\nUsername: " . $username . "\nPassword: " . $password . "\n\n";
 			$sendsiteemail = new Email();
-			$send = $sendsiteemail->sendEmail($email,$adminemail,$subject,$message,$sitename,$domain,$adminemail);
+			$send = $sendsiteemail->sendEmail($email, $settings['adminemail'], $subject, $message, $settings['sitename'], $settings['domain'], $settings['adminemail']);
 
 			return "<center><div class=\"alert alert-success\" style=\"width:75%;\"><strong>Success! Thanks for Joining!</strong></div>";
 

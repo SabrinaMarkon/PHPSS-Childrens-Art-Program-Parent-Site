@@ -67,7 +67,7 @@ $sentcontact = $contact->sendContact($sitename,$domain,$adminemail);
 if (isset($_POST['register']))
 {
 $register = new User();
-$showregistration = $register->newSignup();
+$showregistration = $register->newSignup($settings);
 }
 if (isset($_POST['saveprofile']))
 {

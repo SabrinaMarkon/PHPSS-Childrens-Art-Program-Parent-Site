@@ -1,0 +1,28 @@
+[31-Dec-2016 05:31:50 UTC] PHP Notice:  Undefined variable: sitename in /home/juniorartists/public_html/classes/User.php on line 61
+[31-Dec-2016 05:31:50 UTC] PHP Notice:  Undefined variable: domain in /home/juniorartists/public_html/classes/User.php on line 62
+[31-Dec-2016 05:31:50 UTC] PHP Notice:  Undefined variable: adminemail in /home/juniorartists/public_html/classes/User.php on line 64
+[31-Dec-2016 05:31:50 UTC] PHP Notice:  Undefined variable: sitename in /home/juniorartists/public_html/classes/User.php on line 64
+[31-Dec-2016 05:31:50 UTC] PHP Notice:  Undefined variable: domain in /home/juniorartists/public_html/classes/User.php on line 64
+[31-Dec-2016 05:31:50 UTC] PHP Notice:  Undefined variable: adminemail in /home/juniorartists/public_html/classes/User.php on line 64
+[31-Dec-2016 06:16:47 UTC] PHP Warning:  Missing argument 1 for User::newSignup(), called in /home/juniorartists/public_html/index.php on line 70 and defined in /home/juniorartists/public_html/classes/User.php on line 19
+[31-Dec-2016 06:16:47 UTC] PHP Notice:  Undefined variable: settings in /home/juniorartists/public_html/classes/User.php on line 61
+[31-Dec-2016 06:16:47 UTC] PHP Notice:  Trying to get property of non-object in /home/juniorartists/public_html/classes/User.php on line 61
+[31-Dec-2016 06:16:47 UTC] PHP Notice:  Undefined variable: settings in /home/juniorartists/public_html/classes/User.php on line 62
+[31-Dec-2016 06:16:47 UTC] PHP Notice:  Trying to get property of non-object in /home/juniorartists/public_html/classes/User.php on line 62
+[31-Dec-2016 06:16:47 UTC] PHP Notice:  Undefined variable: settings in /home/juniorartists/public_html/classes/User.php on line 64
+[31-Dec-2016 06:16:47 UTC] PHP Notice:  Trying to get property of non-object in /home/juniorartists/public_html/classes/User.php on line 64
+[31-Dec-2016 06:16:47 UTC] PHP Notice:  Undefined variable: settings in /home/juniorartists/public_html/classes/User.php on line 64
+[31-Dec-2016 06:16:47 UTC] PHP Notice:  Trying to get property of non-object in /home/juniorartists/public_html/classes/User.php on line 64
+[31-Dec-2016 06:16:47 UTC] PHP Notice:  Undefined variable: settings in /home/juniorartists/public_html/classes/User.php on line 64
+[31-Dec-2016 06:16:47 UTC] PHP Notice:  Trying to get property of non-object in /home/juniorartists/public_html/classes/User.php on line 64
+[31-Dec-2016 06:16:47 UTC] PHP Notice:  Undefined variable: settings in /home/juniorartists/public_html/classes/User.php on line 64
+[31-Dec-2016 06:16:47 UTC] PHP Notice:  Trying to get property of non-object in /home/juniorartists/public_html/classes/User.php on line 64
+[31-Dec-2016 06:18:16 UTC] PHP Notice:  Trying to get property of non-object in /home/juniorartists/public_html/classes/User.php on line 61
+[31-Dec-2016 06:18:16 UTC] PHP Notice:  Trying to get property of non-object in /home/juniorartists/public_html/classes/User.php on line 62
+[31-Dec-2016 06:18:16 UTC] PHP Notice:  Trying to get property of non-object in /home/juniorartists/public_html/classes/User.php on line 64
+[31-Dec-2016 06:18:16 UTC] PHP Notice:  Trying to get property of non-object in /home/juniorartists/public_html/classes/User.php on line 64
+[31-Dec-2016 06:18:16 UTC] PHP Notice:  Trying to get property of non-object in /home/juniorartists/public_html/classes/User.php on line 64
+[31-Dec-2016 06:18:16 UTC] PHP Notice:  Trying to get property of non-object in /home/juniorartists/public_html/classes/User.php on line 64
+[31-Dec-2016 06:19:09 UTC] PHP Notice:  Array to string conversion in /home/juniorartists/public_html/classes/User.php on line 21
+[31-Dec-2016 06:20:38 UTC] PHP Catchable fatal error:  Object of class Settings could not be converted to string in /home/juniorartists/public_html/classes/User.php on line 21
+[31-Dec-2016 06:21:02 UTC] PHP Notice:  Undefined property: Settings::$adminemail in /home/juniorartists/public_html/classes/User.php on line 21
