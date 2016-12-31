@@ -43,7 +43,7 @@ echo $showcontent->showPage('Members Area Profile Page');
 						<label class="sr-only" for="country">Country</label>
 						<select name="country" class="form-control input-lg">
 							<option value="United States"<?php if ($country == "United States") { echo " selected"; } ?> >United States</option>
-							<option value="Canada"<?php if ($country == "Canada") { echo " selected"; } ?>>Canada</option>
+							<option value="Canada"<?php if ($country === "Canada") { echo " selected"; } ?>>Canada</option>
 							<?php
 							$countrylist = new Countries();
 							echo $countrylist->showCountries($country);

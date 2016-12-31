@@ -26,3 +26,6 @@
 [31-Dec-2016 06:19:09 UTC] PHP Notice:  Array to string conversion in /home/juniorartists/public_html/classes/User.php on line 21
 [31-Dec-2016 06:20:38 UTC] PHP Catchable fatal error:  Object of class Settings could not be converted to string in /home/juniorartists/public_html/classes/User.php on line 21
 [31-Dec-2016 06:21:02 UTC] PHP Notice:  Undefined property: Settings::$adminemail in /home/juniorartists/public_html/classes/User.php on line 21
+[31-Dec-2016 06:58:52 UTC] PHP Notice:  Undefined index: username in /home/juniorartists/public_html/index.php on line 75
+[31-Dec-2016 06:58:56 UTC] PHP Notice:  Undefined index: username in /home/juniorartists/public_html/index.php on line 75
+[31-Dec-2016 06:59:57 UTC] PHP Notice:  Undefined index: username in /home/juniorartists/public_html/index.php on line 75
