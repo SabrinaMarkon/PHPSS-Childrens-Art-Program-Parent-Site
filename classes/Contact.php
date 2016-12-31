@@ -7,7 +7,7 @@ class Contact
 	private $message;
 	private $headers;
 
-	public function sendContact($sitename,$domain,$adminemail) {
+	public function sendContact($settings) {
 
 	$username = $_POST['username'];
 	$email = $_POST['email'];
@@ -20,7 +20,7 @@ class Contact
 		}
 	
 	$sendsiteemail = new Email();
-	$send = $sendsiteemail->sendEmail($adminemail,$email,$subject,$message,$sitename,$domain,$adminemail);
+	$send = $sendsiteemail->sendEmail($settings['adminemail'], $email, $subject, $message,$settings['sitename'], $settings['domain'],$settings['adminemail']);
 
 	return "<center><div class=\"alert alert-success\" style=\"width:75%;\"><strong>Your Message was Sent!</strong></div>";
 	

@@ -62,7 +62,7 @@ $showforgot = $forgot->forgotLogin($sitename,$domain,$adminemail);
 if (isset($_POST['contactus']))
 {
 $contact = new Contact();
-$sentcontact = $contact->sendContact($sitename,$domain,$adminemail);
+$sentcontact = $contact->sendContact($settings);
 }
 if (isset($_POST['register']))
 {
