@@ -10,7 +10,7 @@ require_once "../config/Settings.php";
 require_once "../config/Layout.php";
 
 function sabrina_autoloader($class) {
-    require "classes/" . $class . ".php";
+    require $class . ".php";
 }
 spl_autoload_register("sabrina_autoloader");
 
@@ -75,14 +75,15 @@ if (isset($_GET['page']) && ($_GET['page'] == "logout"))
 
 $Layout = new Layout();
 $Layout->showAdminHeader();
-echo $_GET['page'] . "<br>";
-if ((!empty($_GET['page'])) and ((file_exists('classes/' . $_GET['page'] . ".php") and ($_GET['page'] != "index"))))
+
+//echo $_GET['page'] . "<br>";
+if ((!empty($_GET['page'])) and ((file_exists($_GET['page'] . ".php") and ($_GET['page'] != "index"))))
 {
     $page = $_REQUEST['page'];
-    include "classes/" . $page . ".php";
+    include $page . ".php";
 }
 else
 {
-    include "classes/main.php";
+    include "main.php";
 }
 $Layout->showAdminFooter();
