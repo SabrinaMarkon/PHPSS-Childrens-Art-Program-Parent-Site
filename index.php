@@ -88,11 +88,11 @@ $Layout->showHeader();
 
 if ((!empty($_GET['page'])) and ((file_exists($_GET['page'] . ".php") and ($_GET['page'] != "index"))))
 {
-	$page = $_REQUEST['page'];
-	include $page . ".php";
+    $page = $_REQUEST['page'];
+    include $page . ".php";
 }
 else
 {
-	include "main.php";
+    include "main.php";
 }
 $Layout->showFooter();

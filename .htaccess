@@ -1,5 +1,13 @@
 Options +FollowSymLinks
 RewriteEngine On
+# urls with only /admin go to the main admin page (logged in or not):
+RewriteRule ^(admin) - [L]
+# urls with /admin/somepage go to the matching .php file. ie. /admin/settings is /admin/settings.php:
+RewriteRule ^admin/([A-Za-z0-9-]+)[/]*$ /admin/index.php?page=$1 [L,NC]
+# urls that are NOT in /admin have the page as the first parameter, an the sponsor userid as the second.
+# ie. /register/sabrina url means that the page we see is register.php and the /sabrina part is the sponsor (for the affiliate url):
 RewriteRule ^([A-Za-z0-9-]+)/([A-Za-z0-9-]+)[/]*$ /index.php?page=$1&referid=$2 [L,NC]
+# If there is no sponsor name section, just load the page ie. /register goes to register.php with no sponsor userid:
 RewriteRule ^([A-Za-z0-9]+)[/]*$ /index.php?page=$1 [L,NC]
+# Custom 404 page:
 ErrorDocument 404 /404.php
