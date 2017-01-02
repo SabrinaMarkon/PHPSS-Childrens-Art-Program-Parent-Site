@@ -7,10 +7,4 @@ class Layout
 	function showFooter() {
 		include "footer.php";
 	}
-    function showAdminHeader() {
-        include "../header.php";
-    }
-    function showAdminFooter() {
-        include "../footer.php";
-    }
 }

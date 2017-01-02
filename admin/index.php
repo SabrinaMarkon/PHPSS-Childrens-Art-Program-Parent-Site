@@ -66,15 +66,15 @@ if (isset($_POST['saveprofile']))
 }
 if (isset($_GET['page']) && ($_GET['page'] == "logout"))
 {
-    $logout = new User();
-    $logout->userLogout();
-    $logoutpage = new PageContent();
-    $showlogout = $logoutpage->showPage('Logout Page');
+//    $logout = new User();
+//    $logout->userLogout();
+//    $logoutpage = new PageContent();
+//    $showlogout = $logoutpage->showPage('Logout Page');
 }
 ######################################
 
 $Layout = new Layout();
-$Layout->showAdminHeader();
+$Layout->showHeader();
 
 //echo $_GET['page'] . "<br>";
 if ((!empty($_GET['page'])) and ((file_exists($_GET['page'] . ".php") and ($_GET['page'] != "index"))))
@@ -86,4 +86,4 @@ else
 {
     include "main.php";
 }
-$Layout->showAdminFooter();
+$Layout->showFooter();
