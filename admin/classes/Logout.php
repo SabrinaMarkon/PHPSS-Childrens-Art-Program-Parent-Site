@@ -8,7 +8,7 @@ PHP 5
  **/
 class Logout
 {
-
-
-
+    function __construct () {
+        session_unset();
+    }
 }

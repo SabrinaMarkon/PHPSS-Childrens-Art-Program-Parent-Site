@@ -1,3 +1,24 @@
 [02-Jan-2017 11:19:40 UTC] PHP Warning:  require(User.php): failed to open stream: No such file or directory in /home/juniorartists/public_html/admin/index.php on line 13
 [02-Jan-2017 11:19:40 UTC] PHP Warning:  require(User.php): failed to open stream: No such file or directory in /home/juniorartists/public_html/admin/index.php on line 13
 [02-Jan-2017 11:19:40 UTC] PHP Fatal error:  require(): Failed opening required 'User.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/juniorartists/public_html/admin/index.php on line 13
+[04-Jan-2017 07:48:03 UTC] PHP Notice:  Undefined variable: password in /home/juniorartists/public_html/admin/settings.php on line 13
+[04-Jan-2017 07:48:03 UTC] PHP Notice:  Undefined variable: password in /home/juniorartists/public_html/admin/settings.php on line 16
+[04-Jan-2017 07:48:33 UTC] PHP Notice:  Undefined variable: password in /home/juniorartists/public_html/admin/settings.php on line 13
+[04-Jan-2017 07:48:33 UTC] PHP Notice:  Undefined variable: password in /home/juniorartists/public_html/admin/settings.php on line 16
+[04-Jan-2017 07:50:01 UTC] PHP Notice:  Undefined variable: password in /home/juniorartists/public_html/admin/settings.php on line 13
+[04-Jan-2017 07:50:01 UTC] PHP Notice:  Undefined variable: password in /home/juniorartists/public_html/admin/settings.php on line 16
+[04-Jan-2017 08:11:38 UTC] PHP Warning:  require(Setting.php): failed to open stream: No such file or directory in /home/juniorartists/public_html/admin/index.php on line 13
+[04-Jan-2017 08:11:38 UTC] PHP Warning:  require(Setting.php): failed to open stream: No such file or directory in /home/juniorartists/public_html/admin/index.php on line 13
+[04-Jan-2017 08:11:38 UTC] PHP Fatal error:  require(): Failed opening required 'Setting.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/juniorartists/public_html/admin/index.php on line 13
+[04-Jan-2017 08:12:32 UTC] PHP Notice:  Undefined index: adminpass in /home/juniorartists/public_html/admin/classes/Setting.php on line 15
+[04-Jan-2017 08:12:32 UTC] PHP Notice:  Undefined variable: q in /home/juniorartists/public_html/admin/classes/Setting.php on line 24
+[04-Jan-2017 08:12:32 UTC] PHP Fatal error:  Call to a member function execute() on null in /home/juniorartists/public_html/admin/classes/Setting.php on line 24
+[04-Jan-2017 08:13:08 UTC] PHP Notice:  Undefined index: adminpass in /home/juniorartists/public_html/admin/classes/Setting.php on line 15
+[04-Jan-2017 08:13:08 UTC] PHP Notice:  Undefined variable: q in /home/juniorartists/public_html/admin/classes/Setting.php on line 24
+[04-Jan-2017 08:13:08 UTC] PHP Fatal error:  Call to a member function execute() on null in /home/juniorartists/public_html/admin/classes/Setting.php on line 24
+[04-Jan-2017 08:14:19 UTC] PHP Notice:  Undefined variable: q in /home/juniorartists/public_html/admin/classes/Setting.php on line 24
+[04-Jan-2017 08:14:19 UTC] PHP Fatal error:  Call to a member function execute() on null in /home/juniorartists/public_html/admin/classes/Setting.php on line 24
+[04-Jan-2017 08:15:23 UTC] PHP Warning:  require(classes/Databaes.php): failed to open stream: No such file or directory in /home/juniorartists/public_html/admin/index.php on line 13
+[04-Jan-2017 08:15:23 UTC] PHP Warning:  require(classes/Databaes.php): failed to open stream: No such file or directory in /home/juniorartists/public_html/admin/index.php on line 13
+[04-Jan-2017 08:15:23 UTC] PHP Fatal error:  require(): Failed opening required 'classes/Databaes.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/juniorartists/public_html/admin/index.php on line 13
+[04-Jan-2017 08:17:36 UTC] PHP Parse error:  syntax error, unexpected 'public' (T_PUBLIC) in /home/juniorartists/public_html/admin/classes/Setting.php on line 14

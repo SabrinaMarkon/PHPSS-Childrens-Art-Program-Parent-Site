@@ -17,11 +17,11 @@ url varchar(255) NOT NULL DEFAULT ''
 
 CREATE TABLE `adminsettings` (
 id integer unsigned not null primary key auto_increment,
+adminuser varchar(255) not null,
+adminpass varchar(255) not null,
 sitename varchar(255) not null,
 domain varchar(255) not null,
-adminemail varchar(255) not null,
-emailsignupmethod varchar(255) not null default 'denyallexcept',
-turingkeyenable varchar(4) not null default 'no'
+adminemail varchar(255) not null
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1;
 
 create table adminnavigation (
@@ -107,7 +107,7 @@ CREATE TABLE `pages` (
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1;
 
 
-insert into adminsettings (sitename,domain,adminemail) values ('YOUR SITE NAME','http://YOURDOMAIN.COM','YOUR ADMIN EMAIL');
+insert into adminsettings (adminuser, adminpass, sitename,domain,adminemail) values ('Admin', 'admin', 'YOUR SITE NAME','http://YOURDOMAIN.COM','YOUR ADMIN EMAIL');
 
 INSERT INTO `adminnotes` (`id`, `name`, `htmlcode`) values (1, 'Admin Notes', '');
 

@@ -10,7 +10,7 @@ require_once "../config/Settings.php";
 require_once "../config/Layout.php";
 
 function sabrina_autoloader($class) {
-    require $class . ".php";
+    require 'classes/' . $class . ".php";
 }
 spl_autoload_register("sabrina_autoloader");
 
@@ -59,10 +59,10 @@ if (isset($_POST['register']))
     $register = new User();
     $showregistration = $register->newSignup($settings);
 }
-if (isset($_POST['saveprofile']))
+if (isset($_POST['savesettings']))
 {
-    $update = new User();
-    $showupdate = $update->saveProfile($_SESSION['username']);
+    $update = new Setting();
+    $showupdate = $update->saveSettings();
 }
 if (isset($_GET['page']) && ($_GET['page'] == "logout"))
 {
