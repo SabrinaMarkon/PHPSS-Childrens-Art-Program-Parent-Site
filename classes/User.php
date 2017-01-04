@@ -3,7 +3,7 @@
 Handles user interactions with the application.
 PHP 5
 @author Sabrina Markon
-@copyright 2015 Sabrina Markon, PHPSiteScripts.com
+@copyright 2017 Sabrina Markon, PHPSiteScripts.com
 @license README-LICENSE.txt
 **/
 class User
