@@ -19,9 +19,10 @@ CREATE TABLE `adminsettings` (
 id integer unsigned not null primary key auto_increment,
 adminuser varchar(255) not null,
 adminpass varchar(255) not null,
+adminname varchar(255) not null,
+adminemail varchar(255) not null,
 sitename varchar(255) not null,
-domain varchar(255) not null,
-adminemail varchar(255) not null
+domain varchar(255) not null
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1;
 
 create table adminnavigation (
@@ -106,8 +107,16 @@ CREATE TABLE `pages` (
   UNIQUE KEY `name` (`name`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1;
 
+CREATE TABLE `transactions` (
+`id` int(10) unsigned NOT NULL AUTO_INCREMENT primary key,
+`username` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+`transaction` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+`description` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+`datepaid` datetime NOT NULL,
+KEY `transactions_username_foreign` (`username`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
-insert into adminsettings (adminuser, adminpass, sitename,domain,adminemail) values ('Admin', 'admin', 'YOUR SITE NAME','http://YOURDOMAIN.COM','YOUR ADMIN EMAIL');
+insert into adminsettings (adminuser, adminpass, adminname, adminemail, sitename, domain) values ('Admin', 'admin', 'YOUR NAME', 'YOUR ADMIN EMAIL', 'YOUR SITE NAME','http://YOURDOMAIN.COM');
 
 INSERT INTO `adminnotes` (`id`, `name`, `htmlcode`) values (1, 'Admin Notes', '');
 

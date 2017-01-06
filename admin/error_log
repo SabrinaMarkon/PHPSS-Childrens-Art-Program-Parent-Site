@@ -22,3 +22,12 @@
 [04-Jan-2017 08:15:23 UTC] PHP Warning:  require(classes/Databaes.php): failed to open stream: No such file or directory in /home/juniorartists/public_html/admin/index.php on line 13
 [04-Jan-2017 08:15:23 UTC] PHP Fatal error:  require(): Failed opening required 'classes/Databaes.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/juniorartists/public_html/admin/index.php on line 13
 [04-Jan-2017 08:17:36 UTC] PHP Parse error:  syntax error, unexpected 'public' (T_PUBLIC) in /home/juniorartists/public_html/admin/classes/Setting.php on line 14
+[04-Jan-2017 08:48:47 UTC] PHP Notice:  Undefined variable: htmlcode in /home/juniorartists/public_html/admin/main.php on line 14
+[04-Jan-2017 08:49:09 UTC] PHP Notice:  Undefined variable: htmlcode in /home/juniorartists/public_html/admin/main.php on line 14
+[04-Jan-2017 08:54:23 UTC] PHP Notice:  Undefined variable: htmlcode in /home/juniorartists/public_html/admin/main.php on line 14
+[06-Jan-2017 04:54:03 UTC] PHP Notice:  Undefined variable: htmlcode in /home/juniorartists/public_html/admin/main.php on line 14
+[06-Jan-2017 04:58:38 UTC] PHP Catchable fatal error:  Object of class AdminNote could not be converted to string in /home/juniorartists/public_html/admin/main.php on line 14
+[06-Jan-2017 04:58:42 UTC] PHP Catchable fatal error:  Object of class AdminNote could not be converted to string in /home/juniorartists/public_html/admin/main.php on line 14
+[06-Jan-2017 04:58:49 UTC] PHP Notice:  Undefined variable: htmlcode in /home/juniorartists/public_html/admin/main.php on line 14
+[06-Jan-2017 04:58:52 UTC] PHP Notice:  Undefined variable: htmlcode in /home/juniorartists/public_html/admin/main.php on line 14
+[06-Jan-2017 04:58:54 UTC] PHP Notice:  Undefined variable: htmlcode in /home/juniorartists/public_html/admin/main.php on line 14
