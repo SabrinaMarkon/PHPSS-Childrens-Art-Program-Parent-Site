@@ -112,6 +112,7 @@ CREATE TABLE `transactions` (
 `username` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
 `transaction` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
 `description` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+`amount` decimal(9,2) NOT NULL,
 `datepaid` datetime NOT NULL,
 KEY `transactions_username_foreign` (`username`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;

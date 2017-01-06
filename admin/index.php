@@ -64,6 +64,11 @@ if (isset($_POST['savesettings']))
     $update = new Setting();
     $showupdate = $update->saveSettings();
 }
+if (isset($_POST['savetransaction']))
+{
+    $update = new Money();
+    $showupdate = $update->saveTransaction();
+}
 if (isset($_GET['page']) && ($_GET['page'] == "logout"))
 {
 //    $logout = new User();
