@@ -21,7 +21,11 @@ class Money
 
     }
 
-    public function saveTransaction() {
+    public function saveTransaction($id) {
+
+    }
+
+    public function deleteTransaction($id) {
 
     }
 

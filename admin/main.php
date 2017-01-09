@@ -1,4 +1,11 @@
-
+<?php
+if (isset($showupdate))
+{
+    echo $showupdate;
+}
+$adminnote = new AdminNote();
+$htmlcode = $adminnote->getAdminNote();
+?>
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
@@ -11,11 +18,11 @@
 
                 <label class="sr-only" for="adminnotes">Your Admin Notes</label>
 
-                <input type="text" name="htmlcode" value="<?php echo $htmlcode ?>" class="form-control input-lg" placeholder="Admin Notes">
+                <input type="text" name="htmlcode" value="<?php echo $htmlcode['htmlcode']; ?>" class="form-control input-lg" placeholder="Admin Notes">
 
                 <div class="ja-bottompadding"></div>
 
-                <button class="btn btn-lg btn-primary" type="submit" name="savenotes">Save Your Notes</button>
+                <button class="btn btn-lg btn-primary" type="submit" name="saveadminnotes">Save Your Notes</button>
 
             </form>
 

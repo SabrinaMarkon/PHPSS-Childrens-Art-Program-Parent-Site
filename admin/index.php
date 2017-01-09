@@ -44,20 +44,10 @@ if (isset($_POST['login']))
         $showgravatar = $logincheck->getGravatar($_SESSION['username'],$_SESSION['email']);
     }
 }
-if (isset($_POST['forgotlogin']))
+if (isset($_POST['saveadminnotes']))
 {
-    $forgot = new User();
-    $showforgot = $forgot->forgotLogin($sitename,$domain,$adminemail);
-}
-if (isset($_POST['contactus']))
-{
-    $contact = new Contact();
-    $sentcontact = $contact->sendContact($settings);
-}
-if (isset($_POST['register']))
-{
-    $register = new User();
-    $showregistration = $register->newSignup($settings);
+    $update = new AdminNote();
+    $showupdate = $update->setAdminNote($_POST['htmlcode']);
 }
 if (isset($_POST['savesettings']))
 {
