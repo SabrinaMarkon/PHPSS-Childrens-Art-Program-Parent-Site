@@ -2,6 +2,8 @@
 class Money
 {
 
+    private $pdo;
+
     public function getAllTransactions() {
 
         $pdo = Database::connect();
@@ -26,6 +28,14 @@ class Money
     }
 
     public function deleteTransaction($id) {
+
+        $pdo = Database::connect();
+        $pdo->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
+        $sql = "delete from transactions where id=?";
+        $q = $pdo->prepare($sql);
+        $q->execute(array($id));
+        Database::disconnect();
+        return "<center><div class=\"alert alert-success\" style=\"width:75%;\"><strong>Transaction ID " . $id . " was Deleted</strong></div>";
 
     }
 

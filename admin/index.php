@@ -21,6 +21,15 @@ foreach ($settings as $key => $value)
     $$key = $value;
 }
 
+if (isset($_REQUEST['id']))
+{
+    $id = $_REQUEST['id'];
+}
+else
+{
+    $id = "";
+}
+
 ######################################
 if (isset($_POST['login']))
 {
@@ -53,6 +62,17 @@ if (isset($_POST['savesettings']))
 {
     $update = new Setting();
     $showupdate = $update->saveSettings();
+}
+
+if (isset($_POST['_method'])) {
+
+    $_method = $_POST['_method'];
+    if($_method === 'delete') {
+
+        $delete = new Money();
+        $showdelete = $delete->deleteTransaction($id);
+
+    }
 }
 if (isset($_POST['savetransaction']))
 {

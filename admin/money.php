@@ -60,7 +60,8 @@ $transactions = $alltransactions->getAllTransactions();
                             </td>
                             </form>
                             <td>
-                                <form action="money/<?php echo $transaction['id']; ?>" method="delete" accept-charset="utf-8" class="form" role="form">
+                                <form action="money/<?php echo $transaction['id']; ?>" method="POST" accept-charset="utf-8" class="form" role="form">
+                                    <input type="hidden" name="_method" value="delete">
                                     <button class="btn btn-md btn-primary" type="submit">DELETE</button>
                                 </form>
                             </form>
