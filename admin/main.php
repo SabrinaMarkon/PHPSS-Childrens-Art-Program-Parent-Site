@@ -14,7 +14,7 @@ $htmlcode = $adminnote->getAdminNote();
 
             <p class="text-left">You may use the text area below to save notes which are only visible to you.</p>
 
-            <form action="main" method="post" accept-charset="utf-8" class="form" role="form">
+            <form method="post" accept-charset="utf-8" class="form" role="form">
 
                 <label class="sr-only" for="adminnotes">Your Admin Notes</label>
 

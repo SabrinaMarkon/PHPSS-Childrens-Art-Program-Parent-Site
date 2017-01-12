@@ -32,7 +32,7 @@ $transactions = $alltransactions->getAllTransactions();
                         $datepaid = $date->format('Y-m-d');
                         ?>
                         <tr>
-                            <form action="money/<?php echo $transaction['id']; ?>" method="patch" accept-charset="utf-8" class="form" role="form">
+                            <form action="/admin/money/<?php echo $transaction['id']; ?>" method="post" accept-charset="utf-8" class="form" role="form">
                             <td><?php echo $transaction['id']; ?>
                             </td>
                             <td>
@@ -56,12 +56,13 @@ $transactions = $alltransactions->getAllTransactions();
                                 <input type="text" name="amount" value="<?php echo $transaction['amount']; ?>" class="form-control input-md" placeholder="Amount">
                             </td>
                             <td>
+                                <input type="hidden" name="_method" value="PATCH">
                                 <button class="btn btn-md btn-primary" type="submit">SAVE</button>
                             </td>
                             </form>
                             <td>
-                                <form action="money/<?php echo $transaction['id']; ?>" method="POST" accept-charset="utf-8" class="form" role="form">
-                                    <input type="hidden" name="_method" value="delete">
+                                <form action="/admin/money/<?php echo $transaction['id']; ?>" method="POST" accept-charset="utf-8" class="form" role="form">
+                                    <input type="hidden" name="_method" value="DELETE">
                                     <button class="btn btn-md btn-primary" type="submit">DELETE</button>
                                 </form>
                             </form>

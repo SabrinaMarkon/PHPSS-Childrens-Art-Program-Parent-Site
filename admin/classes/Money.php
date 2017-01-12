@@ -25,6 +25,20 @@ class Money
 
     public function saveTransaction($id) {
 
+        $username = $_POST['username'];
+        $transaction = $_POST['transaction'];
+        $description = $_POST['description'];
+        $amount = $_POST['amount'];
+        $datepaid = $_POST['datepaid'];
+
+        $pdo = Database::connect();
+        $pdo->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
+        $sql = "update transactions set username=?, transaction=?, description=?, datepaid=?, amount=? where id=?";
+        $q = $pdo->prepare($sql);
+        $q->execute(array($id, $username, $transaction, $description, $amount, $datepaid));
+        Database::disconnect();
+        return "<center><div class=\"alert alert-success\" style=\"width:75%;\"><strong>Transaction ID " . $id . " was Saved!</strong></div>";
+
     }
 
     public function deleteTransaction($id) {

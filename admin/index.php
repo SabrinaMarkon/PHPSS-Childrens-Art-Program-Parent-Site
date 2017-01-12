@@ -67,18 +67,20 @@ if (isset($_POST['savesettings']))
 if (isset($_POST['_method'])) {
 
     $_method = $_POST['_method'];
-    if($_method === 'delete') {
+    if($_method === 'DELETE') {
 
         $delete = new Money();
         $showdelete = $delete->deleteTransaction($id);
 
     }
+    elseif($_method === 'PATCH')
+    {
+
+        $update = new Money();
+        $showupdate = $update->saveTransaction($id);
+    }
 }
-if (isset($_POST['savetransaction']))
-{
-    $update = new Money();
-    $showupdate = $update->saveTransaction();
-}
+
 if (isset($_GET['page']) && ($_GET['page'] == "logout"))
 {
 //    $logout = new User();
