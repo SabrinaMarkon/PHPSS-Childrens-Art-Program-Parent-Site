@@ -75,7 +75,14 @@ $members = $allmembers->getAllMembers();
                             </td>
                             <td>
                                 <label class="sr-only" for="country">Country:</label>
-                                <input type="text" name="country" value="<?php echo $member['country']; ?>" class="form-control input-sm small" size="60" placeholder="Country">
+                                <select name="country" class="form-control input-md">
+                                    <option value="United States"<?php if ($member['country'] == "United States") { echo " selected"; } ?> >United States</option>
+                                    <option value="Canada"<?php if ($member['country'] === "Canada") { echo " selected"; } ?>>Canada</option>
+                                    <?php
+                                    $countrylist = new Countries();
+                                    echo $countrylist->showCountries($member['country']);
+                                    ?>
+                                </select>
                             </td>
                             <td class="small">
                                 <?php echo $datesignedup ?>
