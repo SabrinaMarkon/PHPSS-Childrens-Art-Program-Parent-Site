@@ -10,3 +10,9 @@
 [14-Jan-2017 20:37:48 UTC] PHP Warning:  require(classes/Classes\Countries.php): failed to open stream: No such file or directory in /home/juniorartists/public_html/admin/index.php on line 13
 [14-Jan-2017 20:37:48 UTC] PHP Fatal error:  require(): Failed opening required 'classes/Classes\Countries.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/juniorartists/public_html/admin/index.php on line 13
 [14-Jan-2017 20:39:08 UTC] PHP Notice:  Undefined variable: country in /home/juniorartists/public_html/admin/members.php on line 83
+[14-Jan-2017 21:04:55 UTC] PHP Warning:  strtotime() expects parameter 1 to be string, object given in /home/juniorartists/public_html/admin/members.php on line 41
+[14-Jan-2017 21:04:55 UTC] PHP Warning:  strtotime() expects parameter 1 to be string, object given in /home/juniorartists/public_html/admin/members.php on line 44
+[14-Jan-2017 21:05:50 UTC] PHP Notice:  Object of class DateTime could not be converted to int in /home/juniorartists/public_html/admin/members.php on line 41
+[14-Jan-2017 21:05:50 UTC] PHP Notice:  Object of class DateTime could not be converted to int in /home/juniorartists/public_html/admin/members.php on line 43
+[14-Jan-2017 21:07:02 UTC] PHP Catchable fatal error:  Object of class DateTime could not be converted to string in /home/juniorartists/public_html/admin/members.php on line 41
+[14-Jan-2017 21:13:51 UTC] PHP Catchable fatal error:  Object of class DateTime could not be converted to string in /home/juniorartists/public_html/admin/members.php on line 41
