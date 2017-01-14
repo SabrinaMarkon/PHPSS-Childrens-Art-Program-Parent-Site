@@ -104,7 +104,7 @@ $members = $allmembers->getAllMembers();
                             </td>
                             </form>
                             <td>
-                                <form action="/admin/money/<?php echo $member['id']; ?>" method="POST" accept-charset="utf-8" class="form" role="form">
+                                <form action="/admin/members/<?php echo $member['id']; ?>" method="POST" accept-charset="utf-8" class="form" role="form">
                                     <input type="hidden" name="_method" value="DELETE">
                                     <input type="hidden" name="username" value="<?php echo $member['username']; ?>">
                                     <button class="btn btn-sm btn-primary" type="submit">DELETE</button>
