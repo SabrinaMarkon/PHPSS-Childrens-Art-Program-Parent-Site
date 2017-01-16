@@ -1,4 +1,8 @@
 <?php
+if (isset($showupdate))
+{
+    echo $showupdate;
+}
 $alltransactions = new Money();
 $transactions = $alltransactions->getAllTransactions();
 ?>

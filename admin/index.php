@@ -73,7 +73,7 @@ if (isset($_POST['savemember']))
 if (isset($_POST['deletemember']))
 {
     $delete = new Member();
-    $showdelete = $delete->deleteMember($id);
+    $showupdate = $delete->deleteMember($id);
 }
 
 if (isset($_POST['savetransaction']))
@@ -84,7 +84,7 @@ if (isset($_POST['savetransaction']))
 if (isset($_POST['deletetransaction']))
 {
     $delete = new Money();
-    $showdelete = $delete->deleteTransaction($id);
+    $showupdate = $delete->deleteTransaction($id);
 }
 //
 //if (isset($_POST['_method'])) {

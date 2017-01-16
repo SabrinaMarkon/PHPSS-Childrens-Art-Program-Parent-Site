@@ -1,4 +1,8 @@
 <?php
+if (isset($showupdate))
+{
+    echo $showupdate;
+}
 $allmembers = new Member();
 $members = $allmembers->getAllMembers();
 ?>
