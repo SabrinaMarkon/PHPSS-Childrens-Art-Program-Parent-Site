@@ -1,18 +1,4 @@
 
-[14-Jan-2017 20:14:16 UTC] PHP Fatal error:  Class 'Member' not found in /home/juniorartists/public_html/admin/members.php on line 2
-[14-Jan-2017 20:36:43 UTC] PHP Warning:  require(classes/Countries.php): failed to open stream: No such file or directory in /home/juniorartists/public_html/admin/index.php on line 13
-[14-Jan-2017 20:36:43 UTC] PHP Warning:  require(classes/Countries.php): failed to open stream: No such file or directory in /home/juniorartists/public_html/admin/index.php on line 13
-[14-Jan-2017 20:36:43 UTC] PHP Fatal error:  require(): Failed opening required 'classes/Countries.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/juniorartists/public_html/admin/index.php on line 13
-[14-Jan-2017 20:37:41 UTC] PHP Warning:  require(classes/Classes\Countries.php): failed to open stream: No such file or directory in /home/juniorartists/public_html/admin/index.php on line 13
-[14-Jan-2017 20:37:41 UTC] PHP Warning:  require(classes/Classes\Countries.php): failed to open stream: No such file or directory in /home/juniorartists/public_html/admin/index.php on line 13
-[14-Jan-2017 20:37:41 UTC] PHP Fatal error:  require(): Failed opening required 'classes/Classes\Countries.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/juniorartists/public_html/admin/index.php on line 13
-[14-Jan-2017 20:37:48 UTC] PHP Warning:  require(classes/Classes\Countries.php): failed to open stream: No such file or directory in /home/juniorartists/public_html/admin/index.php on line 13
-[14-Jan-2017 20:37:48 UTC] PHP Warning:  require(classes/Classes\Countries.php): failed to open stream: No such file or directory in /home/juniorartists/public_html/admin/index.php on line 13
-[14-Jan-2017 20:37:48 UTC] PHP Fatal error:  require(): Failed opening required 'classes/Classes\Countries.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/juniorartists/public_html/admin/index.php on line 13
-[14-Jan-2017 20:39:08 UTC] PHP Notice:  Undefined variable: country in /home/juniorartists/public_html/admin/members.php on line 83
-[14-Jan-2017 21:04:55 UTC] PHP Warning:  strtotime() expects parameter 1 to be string, object given in /home/juniorartists/public_html/admin/members.php on line 41
-[14-Jan-2017 21:04:55 UTC] PHP Warning:  strtotime() expects parameter 1 to be string, object given in /home/juniorartists/public_html/admin/members.php on line 44
-[14-Jan-2017 21:05:50 UTC] PHP Notice:  Object of class DateTime could not be converted to int in /home/juniorartists/public_html/admin/members.php on line 41
-[14-Jan-2017 21:05:50 UTC] PHP Notice:  Object of class DateTime could not be converted to int in /home/juniorartists/public_html/admin/members.php on line 43
-[14-Jan-2017 21:07:02 UTC] PHP Catchable fatal error:  Object of class DateTime could not be converted to string in /home/juniorartists/public_html/admin/members.php on line 41
-[14-Jan-2017 21:13:51 UTC] PHP Catchable fatal error:  Object of class DateTime could not be converted to string in /home/juniorartists/public_html/admin/members.php on line 41
+[16-Jan-2017 02:52:10 UTC] PHP Notice:  Undefined variable: dbconn in /home/juniorartists/public_html/config/Database.php on line 22
+[16-Jan-2017 02:52:10 UTC] PHP Fatal error:  Call to a member function setAttribute() on null in /home/juniorartists/public_html/config/Database.php on line 22
+[16-Jan-2017 03:06:10 UTC] PHP Notice:  Array to string conversion in /home/juniorartists/public_html/admin/classes/Member.php on line 50

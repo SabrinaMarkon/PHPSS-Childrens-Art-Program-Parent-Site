@@ -70,7 +70,10 @@ $members = $allmembers->getAllMembers();
                             </td>
                             <td>
                                 <label class="sr-only" for="verified">Verified:</label>
-                                <input type="text" name="verified" value="<?php echo $member['verified']; ?>" class="form-control input-sm small" size="60" placeholder="Verified">
+                                <select name="verified" class="form-control input-md">
+                                    <option value="yes"<?php if ($member['verified'] === 'yes') { echo " selected"; } ?>>yes</option>
+                                    <option value="no"<?php if ($member['verified'] !== 'yes') { echo " selected"; } ?>>no</option>
+                                </select>
                             </td>
                             <td class="small">
                                 <?php echo $dateverified ?>
@@ -102,14 +105,14 @@ $members = $allmembers->getAllMembers();
                             </td>
                             <td>
                                 <input type="hidden" name="_method" value="PATCH">
-                                <button class="btn btn-sm btn-primary" type="submit">SAVE</button>
+                                <button class="btn btn-sm btn-primary" type="submit" name="savemember">SAVE</button>
                             </td>
                             </form>
                             <td>
                                 <form action="/admin/members/<?php echo $member['id']; ?>" method="POST" accept-charset="utf-8" class="form" role="form">
                                     <input type="hidden" name="_method" value="DELETE">
                                     <input type="hidden" name="username" value="<?php echo $member['username']; ?>">
-                                    <button class="btn btn-sm btn-primary" type="submit">DELETE</button>
+                                    <button class="btn btn-sm btn-primary" type="submit" name="deletemember">DELETE</button>
                                 </form>
                                 </form>
                             </td>

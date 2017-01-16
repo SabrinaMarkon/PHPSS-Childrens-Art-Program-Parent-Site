@@ -57,13 +57,13 @@ $transactions = $alltransactions->getAllTransactions();
                         </td>
                         <td>
                             <input type="hidden" name="_method" value="PATCH">
-                            <button class="btn btn-md btn-primary" type="submit">SAVE</button>
+                            <button class="btn btn-md btn-primary" type="submit" name="savetransaction">SAVE</button>
                         </td>
                         </form>
                         <td>
                             <form action="/admin/money/<?php echo $transaction['id']; ?>" method="POST" accept-charset="utf-8" class="form" role="form">
                                 <input type="hidden" name="_method" value="DELETE">
-                                <button class="btn btn-md btn-primary" type="submit">DELETE</button>
+                                <button class="btn btn-md btn-primary" type="submit" name="deletetransaction">DELETE</button>
                             </form>
                         </form>
                         </td>

@@ -65,22 +65,44 @@ if (isset($_POST['savesettings']))
     $showupdate = $update->saveSettings();
 }
 
-if (isset($_POST['_method'])) {
-
-    $_method = $_POST['_method'];
-    if($_method === 'DELETE') {
-
-        $delete = new Money();
-        $showdelete = $delete->deleteTransaction($id);
-
-    }
-    elseif($_method === 'PATCH')
-    {
-
-        $update = new Money();
-        $showupdate = $update->saveTransaction($id);
-    }
+if (isset($_POST['savemember']))
+{
+    $update = new Member();
+    $showupdate = $update->saveMember($id);
 }
+if (isset($_POST['deletemember']))
+{
+    $delete = new Member();
+    $showdelete = $delete->deleteMember($id);
+}
+
+if (isset($_POST['savetransaction']))
+{
+    $update = new Money();
+    $showupdate = $update->saveTransaction($id);
+}
+if (isset($_POST['deletetransaction']))
+{
+    $delete = new Money();
+    $showdelete = $delete->deleteTransaction($id);
+}
+//
+//if (isset($_POST['_method'])) {
+//
+//    $_method = $_POST['_method'];
+//    if($_method === 'DELETE') {
+//
+//        $delete = new Money();
+//        $showdelete = $delete->deleteTransaction($id);
+//
+//    }
+//    elseif($_method === 'PATCH')
+//    {
+//
+//        $update = new Money();
+//        $showupdate = $update->saveTransaction($id);
+//    }
+//}
 
 if (isset($_GET['page']) && ($_GET['page'] == "logout"))
 {
