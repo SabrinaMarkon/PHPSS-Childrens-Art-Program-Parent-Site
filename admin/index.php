@@ -73,7 +73,7 @@ if (isset($_POST['editpage']))
 if (isset($_POST['addpage']))
 {
     $update = new Page();
-    $showupdate = $update->addPage($id);
+    $showupdate = $update->addPage();
 }
 if (isset($_POST['savepage']))
 {

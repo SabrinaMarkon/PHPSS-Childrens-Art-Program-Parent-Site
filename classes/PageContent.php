@@ -4,14 +4,6 @@ class PageContent
 	public $content;
 	public $pagename;
 
-	public function createPage() {
-
-	}
-
-	public function updatePage() {
-
-	}
-
 	public function showPage($pagename) {
 		
 		$pdo = Database::connect();

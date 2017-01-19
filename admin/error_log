@@ -1,0 +1,55 @@
+[19-Jan-2017 05:01:43 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'values) ('Test', '<p><strong>asfsfsdfadsasdfdsfasdf</strong></p>', 'testing')' at line 1' in /home/juniorartists/public_html/admin/classes/Page.php:55
+Stack trace:
+#0 /home/juniorartists/public_html/admin/classes/Page.php(55): PDOStatement->execute(Array)
+#1 /home/juniorartists/public_html/admin/index.php(76): Page->addPage('')
+#2 {main}
+  thrown in /home/juniorartists/public_html/admin/classes/Page.php on line 55
+[19-Jan-2017 05:03:01 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ''Test', '<p><strong>asfsfsdfadsasdfdsfasdf</strong></p>', 'testing')' at line 1' in /home/juniorartists/public_html/admin/classes/Page.php:54
+Stack trace:
+#0 /home/juniorartists/public_html/admin/classes/Page.php(54): PDOStatement->execute(Array)
+#1 /home/juniorartists/public_html/admin/index.php(76): Page->addPage('')
+#2 {main}
+  thrown in /home/juniorartists/public_html/admin/classes/Page.php on line 54
+[19-Jan-2017 05:04:28 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ''Test', '<p><strong>asfsfsdfadsasdfdsfasdf</strong></p>', 'testing')' at line 1' in /home/juniorartists/public_html/admin/classes/Page.php:54
+Stack trace:
+#0 /home/juniorartists/public_html/admin/classes/Page.php(54): PDOStatement->execute(Array)
+#1 /home/juniorartists/public_html/admin/index.php(76): Page->addPage('')
+#2 {main}
+  thrown in /home/juniorartists/public_html/admin/classes/Page.php on line 54
+[19-Jan-2017 05:04:50 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ''Test', '', 'testing')' at line 1' in /home/juniorartists/public_html/admin/classes/Page.php:54
+Stack trace:
+#0 /home/juniorartists/public_html/admin/classes/Page.php(54): PDOStatement->execute(Array)
+#1 /home/juniorartists/public_html/admin/index.php(76): Page->addPage('')
+#2 {main}
+  thrown in /home/juniorartists/public_html/admin/classes/Page.php on line 54
+[19-Jan-2017 05:07:34 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ''Test', '<p>xxxxxx</p>', 'testing')' at line 1' in /home/juniorartists/public_html/admin/classes/Page.php:54
+Stack trace:
+#0 /home/juniorartists/public_html/admin/classes/Page.php(54): PDOStatement->execute(Array)
+#1 /home/juniorartists/public_html/admin/index.php(76): Page->addPage('')
+#2 {main}
+  thrown in /home/juniorartists/public_html/admin/classes/Page.php on line 54
+[19-Jan-2017 05:08:41 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ''Test', 'testing')' at line 1' in /home/juniorartists/public_html/admin/classes/Page.php:54
+Stack trace:
+#0 /home/juniorartists/public_html/admin/classes/Page.php(54): PDOStatement->execute(Array)
+#1 /home/juniorartists/public_html/admin/index.php(76): Page->addPage('')
+#2 {main}
+  thrown in /home/juniorartists/public_html/admin/classes/Page.php on line 54
+[19-Jan-2017 05:10:22 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens' in /home/juniorartists/public_html/admin/classes/Page.php:54
+Stack trace:
+#0 /home/juniorartists/public_html/admin/classes/Page.php(54): PDOStatement->execute(Array)
+#1 /home/juniorartists/public_html/admin/index.php(76): Page->addPage('')
+#2 {main}
+  thrown in /home/juniorartists/public_html/admin/classes/Page.php on line 54
+[19-Jan-2017 05:10:46 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ''<p>xxxxxx</p>', 'testing')' at line 1' in /home/juniorartists/public_html/admin/classes/Page.php:54
+Stack trace:
+#0 /home/juniorartists/public_html/admin/classes/Page.php(54): PDOStatement->execute(Array)
+#1 /home/juniorartists/public_html/admin/index.php(76): Page->addPage('')
+#2 {main}
+  thrown in /home/juniorartists/public_html/admin/classes/Page.php on line 54
+[19-Jan-2017 05:12:25 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ''Test', '<p>xxxxxx</p>', 'testing')' at line 1' in /home/juniorartists/public_html/admin/classes/Page.php:54
+Stack trace:
+#0 /home/juniorartists/public_html/admin/classes/Page.php(54): PDOStatement->execute(Array)
+#1 /home/juniorartists/public_html/admin/index.php(76): Page->addPage()
+#2 {main}
+  thrown in /home/juniorartists/public_html/admin/classes/Page.php on line 54
+[19-Jan-2017 05:14:20 UTC] PHP Notice:  Undefined index: name in /home/juniorartists/public_html/admin/classes/Page.php on line 77

@@ -15,6 +15,11 @@ img {
 .ja-bottompadding {
 	margin-bottom: 20px;
 }
+.ja-horizontaldivider{
+	width:5px;
+	height:auto;
+	display:inline-block;
+}
 #ja-headerimage {
 	border: 2px solid #402659;
 	border-bottom: 0;

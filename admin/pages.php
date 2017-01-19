@@ -54,9 +54,8 @@ $pages = $allpages->getAllPages();
             <form action="/admin/pages" method="post" accept-charset="utf-8" class="form" role="form">
                 <div class="form-group textfield">
                     <div class="row">
-                        <div class="col-sm-1"></div>
                         <div class="col-sm-2"><label for="id">Edit Page:</label></div>
-                        <div class="col-sm-6">
+                        <div class="col-sm-7">
                             <select name="id" class="form-control">
                                 <option value="" disabled selected>Select page to edit</option>
                                 <?php
@@ -73,9 +72,20 @@ $pages = $allpages->getAllPages();
                                 ?>
                             </select>
                         </div>
-                        <div class="col-sm-2">
+                        <div class="col-sm-3">
                             <input type="hidden" name="_method" value="POST">
-                            <button class="btn btn-md btn-primary pull-left" type="submit" name="editpage">EDIT</button></div>
+                            <button class="btn btn-md btn-primary pull-left" type="submit" name="editpage" style="margin-right:10px;">EDIT</button>
+                            <?php
+                            if (isset($showeditpage) && $showeditpage !== '') {
+                                ?>
+                                <button class="btn btn-md btn-primary pull-left" type="button" name="showallpages"
+                                        onclick="parent.location = '/admin/pages'">RETURN
+                                </button>
+                                <?php
+                            }
+                            ?>
+
+                        </div>
                         <div class="col-sm-1"></div>
                     </div>
                 </div>
@@ -98,6 +108,29 @@ $pages = $allpages->getAllPages();
                 <div class="form-group">
                     <div class="row">
                         <div class="col-sm-12">
+                            <label class="sr-only" for="name">Page Slug (url)</label>
+                            <?php
+                            if ($showeditpage['core'] === 'yes') {
+                                $disabled = "disabled";
+                            } else {
+                                $disabled = "";
+                            }
+                            ?>
+                            <input type="text" name="slug" placeholder="Page Slug (url)" class="form-control" size="12"<?php echo $disabled ?> value="<?php echo $showeditpage['slug']; ?>">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            Page URL: <a href="<?php echo $domain ?>/<?php echo $showeditpage['slug'] ?>" target="_blank"><?php echo $domain ?>/<?php echo $showeditpage['slug'] ?></a>
+                            <div class="ja-bottompadding"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-sm-12">
                             <label class="sr-only" for="htmlcode">Page HTML</label>
                             <textarea name="htmlcode" id="htmlcode" placeholder="Page HTML" class="form-control" rows="30"><?php echo $showeditpage['htmlcode']; ?></textarea>
                         </div>
@@ -109,7 +142,7 @@ $pages = $allpages->getAllPages();
                         <div class="col-sm-3"></div>
                         <div class="col-sm-2">
                             <input type="hidden" name="_method" value="GET">
-                            <button class="btn btn-md btn-primary" type="button" name="showallpages" onclick="parent.location = '/admin/pages'">RETURN</button>
+                            <button class="btn btn-md btn-primary" type="button" name="showallpages" onclick="parent.location = '/admin/pages'">CREATE NEW</button>
                         </div>
                         <div class="col-sm-2">
                             <input type="hidden" name="_method" value="PATCH">
@@ -138,6 +171,14 @@ $pages = $allpages->getAllPages();
                             <div class="col-sm-12">
                                 <label class="sr-only" for="name">Page Name</label>
                                 <input type="text" name="name" placeholder="Page Name" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <label class="sr-only" for="name">Page Slug (url)</label>
+                                <input type="text" name="slug" placeholder="Page Slug (url)" class="form-control" size="12">
                             </div>
                         </div>
                     </div>

@@ -44,14 +44,14 @@ class Page
 
     public function addPage() {
 
-        /// NEED SLUGS
         $name = $_POST['name'];
         $htmlcode = $_POST['htmlcode'];
+        $slug = $_POST['slug'];
         $pdo = Database::connect();
         $pdo->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
-        $sql = "insert into `pages` (name, values) (?, ?)";
+        $sql = "insert into `pages` set name=?, htmlcode=?, slug=?";
         $q = $pdo->prepare($sql);
-        $q->execute(array($name, $htmlcode));
+        $q->execute(array($name, $htmlcode, $slug));
         Database::disconnect();
         return "<center><div class=\"alert alert-success\" style=\"width:75%;\"><strong>New Page " . $name . " was Added!</strong></div>";
 
@@ -61,11 +61,12 @@ class Page
 
         $name = $_POST['name'];
         $htmlcode = $_POST['htmlcode'];
+        $slug = $_POST['slug'];
         $pdo = Database::connect();
         $pdo->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
-        $sql = "update `pages` set name=?, htmlcode=? where id=?";
+        $sql = "update `pages` set name=?, htmlcode=?, slug=? where id=?";
         $q = $pdo->prepare($sql);
-        $q->execute(array($name, $htmlcode, $id));
+        $q->execute(array($name, $htmlcode, $id, $slug));
         Database::disconnect();
         return "<center><div class=\"alert alert-success\" style=\"width:75%;\"><strong>Website Content for Page " . $name . " was Saved!</strong></div>";
 
