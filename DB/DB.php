@@ -1,19 +1,12 @@
 create table adminemails (
 id integer unsigned not null primary key auto_increment,
 subject varchar(255) NOT NULL,
-adbody longtext NOT NULL,
+message longtext NOT NULL,
 url varchar(255) NOT NULL,
 clicks integer unsigned NOT NULL,
 sent tinyint(4) NOT NULL,
 datesent integer unsigned NOT NULL
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1;
-
-CREATE TABLE adminemail_saved (
-id integer unsigned not null primary key auto_increment,
-subject varchar(255) NOT NULL DEFAULT '',
-adbody longtext NOT NULL,
-url varchar(255) NOT NULL DEFAULT ''
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 CREATE TABLE `adminsettings` (
 id integer unsigned not null primary key auto_increment,
@@ -23,15 +16,6 @@ adminname varchar(255) not null,
 adminemail varchar(255) not null,
 sitename varchar(255) not null,
 domain varchar(255) not null
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1;
-
-create table adminnavigation (
-id integer unsigned not null primary key auto_increment,
-adminnavtitle varchar(255) not null,
-adminnavurl varchar(255) not null,
-adminnavwindow varchar(255) not null default '_top',
-adminnavenabled varchar(4) not null default 'yes',
-adminnavsequence integer unsigned not null
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1;
 
 CREATE TABLE `adminnotes` (
@@ -60,28 +44,6 @@ PRIMARY KEY (`country_id`),
 KEY `IDX_COUNTRIES_NAME` (`country_name`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1;
 
-create table emailsignupcontrol (
-id integer unsigned not null primary key auto_increment,
-emaildomain varchar(255) not null
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1;
-
-create table membernavigation (
-id integer unsigned not null primary key auto_increment,
-membernavtitle varchar(255) not null,
-membernavurl varchar(255) not null,
-membernavwindow varchar(255) not null default '_top',
-membernavenabled varchar(4) not null default 'yes',
-membernavsequence integer unsigned not null
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1;
-
-INSERT INTO `membernavigation` (`membernavtitle`, `membernavurl`, `membernavwindow`, `membernavenabled`, `membernavsequence`) VALUES('TALK!', 'members.php', '_top', 'yes', 1);
-INSERT INTO `membernavigation` (`membernavtitle`, `membernavurl`, `membernavwindow`, `membernavenabled`, `membernavsequence`) VALUES('PROFILE', 'profile.php', '_top', 'yes', 2);
-INSERT INTO `membernavigation` (`membernavtitle`, `membernavurl`, `membernavwindow`, `membernavenabled`, `membernavsequence`) VALUES('PROMOTE', 'promote.php', '_top', 'yes', 3);
-INSERT INTO `membernavigation` (`membernavtitle`, `membernavurl`, `membernavwindow`, `membernavenabled`, `membernavsequence`) VALUES('SUPPORT', 'Admin Helpdesk URL', '_blank', 'yes', 4);
-INSERT INTO `membernavigation` (`membernavtitle`, `membernavurl`, `membernavwindow`, `membernavenabled`, `membernavsequence`) VALUES('DELETE ACCOUNT', 'delete.php', '_top', 'yes', 5);
-INSERT INTO `membernavigation` (`membernavtitle`, `membernavurl`, `membernavwindow`, `membernavenabled`, `membernavsequence`) VALUES('LOG OUT', 'logout.php', '_top', 'yes', 6);
-INSERT INTO `membernavigation` (`membernavtitle`, `membernavurl`, `membernavwindow`, `membernavenabled`, `membernavsequence`) VALUES('GET A SITE LIKE THIS', 'http://demoforummembersonly.phpsitescripts.com', '_blank', 'yes', 7);
-
 create table members (
 id integer unsigned not null primary key auto_increment,
 username varchar(255) not null,
@@ -100,9 +62,11 @@ lastlogin datetime not null
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1;
 
 CREATE TABLE `pages` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) NOT NULL,
-  `htmlcode` longtext NOT NULL,
+  `id` int(10) unsigned not null auto_increment,
+  `name` varchar(255) not null,
+  `htmlcode` longtext not null,
+  `slug` varchar(255) not null,
+  `core` varchar(4) not null default 'no',
   PRIMARY KEY (`id`),
   UNIQUE KEY `name` (`name`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1;
@@ -120,6 +84,19 @@ KEY `transactions_username_foreign` (`username`)
 insert into adminsettings (adminuser, adminpass, adminname, adminemail, sitename, domain) values ('Admin', 'admin', 'YOUR NAME', 'YOUR ADMIN EMAIL', 'YOUR SITE NAME','http://YOURDOMAIN.COM');
 
 INSERT INTO `adminnotes` (`id`, `name`, `htmlcode`) values (1, 'Admin Notes', '');
+
+INSERT INTO pages (name, htmlcode, slug, core) values ('Home Page', '', '', 'yes');
+INSERT INTO pages (name, htmlcode, slug, core) values ('Login Page', '', 'login', 'yes');
+INSERT INTO pages (name, htmlcode, slug, core) values ('Terms and Conditions', '', 'terms', 'yes');
+INSERT INTO pages (name, htmlcode, slug, core) values ('Members Area Main Page', '', 'members', 'yes');
+INSERT INTO pages (name, htmlcode, slug, core) values ('Members Area Profile Page', '', 'profile', 'yes');
+INSERT INTO pages (name, htmlcode, slug, core) values ('Members Area Promotion Page', '', promotion', 'yes');
+INSERT INTO pages (name, htmlcode, slug, core) values ('Members Area Chat Page', '', 'chat', 'yes');
+INSERT INTO pages (name, htmlcode, slug, core) values ('Registration Page', '', 'register', 'yes');
+INSERT INTO pages (name, htmlcode, slug, core) values ('Thank You Page - New Member Signup', '', 'thankyou', 'yes');
+INSERT INTO pages (name, htmlcode, slug, core) values ('Logout Page', '', 'logout', 'yes');
+INSERT INTO pages (name, htmlcode, slug, core) values ('About Us Page', '', 'aboutus', 'yes');
+
 
 INSERT INTO `countries` (`country_id`, `country_name`, `iso_code2`, `iso_code3`, `reserved1`) values (1, 'Afghanistan', 'AF', 'AFG', 0);
 INSERT INTO `countries` (`country_id`, `country_name`, `iso_code2`, `iso_code3`, `reserved1`) values (2, 'Albania', 'AL', 'ALB', 0);
@@ -359,30 +336,3 @@ INSERT INTO `countries` (`country_id`, `country_name`, `iso_code2`, `iso_code3`,
 INSERT INTO `countries` (`country_id`, `country_name`, `iso_code2`, `iso_code3`, `reserved1`) values (237, 'Zaire', 'ZR', 'ZAR', 0);
 INSERT INTO `countries` (`country_id`, `country_name`, `iso_code2`, `iso_code3`, `reserved1`) values (238, 'Zambia', 'ZM', 'ZMB', 0);
 INSERT INTO `countries` (`country_id`, `country_name`, `iso_code2`, `iso_code3`, `reserved1`) values (239, 'Zimbabwe', 'ZW', 'ZWE', 0);
-
-INSERT INTO pages (name, htmlcode) values ('Home Page', '');
-INSERT INTO pages (name, htmlcode) values ('Login Page', '');
-INSERT INTO pages (name, htmlcode) values ('Terms and Conditions', '');
-INSERT INTO pages (name, htmlcode) values ('Members Area Main Page', '');
-INSERT INTO pages (name, htmlcode) values ('Members Area Profile Page', '');
-INSERT INTO pages (name, htmlcode) values ('Members Area Promotion Page', '');
-INSERT INTO pages (name, htmlcode) values ('Registration Page', '');
-INSERT INTO pages (name, htmlcode) values ('Thank You Page - New Member Signup', '');
-INSERT INTO pages (name, htmlcode) values ('Logout Page', '');
-INSERT INTO pages (name, htmlcode) values ('About Us Page', '');
-
-INSERT INTO `adminnavigation` (`adminnavtitle`, `adminnavurl`, `adminnavwindow`, `adminnavenabled`, `adminnavsequence`) values ('MAIN SITE', 'http://YOURDOMAIN.COM', '_blank', 'yes', 1);
-INSERT INTO `adminnavigation` (`adminnavtitle`, `adminnavurl`, `adminnavwindow`, `adminnavenabled`, `adminnavsequence`) values ('ADMIN MAIN', 'controlpanel.php', '_top', 'yes', 2);
-INSERT INTO `adminnavigation` (`adminnavtitle`, `adminnavurl`, `adminnavwindow`, `adminnavenabled`, `adminnavsequence`) values ('SITE SETTINGS', 'sitecontrol.php', '_top', 'yes', 3);
-INSERT INTO `adminnavigation` (`adminnavtitle`, `adminnavurl`, `adminnavwindow`, `adminnavenabled`, `adminnavsequence`) values ('EMAIL SIGNUP FILTER', 'signupemailcontrol.php', '_top', 'yes', 4);
-INSERT INTO `adminnavigation` (`adminnavtitle`, `adminnavurl`, `adminnavwindow`, `adminnavenabled`, `adminnavsequence`) values ('MEMBER ACCOUNTS', 'membercontrol.php', '_top', 'yes', 5);
-INSERT INTO `adminnavigation` (`adminnavtitle`, `adminnavurl`, `adminnavwindow`, `adminnavenabled`, `adminnavsequence`) values ('FORUM CONTROL', 'forum_control.php', '_top', 'yes', 6);
-INSERT INTO `adminnavigation` (`adminnavtitle`, `adminnavurl`, `adminnavwindow`, `adminnavenabled`, `adminnavsequence`) values ('EMAIL MEMBERS', 'contactmembers.php', '_top', 'yes', 7);
-INSERT INTO `adminnavigation` (`adminnavtitle`, `adminnavurl`, `adminnavwindow`, `adminnavenabled`, `adminnavsequence`) values ('EDIT PROMOTIONAL ADS', 'editpromotional.php', '_top', 'yes', 8);
-INSERT INTO `adminnavigation` (`adminnavtitle`, `adminnavurl`, `adminnavwindow`, `adminnavenabled`, `adminnavsequence`) values ('SITE GRAPHICS CONTROL', 'graphicscontrol.php', '_top', 'yes', 9);
-INSERT INTO `adminnavigation` (`adminnavtitle`, `adminnavurl`, `adminnavwindow`, `adminnavenabled`, `adminnavsequence`) values ('EDIT LAYOUT FILES', 'editlayout.php', '_top', 'yes', 10);
-INSERT INTO `adminnavigation` (`adminnavtitle`, `adminnavurl`, `adminnavwindow`, `adminnavenabled`, `adminnavsequence`) values ('EDIT PAGE HTML', 'editpages.php', '_top', 'yes', 11);
-INSERT INTO `adminnavigation` (`adminnavtitle`, `adminnavurl`, `adminnavwindow`, `adminnavenabled`, `adminnavsequence`) values ('EDIT ADMIN NAVIGATION', 'editadminnavigation.php', '_top', 'yes', 12);
-INSERT INTO `adminnavigation` (`adminnavtitle`, `adminnavurl`, `adminnavwindow`, `adminnavenabled`, `adminnavsequence`) values ('EDIT MEMBER NAVIGATION', 'editmembernavigation.php', '_top', 'yes', 13);
-INSERT INTO `adminnavigation` (`adminnavtitle`, `adminnavurl`, `adminnavwindow`, `adminnavenabled`, `adminnavsequence`) values ('LOG OUT', 'index.php', '_top', 'yes', 14);
-

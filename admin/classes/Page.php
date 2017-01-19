@@ -44,6 +44,7 @@ class Page
 
     public function addPage() {
 
+        /// NEED SLUGS
         $name = $_POST['name'];
         $htmlcode = $_POST['htmlcode'];
         $pdo = Database::connect();
