@@ -61,11 +61,15 @@ $pages = $allpages->getAllPages();
                                 <option value="" disabled selected>Select page to edit</option>
                                 <?php
                                 foreach($pages as $page)
-                                if ($page['id'] === $showeditpage['id']) {
-                                    echo "<option value='" . $page['id'] . "' selected>" . $page['name'] . "</option>";
-                                } else {
-                                    echo "<option value='" . $page['id'] . "'>" . $page['name'] . "</option>";
-                                }
+                                    if (isset($showeditpage) && $showeditpage !== '') {
+                                        if ($page['id'] === $showeditpage['id']) {
+                                            echo "<option value='" . $page['id'] . "' selected>" . $page['name'] . "</option>";
+                                        } else {
+                                            echo "<option value='" . $page['id'] . "'>" . $page['name'] . "</option>";
+                                        }
+                                    } else {
+                                        echo "<option value='" . $page['id'] . "'>" . $page['name'] . "</option>";
+                                    }
                                 ?>
                             </select>
                         </div>
