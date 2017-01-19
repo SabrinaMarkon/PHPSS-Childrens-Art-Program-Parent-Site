@@ -50,7 +50,7 @@ class Page
         $pdo->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
         $sql = "insert into `pages` (name, values) (?, ?)";
         $q = $pdo->prepare($sql);
-        $q->execute(array(name, htmlcode));
+        $q->execute(array($name, $htmlcode));
         Database::disconnect();
         return "<center><div class=\"alert alert-success\" style=\"width:75%;\"><strong>New Page " . $name . " was Added!</strong></div>";
 
@@ -64,7 +64,7 @@ class Page
         $pdo->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
         $sql = "update `pages` set name=?, htmlcode=? where id=?";
         $q = $pdo->prepare($sql);
-        $q->execute(array(name, htmlcode, $id));
+        $q->execute(array($name, $htmlcode, $id));
         Database::disconnect();
         return "<center><div class=\"alert alert-success\" style=\"width:75%;\"><strong>Website Content for Page " . $name . " was Saved!</strong></div>";
 

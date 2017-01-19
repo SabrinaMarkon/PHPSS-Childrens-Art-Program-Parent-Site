@@ -67,7 +67,6 @@ img {
 {
     width: 50%; /* your width */
 }
-
 @media (min-width:200px)
 {
 	.ja-navbutton { font-size: 80%; border-right: 0px; }

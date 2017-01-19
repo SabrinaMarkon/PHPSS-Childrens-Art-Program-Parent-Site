@@ -67,8 +67,6 @@ if (isset($_POST['savesettings']))
 
 if (isset($_POST['editpage']))
 {
-    echo "test";
-    exit;
     $editpage = new Page();
     $showeditpage = $editpage->editPage($id);
 }
