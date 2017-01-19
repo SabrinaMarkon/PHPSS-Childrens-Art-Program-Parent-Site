@@ -65,6 +65,29 @@ if (isset($_POST['savesettings']))
     $showupdate = $update->saveSettings();
 }
 
+if (isset($_POST['editpage']))
+{
+    echo "test";
+    exit;
+    $editpage = new Page();
+    $showeditpage = $editpage->editPage($id);
+}
+if (isset($_POST['addpage']))
+{
+    $update = new Page();
+    $showupdate = $update->addPage($id);
+}
+if (isset($_POST['savepage']))
+{
+    $update = new Page();
+    $showupdate = $update->savePage($id);
+}
+if (isset($_POST['deletepage']))
+{
+    $delete = new Page();
+    $showupdate = $delete->deletePage($id);
+}
+
 if (isset($_POST['savemember']))
 {
     $update = new Member();
@@ -86,7 +109,7 @@ if (isset($_POST['deletetransaction']))
     $delete = new Money();
     $showupdate = $delete->deleteTransaction($id);
 }
-//
+// REFACTOR LATER to make better routes etc.
 //if (isset($_POST['_method'])) {
 //
 //    $_method = $_POST['_method'];

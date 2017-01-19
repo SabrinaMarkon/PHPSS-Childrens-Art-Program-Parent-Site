@@ -2,3 +2,13 @@
 [16-Jan-2017 02:52:10 UTC] PHP Notice:  Undefined variable: dbconn in /home/juniorartists/public_html/config/Database.php on line 22
 [16-Jan-2017 02:52:10 UTC] PHP Fatal error:  Call to a member function setAttribute() on null in /home/juniorartists/public_html/config/Database.php on line 22
 [16-Jan-2017 03:06:10 UTC] PHP Notice:  Array to string conversion in /home/juniorartists/public_html/admin/classes/Member.php on line 50
+[19-Jan-2017 00:18:49 UTC] PHP Notice:  Undefined variable: showeditpage in /home/juniorartists/public_html/admin/pages.php on line 73
+[19-Jan-2017 00:18:49 UTC] PHP Notice:  Undefined variable: showeditpage in /home/juniorartists/public_html/admin/pages.php on line 77
+[19-Jan-2017 00:18:49 UTC] PHP Notice:  Undefined variable: showeditpage in /home/juniorartists/public_html/admin/pages.php on line 83
+[19-Jan-2017 00:18:49 UTC] PHP Notice:  Undefined variable: showeditpage in /home/juniorartists/public_html/admin/pages.php on line 93
+[19-Jan-2017 00:18:49 UTC] PHP Notice:  Undefined variable: showeditpage in /home/juniorartists/public_html/admin/pages.php on line 112
+[19-Jan-2017 00:19:03 UTC] PHP Notice:  Undefined variable: showeditpage in /home/juniorartists/public_html/admin/pages.php on line 73
+[19-Jan-2017 00:19:03 UTC] PHP Notice:  Undefined variable: showeditpage in /home/juniorartists/public_html/admin/pages.php on line 77
+[19-Jan-2017 00:19:03 UTC] PHP Notice:  Undefined variable: showeditpage in /home/juniorartists/public_html/admin/pages.php on line 83
+[19-Jan-2017 00:19:03 UTC] PHP Notice:  Undefined variable: showeditpage in /home/juniorartists/public_html/admin/pages.php on line 93
+[19-Jan-2017 00:19:03 UTC] PHP Notice:  Undefined variable: showeditpage in /home/juniorartists/public_html/admin/pages.php on line 112
