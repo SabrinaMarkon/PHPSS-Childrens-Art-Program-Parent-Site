@@ -65,6 +65,32 @@ if (isset($_POST['savesettings']))
     $showupdate = $update->saveSettings();
 }
 
+if (isset($_POST['editmail']))
+{
+    $editmail = new Mail();
+    $showeditmail = $editmail->editMail($id);
+}
+if (isset($_POST['addmail']))
+{
+    $update = new Mail();
+    $showupdate = $update->addMail();
+}
+if (isset($_POST['savemail']))
+{
+    $update = new Mail();
+    $showupdate = $update->saveMail($id);
+}
+if (isset($_POST['deletemail']))
+{
+    $delete = new Mail();
+    $showupdate = $delete->deleteMail($id);
+}
+if (isset($_POST['sendmail']))
+{
+    $send = new Mail();
+    $showupdate = $send->sendMail();
+}
+
 if (isset($_POST['editpage']))
 {
     $editpage = new Page();

@@ -72,3 +72,5 @@ Stack trace:
 #2 {main}
   thrown in /home/juniorartists/public_html/admin/classes/Page.php on line 54
 [19-Jan-2017 05:23:57 UTC] PHP Notice:  Undefined index: name in /home/juniorartists/public_html/admin/classes/Page.php on line 77
+[25-Jan-2017 04:41:44 UTC] PHP Fatal error:  Cannot redeclare Mail::sendMail() in /home/juniorartists/public_html/admin/classes/Mail.php on line 110
+[25-Jan-2017 04:44:48 UTC] PHP Parse error:  syntax error, unexpected end of file, expecting variable (T_VARIABLE) or ${ (T_DOLLAR_OPEN_CURLY_BRACES) or {$ (T_CURLY_OPEN) in /home/juniorartists/public_html/admin/mail.php on line 65
