@@ -53,3 +53,22 @@ Stack trace:
 #2 {main}
   thrown in /home/juniorartists/public_html/admin/classes/Page.php on line 54
 [19-Jan-2017 05:14:20 UTC] PHP Notice:  Undefined index: name in /home/juniorartists/public_html/admin/classes/Page.php on line 77
+[19-Jan-2017 05:17:11 UTC] PHP Notice:  Undefined variable: domain in /home/juniorartists/public_html/admin/classes/Page.php on line 56
+[19-Jan-2017 05:17:11 UTC] PHP Notice:  Undefined variable: domain in /home/juniorartists/public_html/admin/classes/Page.php on line 56
+[19-Jan-2017 05:18:50 UTC] PHP Notice:  Undefined index: name in /home/juniorartists/public_html/admin/classes/Page.php on line 77
+[19-Jan-2017 05:19:03 UTC] PHP Notice:  Undefined variable: settings in /home/juniorartists/public_html/admin/classes/Page.php on line 56
+[19-Jan-2017 05:19:03 UTC] PHP Notice:  Undefined variable: settings in /home/juniorartists/public_html/admin/classes/Page.php on line 56
+[19-Jan-2017 05:23:11 UTC] PHP Warning:  Missing argument 1 for Page::addPage(), called in /home/juniorartists/public_html/admin/index.php on line 76 and defined in /home/juniorartists/public_html/admin/classes/Page.php on line 45
+[19-Jan-2017 05:23:11 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'test' for key 'name'' in /home/juniorartists/public_html/admin/classes/Page.php:54
+Stack trace:
+#0 /home/juniorartists/public_html/admin/classes/Page.php(54): PDOStatement->execute(Array)
+#1 /home/juniorartists/public_html/admin/index.php(76): Page->addPage()
+#2 {main}
+  thrown in /home/juniorartists/public_html/admin/classes/Page.php on line 54
+[19-Jan-2017 05:23:31 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'test' for key 'name'' in /home/juniorartists/public_html/admin/classes/Page.php:54
+Stack trace:
+#0 /home/juniorartists/public_html/admin/classes/Page.php(54): PDOStatement->execute(Array)
+#1 /home/juniorartists/public_html/admin/index.php(76): Page->addPage('http://juniorar...')
+#2 {main}
+  thrown in /home/juniorartists/public_html/admin/classes/Page.php on line 54
+[19-Jan-2017 05:23:57 UTC] PHP Notice:  Undefined index: name in /home/juniorartists/public_html/admin/classes/Page.php on line 77

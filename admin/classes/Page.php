@@ -42,7 +42,7 @@ class Page
         }
     }
 
-    public function addPage() {
+    public function addPage($domain) {
 
         $name = $_POST['name'];
         $htmlcode = $_POST['htmlcode'];
@@ -53,7 +53,7 @@ class Page
         $q = $pdo->prepare($sql);
         $q->execute(array($name, $htmlcode, $slug));
         Database::disconnect();
-        return "<center><div class=\"alert alert-success\" style=\"width:75%;\"><strong>New Page " . $name . " was Added!</strong></div>";
+        return "<center><div class=\"alert alert-success\" style=\"width:75%;\"><strong>New Page " . $name . " was Added!</strong><br>New URL: <a href=" . $domain . "/" . $slug . ">" . $domain . "/" . $slug . "</a></div>";
 
     }
 

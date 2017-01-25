@@ -1,13 +1,3 @@
-create table adminemails (
-id integer unsigned not null primary key auto_increment,
-subject varchar(255) NOT NULL,
-message longtext NOT NULL,
-url varchar(255) NOT NULL,
-clicks integer unsigned NOT NULL,
-sent tinyint(4) NOT NULL,
-datesent integer unsigned NOT NULL
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1;
-
 CREATE TABLE `adminsettings` (
 id integer unsigned not null primary key auto_increment,
 adminuser varchar(255) not null,
@@ -43,6 +33,20 @@ CREATE TABLE `countries` (
 PRIMARY KEY (`country_id`),
 KEY `IDX_COUNTRIES_NAME` (`country_name`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1;
+
+CREATE TABLE mail (
+`id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+username varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+`subject` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+message longtext COLLATE utf8_unicode_ci NOT NULL,
+url varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+needtosend char(1) COLLATE utf8_unicode_ci NOT NULL DEFAULT '0',
+sent datetime DEFAULT NULL,
+clicks int(11) NOT NULL,
+save char(1) COLLATE utf8_unicode_ci NOT NULL DEFAULT '0',
+PRIMARY KEY (`id`),
+KEY mail_username_foreign (username)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 create table members (
 id integer unsigned not null primary key auto_increment,
