@@ -36,9 +36,9 @@ $savedmails = $allsavedmails->getAllSavedMails();
             { title: 'Test template 2', content: 'Test 2' }
         ],
         content_css: [
-            '/../css/bootstrap.min.css',
-            '/../css/bootstrap-theme.min.css',
-            '/../css/custom.css'
+//            '/../css/bootstrap.min.css',
+//            '/../css/bootstrap-theme.min.css',
+//            '/../css/custom.css'
         ]
     });
 </script>
@@ -52,8 +52,8 @@ $savedmails = $allsavedmails->getAllSavedMails();
             <form action="/admin/mail" method="post" accept-charset="utf-8" class="form" role="form">
                 <div class="form-group textfield">
                     <div class="row">
-                        <div class="col-sm-2"><label for="id">Edit Saved Mail:</label></div>
-                        <div class="col-sm-7">
+                        <div class="col-sm-3"><label for="id">Edit Saved Mail:</label></div>
+                        <div class="col-sm-6">
                             <select name="id" class="form-control">
                                 <option value="" disabled selected>Select saved mail to edit</option>
                                 <?php

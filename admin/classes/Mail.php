@@ -11,7 +11,7 @@ class Mail
 
         $pdo = Database::connect();
         $pdo->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
-        $sql = "select * from mail where save='1' order by id desc";
+        $sql = "select * from mail order by id desc";
         $q = $pdo->prepare($sql);
         $q->execute();
         $q->setFetchMode(PDO::FETCH_ASSOC);
@@ -71,7 +71,7 @@ class Mail
         $q = $pdo->prepare($sql);
         $q->execute(array($subject, $message, $url));
         Database::disconnect();
-        return "<center><div class=\"alert alert-success\" style=\"width:75%;\"><strong>New Mail was Added!</strong><br>New URL: <a href=" . $domain . "/" . $slug . ">" . $domain . "/" . $slug . "</a></div>";
+        return "<center><div class=\"alert alert-success\" style=\"width:75%;\"><strong>New Mail was Added!</strong></div>";
 
     }
 

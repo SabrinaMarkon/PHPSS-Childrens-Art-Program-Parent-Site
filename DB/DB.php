@@ -35,15 +35,15 @@ KEY `IDX_COUNTRIES_NAME` (`country_name`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1;
 
 CREATE TABLE mail (
-`id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-username varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-`subject` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-message longtext COLLATE utf8_unicode_ci NOT NULL,
-url varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-needtosend char(1) COLLATE utf8_unicode_ci NOT NULL DEFAULT '0',
+`id` int(10) unsigned not null auto_increment,
+username varchar(255) not null default 'admin',
+`subject` varchar(255) not null,
+message longtext not null,
+url varchar(255) not null,
+needtosend char(1) not null default '0',
 sent datetime DEFAULT NULL,
-clicks int(11) NOT NULL,
-save char(1) COLLATE utf8_unicode_ci NOT NULL DEFAULT '0',
+clicks int(11) not null default '0',
+save char(1) not null default '0',
 PRIMARY KEY (`id`),
 KEY mail_username_foreign (username)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;

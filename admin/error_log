@@ -74,3 +74,8 @@ Stack trace:
 [19-Jan-2017 05:23:57 UTC] PHP Notice:  Undefined index: name in /home/juniorartists/public_html/admin/classes/Page.php on line 77
 [25-Jan-2017 04:41:44 UTC] PHP Fatal error:  Cannot redeclare Mail::sendMail() in /home/juniorartists/public_html/admin/classes/Mail.php on line 110
 [25-Jan-2017 04:44:48 UTC] PHP Parse error:  syntax error, unexpected end of file, expecting variable (T_VARIABLE) or ${ (T_DOLLAR_OPEN_CURLY_BRACES) or {$ (T_CURLY_OPEN) in /home/juniorartists/public_html/admin/mail.php on line 65
+[25-Jan-2017 05:09:36 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/juniorartists/public_html/admin/pages.php on line 172
+[25-Jan-2017 05:12:19 UTC] PHP Notice:  Undefined variable: domain in /home/juniorartists/public_html/admin/classes/Mail.php on line 74
+[25-Jan-2017 05:12:19 UTC] PHP Notice:  Undefined variable: slug in /home/juniorartists/public_html/admin/classes/Mail.php on line 74
+[25-Jan-2017 05:12:19 UTC] PHP Notice:  Undefined variable: domain in /home/juniorartists/public_html/admin/classes/Mail.php on line 74
+[25-Jan-2017 05:12:19 UTC] PHP Notice:  Undefined variable: slug in /home/juniorartists/public_html/admin/classes/Mail.php on line 74

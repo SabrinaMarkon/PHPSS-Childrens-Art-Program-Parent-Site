@@ -38,9 +38,9 @@ $pages = $allpages->getAllPages();
             { title: 'Test template 2', content: 'Test 2' }
         ],
         content_css: [
-            '/../css/bootstrap.min.css',
-            '/../css/bootstrap-theme.min.css',
-            '/../css/custom.css'
+//            '/../css/bootstrap.min.css',
+//            '/../css/bootstrap-theme.min.css',
+//            '/../css/custom.css'
         ]
     });
 </script>
