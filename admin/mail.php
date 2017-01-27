@@ -138,81 +138,81 @@ $savedmails = $allsavedmails->getAllSavedMails();
 
                         <div class="col-sm-3"></div>
                         <div class="col-sm-2">
-                            <input type="hidden" name="_method" value="GET">
                             <button class="btn btn-lg btn-primary" type="button" name="showallmail" onclick="parent.location = '/admin/mail'">RETURN</button>
                         </div>
                         <div class="col-sm-2">
                             <input type="hidden" name="_method" value="PATCH">
                             <button class="btn btn-lg btn-primary" type="submit" name="savemail">SAVE</button>
+                        </div>
+                        <div class="col-sm-1">
+                            <button class="btn btn-lg btn-primary" type="submit" name="sendmail">SEND</button>
+                        </div>
             </form>
-        </div>
-        <div class="col-sm-2">
-            <form action="/admin/mail/<?php echo $showeditmail['id']; ?>" method="post" accept-charset="utf-8" class="form" role="form">
-                <input type="hidden" name="_method" value="DELETE">
-                <button class="btn btn-lg btn-primary" type="submit" name="deletemail">DELETE</button>
-            </form>
-        </div>
-        <div class="col-sm-3"></div>
+                        <div class="col-sm-2">
+                            <form action="/admin/mail/<?php echo $showeditmail['id']; ?>" method="post" accept-charset="utf-8" class="form" role="form">
+                                <input type="hidden" name="_method" value="DELETE">
+                                <button class="btn btn-lg btn-primary" type="submit" name="deletemail">DELETE</button>
+                            </form>
+                        </div>
+                        <div class="col-sm-3"></div>
 
+                    </div>
+                </div>
+                <?php
+
+                } else {
+
+                // CREATE NEW MAIL:
+                ?>
+                <form action="/admin/mail" method="post" accept-charset="utf-8" class="form" role="form">
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <label class="sr-only" for="name">Email Subject</label>
+                                <input type="text" name="subject" placeholder="Email Subject" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <label class="sr-only" for="name">Email URL</label>
+                                <input type="text" name="url" placeholder="Email URL" class="form-control" value="http://">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <label class="sr-only" for="htmlcode">Email Message</label>
+                                <textarea name="message" id="message" placeholder="Email Message" class="form-control" rows="30"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+
+                            <div class="col-sm-5"></div>
+                            <div class="col-sm-1">
+                                <input type="hidden" name="_method" value="POST">
+                                <button class="btn btn-lg btn-primary" type="submit" name="addmail">SAVE</button>
+                            </div>
+                            <div class="col-sm-1">
+                                <button class="btn btn-lg btn-primary" type="submit" name="sendmail">SEND</button>
+                            </div>
+                            <div class="col-sm-5"></div>
+
+                        </div>
+                    </div>
+                </form>
+                    <?php
+
+                    }
+
+                    ?>
+
+                    <div class="ja-bottompadding"></div>
+
+        </div>
     </div>
-</div>
-<?php
-
-} else {
-
-    // CREATE NEW MAIL:
-    ?>
-    <form action="/admin/mail" method="post" accept-charset="utf-8" class="form" role="form">
-        <div class="form-group">
-            <div class="row">
-                <div class="col-sm-12">
-                    <label class="sr-only" for="name">Email Subject</label>
-                    <input type="text" name="subject" placeholder="Email Subject" class="form-control">
-                </div>
-            </div>
-        </div>
-        <div class="form-group">
-            <div class="row">
-                <div class="col-sm-12">
-                    <label class="sr-only" for="name">Email URL</label>
-                    <input type="text" name="url" placeholder="Email URL" class="form-control" value="http://">
-                </div>
-            </div>
-        </div>
-        <div class="form-group">
-            <div class="row">
-                <div class="col-sm-12">
-                    <label class="sr-only" for="htmlcode">Email Message</label>
-                    <textarea name="message" id="message" placeholder="Email Message" class="form-control" rows="30"></textarea>
-                </div>
-            </div>
-        </div>
-        <div class="form-group">
-            <div class="row">
-
-                <div class="col-sm-5"></div>
-                <div class="col-sm-1">
-                    <input type="hidden" name="_method" value="POST">
-                    <button class="btn btn-lg btn-primary" type="submit" name="addmail">SAVE</button>
-                </div>
-                <div class="col-sm-1">
-                    <form action="/admin/mail" method="post" accept-charset="utf-8" class="form" role="form">
-                        <input type="hidden" name="_method" value="POST">
-                        <button class="btn btn-lg btn-primary" type="submit" name="sendmail">SEND</button>
-                    </form>
-                </div>
-                <div class="col-sm-5"></div>
-
-                </div>
-        </div>
-    <?php
-
-}
-
-?>
-
-<div class="ja-bottompadding"></div>
-
-</div>
-</div>
 </div>

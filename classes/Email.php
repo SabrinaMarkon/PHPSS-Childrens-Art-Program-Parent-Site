@@ -7,7 +7,7 @@ class Email
 	private $toemail;
 	private $fromemail;
 
-	public function sendEmail($toemail, $fromemail, $subject, $message, $sitename, $domain, $adminemail) {
+	public function sendEmail($toemail, $fromemail, $subject, $message, $sitename, $domain, $adminemail, $htmlheader) {
 		
 	$headers = "From: " . $sitename . "<" . $fromemail . ">\n";
 	$headers .= "Reply-To: <" . $adminemail . ">\n";
@@ -15,6 +15,7 @@ class Email
 	$headers .= "X-Mailer: PHP5\n";
 	$headers .= "X-Priority: 3\n";
 	$headers .= "Return-Path: <" . $adminemail . ">\n";
+    $headers .= $htmlheader;
 
 	@mail($toemail, $subject, wordwrap(stripslashes($message)), $headers, "-f$fromemail");
 

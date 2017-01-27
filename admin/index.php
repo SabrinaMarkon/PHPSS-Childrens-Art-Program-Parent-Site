@@ -9,6 +9,7 @@ require_once "../config/Database.php";
 require_once "../config/Settings.php";
 require_once "../config/Layout.php";
 require_once "../classes/Countries.php";
+require_once "../classes/Email.php";
 
 function sabrina_autoloader($class) {
     require 'classes/' . $class . ".php";

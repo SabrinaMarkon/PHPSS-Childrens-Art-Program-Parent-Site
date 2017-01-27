@@ -2,6 +2,7 @@
 class Mail
 {
     private $email;
+    private $url;
     private $subject;
     private $message;
     private $headers;
@@ -11,7 +12,7 @@ class Mail
 
         $pdo = Database::connect();
         $pdo->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
-        $sql = "select * from mail order by id desc";
+        $sql = "select * from mail where save=1 order by id desc";
         $q = $pdo->prepare($sql);
         $q->execute();
         $q->setFetchMode(PDO::FETCH_ASSOC);
@@ -20,6 +21,7 @@ class Mail
         foreach ($savedmails as $savedmail) {
             array_push($savedmailarray, $savedmail);
         }
+        Database::disconnect();
         return $savedmailarray;
 
     }
@@ -46,32 +48,11 @@ class Mail
         $url = $_POST['url'];
         $pdo = Database::connect();
         $pdo->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
-        $sql = "update mail set subject=?, message=?, url=? where id=?";
+        $sql = "update mail set subject=?, message=?, url=?, save=1 where id=?";
         $q = $pdo->prepare($sql);
         $q->execute(array($subject, $message, $url, $id));
         Database::disconnect();
         return "<center><div class=\"alert alert-success\" style=\"width:75%;\"><strong>Your Mail was Saved!</strong></div>";
-
-    }
-    
-    public function sendMail($id) {
-
-        $subject = $_POST['subject'];
-        $message = $_POST['message'];
-        $url = $_POST['url'];
-        $pdo = Database::connect();
-        $pdo->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
-        if ($id !== '') {
-            $sql = "update mail set subject=?, message=?, url=? where id=?";
-            $q = $pdo->prepare($sql);
-            $q->execute(array($subject, $message, $url, $id));
-        } else {
-            $sql = "insert into mail set subject=?, message=?, url=?";
-            $q = $pdo->prepare($sql);
-            $q->execute(array($subject, $message, $url));
-        }
-        Database::disconnect();
-        return "<center><div class=\"alert alert-success\" style=\"width:75%;\"><strong>Your Mail was Sent!</strong></div>";
 
     }
 
@@ -82,11 +63,32 @@ class Mail
         $url = $_POST['url'];
         $pdo = Database::connect();
         $pdo->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
-        $sql = "insert into mail set subject=?, message=?, url=?";
+        $sql = "insert into mail set subject=?, message=?, url=?, save=1";
         $q = $pdo->prepare($sql);
         $q->execute(array($subject, $message, $url));
         Database::disconnect();
         return "<center><div class=\"alert alert-success\" style=\"width:75%;\"><strong>New Mail was Added!</strong></div>";
+
+    }
+
+    public function sendMail($id) {
+
+        $subject = $_POST['subject'];
+        $message = $_POST['message'];
+        $url = $_POST['url'];
+        $pdo = Database::connect();
+        $pdo->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
+        if ($id !== '') {
+            $sql = "update mail set subject=?, message=?, url=?, needtosend=1 where id=?";
+            $q = $pdo->prepare($sql);
+            $q->execute(array($subject, $message, $url, $id));
+        } else {
+            $sql = "insert into mail set subject=?, message=?, url=?, needtosend=1";
+            $q = $pdo->prepare($sql);
+            $q->execute(array($subject, $message, $url));
+        }
+        Database::disconnect();
+        return "<center><div class=\"alert alert-success\" style=\"width:75%;\"><strong>Your Mail was Sent!</strong></div>";
 
     }
 
@@ -105,22 +107,4 @@ class Mail
 
 
 
-
-
-//    public function sendMail($settings) {
-//
-//        $subject = $_POST['subject'];
-//        $message = $_POST['message'];
-//
-//        if (isset($username))
-//        {
-//            $message .= "\n\nSent by Admin\n\n";
-//        }
-//
-//        $sendadminemail = new Mail();
-//        $send = $sendadminemail->sendEmail($settings['adminemail'], $settings['adminemail'], $subject, $message, $settings['sitename'], $settings['domain'], $settings['adminemail']);
-//
-//        return "<center><div class=\"alert alert-success\" style=\"width:75%;\"><strong>Your Message was Sent!</strong></div>";
-//
-//    }
 }

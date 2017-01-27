@@ -2,7 +2,7 @@
 </div>
 
 <footer class="footer" id="ja-footer">
-    &copy;2017 Julia Torigiani, Junior Artists. Custom Development &copy;2016 Sabrina Markon, <a href="http://phpsitescripts.com" target="_blank">PHPSiteScripts.com</a>. All rights reserved.
+    &copy;2017 Julia Torigiani, Junior Artists. Custom Development &copy;2017 Sabrina Markon, <a href="http://phpsitescripts.com" target="_blank">PHPSiteScripts.com</a>. All rights reserved.
 </footer>
 
 
