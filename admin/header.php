@@ -18,9 +18,9 @@
 
 <div class="container text-center">
 
-    <header id="heading">
-        <img src="/../images/header.jpg" alt="Junior Artists" id="ja-headerimage">
-    </header>
+<!--    <header id="heading">-->
+<!--        <img src="/../images/header.jpg" alt="Junior Artists" id="ja-headerimage">-->
+<!--    </header>-->
 
     <div class="btn-group btn-group-justified ja-navgroup" role="group" aria-label="Main Navigation Menu" id="navbar">
 

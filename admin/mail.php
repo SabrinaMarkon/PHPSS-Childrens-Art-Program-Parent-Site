@@ -139,17 +139,17 @@ $savedmails = $allsavedmails->getAllSavedMails();
                         <div class="col-sm-3"></div>
                         <div class="col-sm-2">
                             <input type="hidden" name="_method" value="GET">
-                            <button class="btn btn-md btn-primary" type="button" name="showallmail" onclick="parent.location = '/admin/mail'">CREATE NEW</button>
+                            <button class="btn btn-lg btn-primary" type="button" name="showallmail" onclick="parent.location = '/admin/mail'">RETURN</button>
                         </div>
                         <div class="col-sm-2">
                             <input type="hidden" name="_method" value="PATCH">
-                            <button class="btn btn-md btn-primary" type="submit" name="savemail">SAVE</button>
+                            <button class="btn btn-lg btn-primary" type="submit" name="savemail">SAVE</button>
             </form>
         </div>
         <div class="col-sm-2">
             <form action="/admin/mail/<?php echo $showeditmail['id']; ?>" method="post" accept-charset="utf-8" class="form" role="form">
                 <input type="hidden" name="_method" value="DELETE">
-                <button class="btn btn-md btn-primary" type="submit" name="deletemail">DELETE</button>
+                <button class="btn btn-lg btn-primary" type="submit" name="deletemail">DELETE</button>
             </form>
         </div>
         <div class="col-sm-3"></div>
@@ -189,15 +189,22 @@ $savedmails = $allsavedmails->getAllSavedMails();
         </div>
         <div class="form-group">
             <div class="row">
-                <div class="col-sm-1"></div>
-                <div class="col-sm-10">
+
+                <div class="col-sm-5"></div>
+                <div class="col-sm-1">
                     <input type="hidden" name="_method" value="POST">
-                    <button class="btn btn-lg btn-primary" type="submit" name="addmail">ADD</button>
+                    <button class="btn btn-lg btn-primary" type="submit" name="addmail">SAVE</button>
                 </div>
-                <div class="col-sm-1"></div>
-            </div>
+                <div class="col-sm-1">
+                    <form action="/admin/mail" method="post" accept-charset="utf-8" class="form" role="form">
+                        <input type="hidden" name="_method" value="POST">
+                        <button class="btn btn-lg btn-primary" type="submit" name="sendmail">SEND</button>
+                    </form>
+                </div>
+                <div class="col-sm-5"></div>
+
+                </div>
         </div>
-    </form>
     <?php
 
 }

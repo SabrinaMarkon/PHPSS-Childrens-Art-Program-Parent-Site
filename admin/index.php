@@ -88,7 +88,7 @@ if (isset($_POST['deletemail']))
 if (isset($_POST['sendmail']))
 {
     $send = new Mail();
-    $showupdate = $send->sendMail();
+    $showupdate = $send->sendMail($id);
 }
 
 if (isset($_POST['editpage']))

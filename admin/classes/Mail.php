@@ -39,6 +39,21 @@ class Mail
         }
     }
 
+    public function saveMail($id) {
+
+        $subject = $_POST['subject'];
+        $message = $_POST['message'];
+        $url = $_POST['url'];
+        $pdo = Database::connect();
+        $pdo->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
+        $sql = "update mail set subject=?, message=?, url=? where id=?";
+        $q = $pdo->prepare($sql);
+        $q->execute(array($subject, $message, $url, $id));
+        Database::disconnect();
+        return "<center><div class=\"alert alert-success\" style=\"width:75%;\"><strong>Your Mail was Saved!</strong></div>";
+
+    }
+    
     public function sendMail($id) {
 
         $subject = $_POST['subject'];
@@ -72,21 +87,6 @@ class Mail
         $q->execute(array($subject, $message, $url));
         Database::disconnect();
         return "<center><div class=\"alert alert-success\" style=\"width:75%;\"><strong>New Mail was Added!</strong></div>";
-
-    }
-
-    public function saveMail($id) {
-
-        $subject = $_POST['subject'];
-        $message = $_POST['message'];
-        $url = $_POST['url'];
-        $pdo = Database::connect();
-        $pdo->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
-        $sql = "update mail set subject=?, message=?, url=? where id=?";
-        $q = $pdo->prepare($sql);
-        $q->execute(array($subject, $message, $url, $id));
-        Database::disconnect();
-        return "<center><div class=\"alert alert-success\" style=\"width:75%;\"><strong>Your Mail was Saved!</strong></div>";
 
     }
 
