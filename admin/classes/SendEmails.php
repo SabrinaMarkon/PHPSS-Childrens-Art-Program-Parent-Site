@@ -1,4 +1,18 @@
 <?php
+/*
+ * SendEmails handles admin or member submitted mail outs and should be called as a scheduled job.
+ *
+ * @author Sabrina Markon
+ * @copyright 2017 Sabrina Markon, PHPSiteScripts.com
+ * @license LICENSE.md
+ *
+ * @param $domain The main url of the website.
+ * @param $sitename The name of the website
+ * @param $adminemail The website admin's support email address.
+ * @param @adminname The name of the website admin.
+ */
+require_once('../../config/Database.php');
+require_once('../../classes/Email.php');
 class SendEmails
 {
     private $email;
@@ -31,7 +45,7 @@ class SendEmails
                 $sent = new Datetime();
                 $sent = $sent->format('Y-m-d');
 
-                $getsql = "select * from members where verified=1 order by id";
+                $getsql = "select * from members where verified='yes' order by id";
                 $getq = $pdo->prepare($getsql);
                 $getq->execute();
                 $getq->setFetchMode(PDO::FETCH_ASSOC);
@@ -54,14 +68,14 @@ class SendEmails
                         $disclaimer .= "This email is sent in strict compliance with international spam laws.<br><br>";
 
                         // full message and subject with disclaimer as well as this member's substitution:
-                        $html = $html . "<br><br><br>" . $disclaimer;
-                        $html = str_replace("~USERID~", $userid, $html);
+                        $html = "<br><br><br>" . $disclaimer;
+                        $html = str_replace("~USERID~", $username, $html);
                         $html = str_replace("~FULLNAME~", $fullname, $html);
                         $html = str_replace("~FIRSTNAME~", $firstname, $html);
                         $html = str_replace("~LASTNAME~", $lastname, $html);
                         $html = str_replace("~EMAIL~", $email, $html);
                         $html = $html . "<br><br>Sent by: " . $senderuserid;
-                        $subject = str_replace("~USERID~", $userid, $subject);
+                        $subject = str_replace("~USERID~", $username, $subject);
                         $subject = str_replace("~FULLNAME~", $fullname, $subject);
                         $subject = str_replace("~FIRSTNAME~", $firstname, $subject);
                         $subject = str_replace("~LASTNAME~", $lastname, $subject);
@@ -94,3 +108,6 @@ class SendEmails
 
 
 }
+
+$mail = new SendEmails();
+$mail->getMails($domain, $sitename, $adminemail, $adminname);
