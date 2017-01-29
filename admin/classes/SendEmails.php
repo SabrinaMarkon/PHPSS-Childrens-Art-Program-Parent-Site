@@ -12,6 +12,7 @@
  * @param @adminname The name of the website admin.
  */
 require_once('../../config/Database.php');
+require_once('../../config/Settings.php');
 require_once('../../classes/Email.php');
 class SendEmails
 {
@@ -68,7 +69,7 @@ class SendEmails
                         $disclaimer .= "This email is sent in strict compliance with international spam laws.<br><br>";
 
                         // full message and subject with disclaimer as well as this member's substitution:
-                        $html = "<br><br><br>" . $disclaimer;
+                        $html = $message . "<br><br><br>" . $disclaimer;
                         $html = str_replace("~USERID~", $username, $html);
                         $html = str_replace("~FULLNAME~", $fullname, $html);
                         $html = str_replace("~FIRSTNAME~", $firstname, $html);
@@ -81,10 +82,10 @@ class SendEmails
                         $subject = str_replace("~LASTNAME~", $lastname, $subject);
                         $subject = str_replace("~EMAIL~", $email, $subject);
 
-                        $htmlheader = "";
+                        $htmlheader = "Content-Type: text/html; charset=windows-1252\n";
 
                         $sendsiteemail = new Email();
-                        $send = $sendsiteemail->sendEmail($email, $adminemail, $subject, $html, $sitename, $domain, $adminemail, $htmlheader);
+                        $sendsiteemail->sendEmail($email, $adminemail, $subject, $html, $sitename, $adminemail, $htmlheader);
                     }
                 }
 
@@ -109,5 +110,11 @@ class SendEmails
 
 }
 
+$sitesettings = new Settings();
+$settings = $sitesettings->getSettings();
+foreach ($settings as $key => $value)
+{
+    $$key = $value;
+}
 $mail = new SendEmails();
 $mail->getMails($domain, $sitename, $adminemail, $adminname);
