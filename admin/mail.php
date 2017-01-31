@@ -91,17 +91,23 @@ $savedmails = $allsavedmails->getAllSavedMails();
 
             <div class="row">
                 <div class="col-sm-1"></div>
-                <div class="col-sm-10 text-center">
+                <div class="col-sm-10 text-center"><br />
                     <p>Please use the personalization substitution below anywhere in your subject or message, typed EXACTLY as shown (cAsE sEnSiTiVe):</p><br />
-                    <div class="row ja-bottompadding"><div class="col-sm-2"></div><div class="col-sm-4"><u><strong>Type This:</strong></u></div><div class="col-sm-4"><u><strong>To Substitute:</strong></u></div><div class="col-sm-2"></div></div>
-                    <div class="row"><div class="col-sm-2"></div><div class="col-sm-4">~USERNAME~</div><div class="col-sm-4">Member's Username</div><div class="col-sm-2"></div></div>
-                    <div class="row"><div class="col-sm-1"></div><div class="col-sm-4 text-right">~FULLNAME~</div><div class="col-sm-6">Member's First and Last Name</div><div class="col-sm-1"></div></div>
-                    <div class="row"><div class="col-sm-2"></div><div class="col-sm-4">~FIRSTNAME~</div><div class="col-sm-4">Member's First Name</div><div class="col-sm-2"></div></div>
-                    <div class="row"><div class="col-sm-2"></div><div class="col-sm-4">~LASTNAME~</div><div class="col-sm-4">Member's Last Name</div><div class="col-sm-2"></div></div>
-                    <div class="row"><div class="col-sm-1"></div><div class="col-sm-4 text-right">~EMAIL~</div><div class="col-sm-6">Member's Email Address</div><div class="col-sm-1"></div></div>
+                    <div class="table-responsive">
+                        <table class="table table-condensed table-bordered">
+                            <tbody>
+                                <tr><td><strong>Type This:</strong></td><td><strong>To Substitute This:</strong></td></tr>
+                                <tr><td>~USERNAME~</td><td>Member's Username</td></tr>
+                                <tr><td>~FULLNAME~</td><td>Member's  First and Last Name</td></tr>
+                                <tr><td>~FIRSTNAME~</td><td>Member's First Name</td></tr>
+                                <tr><td>~LASTNAME~</td><td>Member's Last Name</td></tr>
+                                <tr><td>~EMAIL~</td><td>Member's Email Address</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
                 <div class="col-sm-1"></div>
-            </div><br /><br />
+            </div><br />
 
             <?php
             if (isset($showeditmail) && $showeditmail !== '') {
