@@ -28,14 +28,14 @@
         if ((isset($_SESSION['username'])) && (isset($_SESSION['password'])))
         {
             ?>
-            <a href="/../" type="button" class="btn ja-navbutton admin" role="button" target="_blank">SITE</a>
-            <a href="/admin/main" type="button" class="btn ja-navbutton admin" role="button">MAIN</a>
-            <a href="/admin/settings" type="button" class="btn ja-navbutton admin" role="button">SETTINGS</a>
-            <a href="/admin/members" type="button" class="btn ja-navbutton admin" role="button">MEMBERS</a>
-            <a href="/admin/mail" type="button" class="btn ja-navbutton admin" role="button">MAIL</a>
-            <a href="/admin/money" type="button" class="btn ja-navbutton admin" role="button">MONEY</a>
-            <a href="/admin/pages" type="button" class="btn ja-navbutton admin" role="button">PAGES</a>
-            <a href="/admin/logout" type="button" class="btn ja-navbutton admin" role="button">LOGOUT</a>
+            <a href="/../" type="button" class="btn ja-navbutton" role="button" target="_blank">SITE</a>
+            <a href="/admin/main" type="button" class="btn ja-navbutton" role="button">MAIN</a>
+            <a href="/admin/settings" type="button" class="btn ja-navbutton" role="button">SETTINGS</a>
+            <a href="/admin/members" type="button" class="btn ja-navbutton" role="button">MEMBERS</a>
+            <a href="/admin/mail" type="button" class="btn ja-navbutton" role="button">MAIL</a>
+            <a href="/admin/money" type="button" class="btn ja-navbutton" role="button">MONEY</a>
+            <a href="/admin/pages" type="button" class="btn ja-navbutton" role="button">PAGES</a>
+            <a href="/admin/logout" type="button" class="btn ja-navbutton" role="button">LOGOUT</a>
             <?php
         }
         else
@@ -48,14 +48,14 @@
 <!--            <a href="https://www.facebook.com/junior.artists.7/photos" target="_blank" type="button" class="btn ja-navbutton" role="button">GALLERY</a>-->
 <!--            <a href="/aboutus" type="button" class="btn ja-navbutton" role="button">ABOUT</a>-->
 <!--            <a href="/contact" type="button" class="btn ja-navbutton" role="button">CONTACT</a>-->
-            <a href="/../" type="button" class="btn ja-navbutton admin" role="button" target="_blank">SITE</a>
-            <a href="/admin/main" type="button" class="btn ja-navbutton admin" role="button">MAIN</a>
-            <a href="/admin/settings" type="button" class="btn ja-navbutton admin" role="button">SETTINGS</a>
-            <a href="/admin/members" type="button" class="btn ja-navbutton admin" role="button">MEMBERS</a>
-            <a href="/admin/mail" type="button" class="btn ja-navbutton admin" role="button">MAIL</a>
-            <a href="/admin/money" type="button" class="btn ja-navbutton admin" role="button">MONEY</a>
-            <a href="/admin/pages" type="button" class="btn ja-navbutton admin" role="button">PAGES</a>
-            <a href="/admin/logout" type="button" class="btn ja-navbutton admin" role="button">LOGOUT</a>
+            <a href="/../" type="button" class="btn ja-navbutton" role="button" target="_blank">SITE</a>
+            <a href="/admin/main" type="button" class="btn ja-navbutton" role="button">MAIN</a>
+            <a href="/admin/settings" type="button" class="btn ja-navbutton" role="button">SETTINGS</a>
+            <a href="/admin/members" type="button" class="btn ja-navbutton" role="button">MEMBERS</a>
+            <a href="/admin/mail" type="button" class="btn ja-navbutton" role="button">MAIL</a>
+            <a href="/admin/money" type="button" class="btn ja-navbutton" role="button">MONEY</a>
+            <a href="/admin/pages" type="button" class="btn ja-navbutton" role="button">PAGES</a>
+            <a href="/admin/logout" type="button" class="btn ja-navbutton" role="button">LOGOUT</a>
             <?php
         }
         ?>
