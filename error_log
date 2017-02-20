@@ -1,2 +1,9 @@
 [20-Feb-2017 02:12:41 UTC] PHP Notice:  Undefined variable: allproducts in /home/juniorartists/public_html/products.php on line 5
 [20-Feb-2017 02:12:41 UTC] PHP Fatal error:  Call to a member function getAllProducts() on null in /home/juniorartists/public_html/products.php on line 5
+[20-Feb-2017 08:00:32 UTC] PHP Notice:  Undefined variable: username in /home/juniorartists/public_html/products.php on line 36
+[20-Feb-2017 08:06:54 UTC] PHP Notice:  Undefined variable: username in /home/juniorartists/public_html/products.php on line 36
+[20-Feb-2017 08:12:58 UTC] PHP Notice:  Undefined variable: username in /home/juniorartists/public_html/products.php on line 36
+[20-Feb-2017 08:18:14 UTC] PHP Notice:  Undefined variable: username in /home/juniorartists/public_html/products.php on line 36
+[20-Feb-2017 08:18:14 UTC] PHP Notice:  Undefined variable: username in /home/juniorartists/public_html/products.php on line 36
+[20-Feb-2017 08:19:12 UTC] PHP Notice:  Undefined variable: username in /home/juniorartists/public_html/products.php on line 36
+[20-Feb-2017 08:19:12 UTC] PHP Notice:  Undefined variable: username in /home/juniorartists/public_html/products.php on line 36

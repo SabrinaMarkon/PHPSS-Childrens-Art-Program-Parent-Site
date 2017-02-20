@@ -90,55 +90,55 @@ $products = $allproducts->getAllProducts();
             </form>
 
             <?php
-            if (isset($showeditproducts) && $showeditproducts !== '') {
+            if (isset($showeditproduct) && $showeditproduct !== '') {
                 // EDIT PRODUCT FORM
                 ?>
-            <form action="/admin/products/<?php echo $showeditproducts['id']; ?>" method="post" accept-charset="utf-8" class="form" role="form">
+            <form action="/admin/products/<?php echo $showeditproduct['id']; ?>" method="post" accept-charset="utf-8" class="form" role="form">
                 <div class="form-group">
                     <div class="row">
                         <div class="col-sm-1"></div>
-                        <div class="col-sm-2">Product Name:</div>
-                        <div class="col-sm-8"><input type="text" name="name" placeholder="Name your product" class="form-control" value="<?php echo $showeditproducts['name']; ?>"></div>
-                        <div class="col-sm-1"></div>
+                        <div class="col-sm-3 text-right">Product Name:</div>
+                        <div class="col-sm-6"><input type="text" name="name" placeholder="Name your product" class="form-control" value="<?php echo $showeditproduct['name']; ?>"></div>
+                        <div class="col-sm-2"></div>
                     </div>
                 </div>
                 <div class="form-group">
                     <div class="row">
                         <div class="col-sm-1"></div>
-                        <div class="col-sm-2">Quantity:</div>
-                        <div class="col-sm-8">
+                        <div class="col-sm-3 text-right">Quantity:</div>
+                        <div class="col-sm-6">
                             <select name="quantity" class="form-control">
                                 <?php
                                 for ($i = 1; $i <= 100; $i++) {
                                 ?>
-                                <option value="<?php echo $i ?>" <?php if ($i === $showeditproducts['quantity']) { echo ' selected'; } ?>><?php echo $i ?></option>
+                                <option value="<?php echo $i ?>" <?php if ($i == $showeditproduct['quantity']) { echo ' selected'; } ?>><?php echo $i ?></option>
                                 <?php
                                 }
                                 ?>
                             </select>
 
                         </div>
-                        <div class="col-sm-1"></div>
+                        <div class="col-sm-2"></div>
                     </div>
                 </div>
                 <div class="form-group">
                     <div class="row">
                         <div class="col-sm-1"></div>
-                        <div class="col-sm-2">Price:</div>
-                        <div class="col-sm-8">
-                            <input type="number" name="price" placeholder="0.01" class="form-control" step="0.01" min="0.01" value="<?php echo $showeditproducts['price']; ?>">
+                        <div class="col-sm-3 text-right">Price:</div>
+                        <div class="col-sm-6">
+                            <input type="number" name="price" placeholder="0.01" class="form-control" step="0.01" min="0.01" value="<?php echo $showeditproduct['price']; ?>">
                         </div>
-                        <div class="col-sm-1"></div>
+                        <div class="col-sm-2"></div>
                     </div>
                 </div>
                 <div class="form-group">
                     <div class="row">
                         <div class="col-sm-1"></div>
-                        <div class="col-sm-2">Commission:</div>
-                        <div class="col-sm-8">
-                            <input type="number" name="commission" placeholder="0.00" class="form-control" step="0.01" min="0.00" value="<?php echo $showeditproducts['commission']; ?>">
+                        <div class="col-sm-3 text-right">Commission:</div>
+                        <div class="col-sm-6">
+                            <input type="number" name="commission" placeholder="0.00" class="form-control" step="0.01" min="0.00" value="<?php echo $showeditproduct['commission']; ?>">
                         </div>
-                        <div class="col-sm-1"></div>
+                        <div class="col-sm-2"></div>
                     </div>
                 </div>
                 <div class="form-group">
@@ -150,7 +150,7 @@ $products = $allproducts->getAllProducts();
                     <div class="row">
                         <div class="col-sm-1"></div>
                         <div class="col-sm-10">
-                            <textarea name="description" id="description" placeholder="Product Description" class="form-control" rows="30" cols="65"><?php echo $showeditpage['htmlcode']; ?></textarea>
+                            <textarea name="description" id="description" placeholder="Product Description" class="form-control" rows="30" cols="65"><?php echo $showeditproduct['description']; ?></textarea>
                         </div>
                         <div class="col-sm-1"></div>
                     </div>
@@ -159,17 +159,18 @@ $products = $allproducts->getAllProducts();
                     <div class="row">
                         <div class="col-sm-2"></div>
                         <div class="col-sm-2">
-                            <button class="btn btn-md btn-primary" type="button" name="showallproducts" onclick="parent.location = '/admin/products'">CREATE NEW</button>
+                            <button class="btn btn-lg btn-primary" type="button" name="showallproducts" onclick="parent.location = '/admin/products'">CREATE NEW</button>
                         </div>
                         <div class="col-sm-3">
                             <input type="hidden" name="_method" value="PATCH">
-                            <button class="btn btn-md btn-primary" type="submit" name="saveproduct">SAVE</button>
+                            <button class="btn btn-lg btn-primary" type="submit" name="saveproduct">SAVE</button>
                             </form>
                         </div>
                         <div class="col-sm-3">
-                            <form action="/admin/products/<?php echo $showeditproducts['id']; ?>" method="post" accept-charset="utf-8" class="form" role="form">
+                            <form action="/admin/products/<?php echo $showeditproduct['id']; ?>" method="post" accept-charset="utf-8" class="form" role="form">
+                                <input type="hidden" name="name" value="<?php echo $showeditproduct['name']; ?>">
                                 <input type="hidden" name="_method" value="DELETE">
-                                <button class="btn btn-md btn-primary" type="submit" name="deleteproduct">DELETE</button>
+                                <button class="btn btn-lg btn-primary" type="submit" name="deleteproduct">DELETE</button>
                             </form>
                         </div>
                         <div class="col-sm-2"></div>
@@ -183,16 +184,16 @@ $products = $allproducts->getAllProducts();
                     <div class="form-group">
                         <div class="row">
                             <div class="col-sm-1"></div>
-                            <div class="col-sm-3">Product Name:</div>
-                            <div class="col-sm-7"><input type="text" name="name" placeholder="Name your product" class="form-control"></div>
-                            <div class="col-sm-1"></div>
+                            <div class="col-sm-3 text-right">Product Name:</div>
+                            <div class="col-sm-6"><input type="text" name="name" placeholder="Name your product" class="form-control"></div>
+                            <div class="col-sm-2"></div>
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="row">
                             <div class="col-sm-1"></div>
-                            <div class="col-sm-3">Quantity:</div>
-                            <div class="col-sm-7">
+                            <div class="col-sm-3 text-right">Quantity:</div>
+                            <div class="col-sm-6">
                                 <select name="quantity" class="form-control">
                                     <?php
                                     for ($i = 1; $i <= 100; $i++) {
@@ -204,27 +205,27 @@ $products = $allproducts->getAllProducts();
                                 </select>
 
                             </div>
-                            <div class="col-sm-1"></div>
+                            <div class="col-sm-2"></div>
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="row">
                             <div class="col-sm-1"></div>
-                            <div class="col-sm-3">Price:</div>
-                            <div class="col-sm-7">
+                            <div class="col-sm-3 text-right">Price:</div>
+                            <div class="col-sm-6">
                                 <input type="number" name="price" placeholder="0.01" class="form-control" step="0.01" min="0.01">
                             </div>
-                            <div class="col-sm-1"></div>
+                            <div class="col-sm-2"></div>
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="row">
                             <div class="col-sm-1"></div>
-                            <div class="col-sm-3">Commission:</div>
-                            <div class="col-sm-7">
+                            <div class="col-sm-3 text-right">Commission:</div>
+                            <div class="col-sm-6">
                                 <input type="number" name="commission" placeholder="0.00" class="form-control" step="0.01" min="0.00">
                             </div>
-                            <div class="col-sm-1"></div>
+                            <div class="col-sm-2"></div>
                         </div>
                     </div>
                     <div class="form-group">

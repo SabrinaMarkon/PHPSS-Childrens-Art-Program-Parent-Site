@@ -153,7 +153,7 @@ if (isset($_POST['saveproduct']))
 if (isset($_POST['deleteproduct']))
 {
     $delete = new Product();
-    $showupdate = $delete->deleteProduct($id);
+    $showupdate = $delete->deleteProduct($id, $_POST['name']);
 }
 
 // REFACTOR LATER to make better routes etc.
