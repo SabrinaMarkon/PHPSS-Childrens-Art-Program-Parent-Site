@@ -109,7 +109,7 @@ INSERT INTO pages (name, htmlcode, slug, core) values ('Members Area Products Pa
 INSERT INTO pages (name, htmlcode, slug, core) values ('Members Area Promotion Page', '', promotion', 'yes');
 INSERT INTO pages (name, htmlcode, slug, core) values ('Members Area Chat Page', '', 'chat', 'yes');
 INSERT INTO pages (name, htmlcode, slug, core) values ('Registration Page', '', 'register', 'yes');
-INSERT INTO pages (name, htmlcode, slug, core) values ('Thank You Page - New Member Signup', '', 'thankyou', 'yes');
+INSERT INTO pages (name, htmlcode, slug, core) values ('Thank You After Purchase Page', '', 'thankyou', 'yes');
 INSERT INTO pages (name, htmlcode, slug, core) values ('Logout Page', '', 'logout', 'yes');
 INSERT INTO pages (name, htmlcode, slug, core) values ('About Us Page', '', 'aboutus', 'yes');
 

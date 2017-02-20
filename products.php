@@ -8,7 +8,7 @@ $products = $allproducts->getAllProducts();
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
 
-            <h1 class="ja-bottompadding">Our Services</h1>
+            <h1 class="ja-bottompadding2">Our Services</h1>
 
             <div class="panel-group panel-products" id="accordion">
 
@@ -37,7 +37,7 @@ $products = $allproducts->getAllProducts();
                                     <input type="hidden" name="on1" value="Product ID">
                                     <input type="hidden" name="os1" value="<?php echo $product['id'] ?>">
                                     <input type="hidden" name="notify_url" value="<?php echo $domain . '/ipn' ?>">
-                                    <button class="btn btn-lg btn-primary" type="submit" name="orderbutton">Order for $<?php echo $product['price'] ?></button>
+                                    <button class="btn btn-md btn-primary" type="submit" name="orderbutton">Order for $<?php echo $product['price'] ?></button>
                                 </form>
 
                                 <div class="clearfix"></div>
@@ -47,11 +47,11 @@ $products = $allproducts->getAllProducts();
                         <?php
                         if($product['id'] == 1) {
                             ?>
-                            <div class="panel-collapse collapse in" id="collapse{{ $product->id }}">
+                            <div class="panel-collapse collapse in" id="collapse<?php echo $product['id']; ?>">
                             <?php
                         } else {
                             ?>
-                            <div class="panel-collapse collapse" id="collapse{{ $product->id }}">
+                            <div class="panel-collapse collapse" id="collapse<?php echo $product['id']; ?>">
                             <?php
                         }
                         ?>
