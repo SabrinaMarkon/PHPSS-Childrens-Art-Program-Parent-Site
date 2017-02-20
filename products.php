@@ -17,8 +17,7 @@ $products = $allproducts->getAllProducts();
                     ?>
                     <div class="panel panel-default text-left">
                         <div class="panel-heading">
-                            <h4 class="panel-title panel-toppadding">
-                                <a data-toggle="collapse" data-parent="#accordion" href="#collapse<?php echo $product['id'] ?>" class="productname"><?php echo $product['name'] ?></a>
+                                <a data-toggle="collapse" data-parent="#accordion" href="#collapse<?php echo $product['id'] ?>" class="productname pull-left"><?php echo $product['name'] ?></a>
                                 <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
                                     <input type="hidden" name="amount" value="<?php echo $product['price'] ?>">
                                     <input type="hidden" name="cmd" value="_xclick">
@@ -29,7 +28,6 @@ $products = $allproducts->getAllProducts();
                                     <input type="hidden" name="return" value="<?php echo $domain . '/thankyou' ?>">
                                     <input type="hidden" name="cancel" value="<?php echo $domain . '/products' ?>">
                                     <input type="hidden" name="currency_code" value="USD">
-
                                     <input type="hidden" name="lc" value="US">
                                     <input type="hidden" name="bn" value="PP-BuyNowBF">
                                     <input type="hidden" name="on0" value="User ID">
@@ -37,11 +35,10 @@ $products = $allproducts->getAllProducts();
                                     <input type="hidden" name="on1" value="Product ID">
                                     <input type="hidden" name="os1" value="<?php echo $product['id'] ?>">
                                     <input type="hidden" name="notify_url" value="<?php echo $domain . '/ipn' ?>">
-                                    <button class="btn btn-md btn-primary" type="submit" name="orderbutton">Order for $<?php echo $product['price'] ?></button>
+                                    <button class="btn btn-md btn-primary pull-right" type="submit" name="orderbutton">Order for $<?php echo $product['price'] ?></button>
                                 </form>
 
                                 <div class="clearfix"></div>
-                            </h4>
                         </div>
 
                         <?php
@@ -56,7 +53,7 @@ $products = $allproducts->getAllProducts();
                         }
                         ?>
                                 <div class="panel-body">
-                                    <p><?php echo $product['description'] ?></p>
+                                    <?php echo $product['description'] ?>
                                 </div>
                             </div>
                         </div>

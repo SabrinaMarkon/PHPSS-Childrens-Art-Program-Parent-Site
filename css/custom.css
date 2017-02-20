@@ -64,6 +64,18 @@ img {
 {
     width: 50%; /* your width */
 }
+
+/* Accordions */
+.panel-group .panel-heading {
+	text-decoration: none;
+}
+.panel-group .panel-body {
+	color: #000;
+}
+.panel-body > p {
+	color: #000;
+}
+
 @media (min-width:200px)
 {
 	.ja-navbutton { font-size: 40%; border-right: 0px; }
