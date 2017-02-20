@@ -50,8 +50,9 @@ echo $showcontent->showPage('Registration Page');
 							<option value="United States">United States</option>
 							<option value="Canada">Canada</option>
 							<?php
+							$country = '';
 							$countrylist = new Countries();
-							echo $countrylist->showCountries();
+							echo $countrylist->showCountries($country);
 							?>
 						</select>
 

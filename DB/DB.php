@@ -75,6 +75,18 @@ CREATE TABLE `pages` (
   UNIQUE KEY `name` (`name`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1;
 
+CREATE TABLE `products` (
+`id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+`name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+`description` longtext COLLATE utf8_unicode_ci NOT NULL,
+`quantity` int(11) NOT NULL DEFAULT '1',
+`price` decimal(9,2) NOT NULL,
+`commission` decimal(9,2) NOT NULL,
+`created_at` timestamp NULL DEFAULT NULL,
+`updated_at` timestamp NULL DEFAULT NULL,
+PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
 CREATE TABLE `transactions` (
 `id` int(10) unsigned NOT NULL AUTO_INCREMENT primary key,
 `username` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
