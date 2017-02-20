@@ -134,6 +134,28 @@ if (isset($_POST['deletetransaction']))
     $delete = new Money();
     $showupdate = $delete->deleteTransaction($id);
 }
+
+if (isset($_POST['editproduct']))
+{
+    $editproduct = new Product();
+    $showeditproduct = $editproduct->editProduct($id);
+}
+if (isset($_POST['addproduct']))
+{
+    $update = new Product();
+    $showupdate = $update->addProduct();
+}
+if (isset($_POST['saveproduct']))
+{
+    $update = new Product();
+    $showupdate = $update->saveProduct($id);
+}
+if (isset($_POST['deleteproduct']))
+{
+    $delete = new Product();
+    $showupdate = $delete->deleteProduct($id);
+}
+
 // REFACTOR LATER to make better routes etc.
 //if (isset($_POST['_method'])) {
 //

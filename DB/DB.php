@@ -83,8 +83,6 @@ CREATE TABLE `products` (
 `quantity` int(11) NOT NULL DEFAULT '1',
 `price` decimal(9,2) NOT NULL,
 `commission` decimal(9,2) NOT NULL,
-`created_at` timestamp NULL DEFAULT NULL,
-`updated_at` timestamp NULL DEFAULT NULL,
 PRIMARY KEY (`id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 

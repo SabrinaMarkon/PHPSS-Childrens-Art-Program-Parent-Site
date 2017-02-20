@@ -34,6 +34,7 @@
             <a href="/admin/members" type="button" class="btn ja-navbutton" role="button">MEMBERS</a>
             <a href="/admin/mail" type="button" class="btn ja-navbutton" role="button">MAIL</a>
             <a href="/admin/money" type="button" class="btn ja-navbutton" role="button">MONEY</a>
+            <a href="/admin/products" type="button" class="btn ja-navbutton" role="button">SELL</a>
             <a href="/admin/pages" type="button" class="btn ja-navbutton" role="button">PAGES</a>
             <a href="/admin/logout" type="button" class="btn ja-navbutton" role="button">LOGOUT</a>
             <?php
@@ -54,6 +55,7 @@
             <a href="/admin/members" type="button" class="btn ja-navbutton" role="button">MEMBERS</a>
             <a href="/admin/mail" type="button" class="btn ja-navbutton" role="button">MAIL</a>
             <a href="/admin/money" type="button" class="btn ja-navbutton" role="button">MONEY</a>
+            <a href="/admin/products" type="button" class="btn ja-navbutton" role="button">SELL</a>
             <a href="/admin/pages" type="button" class="btn ja-navbutton" role="button">PAGES</a>
             <a href="/admin/logout" type="button" class="btn ja-navbutton" role="button">LOGOUT</a>
             <?php

@@ -1,0 +1,2 @@
+[20-Feb-2017 06:44:42 UTC] PHP Notice:  Undefined variable: transactions in /home/juniorartists/public_html/admin/products.php on line 72
+[20-Feb-2017 06:44:42 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/juniorartists/public_html/admin/products.php on line 72

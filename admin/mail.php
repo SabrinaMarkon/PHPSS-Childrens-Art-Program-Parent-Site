@@ -43,6 +43,7 @@ $savedmails = $allsavedmails->getAllSavedMails();
     });
 </script>
 <!-- /tinyMCE -->
+
 <div class="container">
     <div class="row">
         <div class="col-md-12">

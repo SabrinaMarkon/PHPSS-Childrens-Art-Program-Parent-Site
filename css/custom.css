@@ -12,14 +12,6 @@ img {
 .gravatar-lg {
 	width: 130px;
 }
-.ja-bottompadding {
-	margin-bottom: 20px;
-}
-.ja-horizontaldivider{
-	width:5px;
-	height:auto;
-	display:inline-block;
-}
 #ja-headerimage {
 	border: 2px solid #402659;
 	border-bottom: 0;
@@ -115,6 +107,29 @@ img {
 #ja-footer {
 	color: #fff;
 	background-color: #402659;
+}
+.ja-bottompadding {
+	margin-bottom: 20px;
+}
+.ja-bottompadding2 {
+	margin-bottom: 30px;
+}
+.ja-bottompadding3 {
+	margin-bottom: 50px;
+}
+.ja-toppadding {
+	margin-top: 20px;
+}
+.ja-toppadding2 {
+	margin-top: 30px;
+}
+.ja-toppadding3 {
+	margin-top: 50px;
+}
+.ja-horizontaldivider{
+	width:5px;
+	height:auto;
+	display:inline-block;
 }
 .form .form-control
 {
