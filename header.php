@@ -31,6 +31,7 @@
 		<a href="/members" type="button" class="btn ja-navbutton" role="button">MAIN</a>
 		<a href="/profile" type="button" class="btn ja-navbutton" role="button">PROFILE</a>
 		<a href="/post" type="button" class="btn ja-navbutton" role="button">POST</a>
+		<a href="/products" type="button" class="btn ja-navbutton" role="button">SERVICES</a>
 		<a href="https://www.facebook.com/junior.artists.7/photos" target="_blank" type="button" class="btn ja-navbutton" role="button">GALLERY</a>
 		<a href="/contact" type="button" class="btn ja-navbutton" role="button">CONTACT</a>
 		<a href="/logout" type="button" class="btn ja-navbutton" role="button">LOGOUT</a>

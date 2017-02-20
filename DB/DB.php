@@ -5,7 +5,8 @@ adminpass varchar(255) not null,
 adminname varchar(255) not null,
 adminemail varchar(255) not null,
 sitename varchar(255) not null,
-domain varchar(255) not null
+domain varchar(255) not null,
+adminpaypal varchar(255) not null,
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1;
 
 CREATE TABLE `adminnotes` (
@@ -106,6 +107,7 @@ INSERT INTO pages (name, htmlcode, slug, core) values ('Login Page', '', 'login'
 INSERT INTO pages (name, htmlcode, slug, core) values ('Terms and Conditions', '', 'terms', 'yes');
 INSERT INTO pages (name, htmlcode, slug, core) values ('Members Area Main Page', '', 'members', 'yes');
 INSERT INTO pages (name, htmlcode, slug, core) values ('Members Area Profile Page', '', 'profile', 'yes');
+INSERT INTO pages (name, htmlcode, slug, core) values ('Members Area Products Page', '', 'products', 'yes');
 INSERT INTO pages (name, htmlcode, slug, core) values ('Members Area Promotion Page', '', promotion', 'yes');
 INSERT INTO pages (name, htmlcode, slug, core) values ('Members Area Chat Page', '', 'chat', 'yes');
 INSERT INTO pages (name, htmlcode, slug, core) values ('Registration Page', '', 'register', 'yes');

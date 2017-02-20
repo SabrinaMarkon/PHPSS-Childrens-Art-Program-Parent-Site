@@ -31,6 +31,9 @@ foreach ($settings as $key => $value)
                 <label class="sr-only" for="adminemail">Your Admin Email</label>
                 <input type="text" name="adminemail" value="<?php echo $adminemail ?>" class="form-control input-lg" placeholder="Admin Email">
 
+                <label class="sr-only" for="adminemail">Your PayPal Email</label>
+                <input type="text" name="adminpaypal" value="<?php echo $adminpaypal ?>" class="form-control input-lg" placeholder="PayPal Email">
+
                 <label class="sr-only" for="sitename">Your Website Name:</label>
                 <input type="text" name="sitename" value="<?php echo $sitename ?>" class="form-control input-lg" placeholder="Website Name">
 
