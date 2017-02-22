@@ -10,3 +10,39 @@
 [20-Feb-2017 07:56:04 UTC] PHP Notice:  Undefined variable: showeditpage in /home/juniorartists/public_html/admin/products.php on line 153
 [20-Feb-2017 07:56:39 UTC] PHP Notice:  Undefined index: htmlcode in /home/juniorartists/public_html/admin/products.php on line 153
 [20-Feb-2017 08:16:05 UTC] PHP Notice:  Undefined index: name in /home/juniorartists/public_html/admin/index.php on line 156
+[22-Feb-2017 07:01:26 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'juniorartists_juniorartists.mmbers' doesn't exist' in /home/juniorartists/public_html/admin/classes/Referid.php:13
+Stack trace:
+#0 /home/juniorartists/public_html/admin/classes/Referid.php(13): PDO->query('select * from m...')
+#1 /home/juniorartists/public_html/admin/members.php(59): Referid->showReferids('')
+#2 /home/juniorartists/public_html/admin/index.php(193): include('/home/juniorart...')
+#3 {main}
+  thrown in /home/juniorartists/public_html/admin/classes/Referid.php on line 13
+[22-Feb-2017 07:02:46 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'juniorartists_juniorartists.mmbers' doesn't exist' in /home/juniorartists/public_html/admin/classes/Referid.php:13
+Stack trace:
+#0 /home/juniorartists/public_html/admin/classes/Referid.php(13): PDO->query('select * from m...')
+#1 /home/juniorartists/public_html/admin/members.php(57): Referid->showReferids('')
+#2 /home/juniorartists/public_html/admin/index.php(193): include('/home/juniorart...')
+#3 {main}
+  thrown in /home/juniorartists/public_html/admin/classes/Referid.php on line 13
+[22-Feb-2017 07:32:22 UTC] PHP Fatal error:  Call to undefined method Member::addMember() in /home/juniorartists/public_html/admin/index.php on line 119
+[22-Feb-2017 07:47:22 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '? order by username' at line 1' in /home/juniorartists/public_html/admin/classes/Referid.php:23
+Stack trace:
+#0 /home/juniorartists/public_html/admin/classes/Referid.php(23): PDO->query('select * from m...')
+#1 /home/juniorartists/public_html/admin/members.php(58): Referid->showReferids('')
+#2 /home/juniorartists/public_html/admin/index.php(198): include('/home/juniorart...')
+#3 {main}
+  thrown in /home/juniorartists/public_html/admin/classes/Referid.php on line 23
+[22-Feb-2017 07:47:31 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '? order by username' at line 1' in /home/juniorartists/public_html/admin/classes/Referid.php:23
+Stack trace:
+#0 /home/juniorartists/public_html/admin/classes/Referid.php(23): PDO->query('select * from m...')
+#1 /home/juniorartists/public_html/admin/members.php(58): Referid->showReferids('')
+#2 /home/juniorartists/public_html/admin/index.php(198): include('/home/juniorart...')
+#3 {main}
+  thrown in /home/juniorartists/public_html/admin/classes/Referid.php on line 23
+[22-Feb-2017 07:47:35 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '? order by username' at line 1' in /home/juniorartists/public_html/admin/classes/Referid.php:23
+Stack trace:
+#0 /home/juniorartists/public_html/admin/classes/Referid.php(23): PDO->query('select * from m...')
+#1 /home/juniorartists/public_html/admin/members.php(58): Referid->showReferids('')
+#2 /home/juniorartists/public_html/admin/index.php(198): include('/home/juniorart...')
+#3 {main}
+  thrown in /home/juniorartists/public_html/admin/classes/Referid.php on line 23

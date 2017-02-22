@@ -6,6 +6,7 @@ if (isset($showupdate))
 $allmembers = new Member();
 $members = $allmembers->getAllMembers();
 $countrylist = new Countries();
+$referidlist = new Referid();
 ?>
 
 <div class="container">
@@ -49,9 +50,18 @@ $countrylist = new Countries();
                     ?>
                 </select>
 
+                <label class="sr-only" for="referid">Sponsor</label>
+                <select name="referid" class="form-control input-lg">
+                    <option value="">None</option>
+                    <?php
+                    $referid = '';
+                    echo $referidlist->showReferids($referid);
+                    ?>
+                </select>
+
                 <div class="ja-bottompadding"></div>
 
-                <button class="btn btn-lg btn-primary" type="submit" name="register">Create Account</button>
+                <button class="btn btn-lg btn-primary" type="submit" name="addmember">Create Account</button>
 
             </form>
 
@@ -150,7 +160,13 @@ $countrylist = new Countries();
                             </td>
                             <td>
                                 <label class="sr-only" for="referid">Sponsor:</label>
-                                <input type="text" name="referid" value="<?php echo $member['referid']; ?>" class="form-control input-sm small" size="40" placeholder="Sponsor">
+                                <select name="referid" class="form-control input-sm">
+                                    <option value="">None</option>
+                                    <?php
+                                    $referid = '';
+                                    echo $referidlist->showReferids($member['referid']);
+                                    ?>
+                                </select>
                             </td>
                             <td>
                                 <input type="hidden" name="_method" value="PATCH">

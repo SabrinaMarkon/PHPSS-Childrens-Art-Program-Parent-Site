@@ -1,10 +1,10 @@
 <?php
 /**
-Handles admin changing site settings.
-PHP 5
-@author Sabrina Markon
-@copyright 2017 Sabrina Markon, PHPSiteScripts.com
-@license LICENSE.md
+ *Handles admin changing site settings.
+ *PHP 5
+ *@author Sabrina Markon
+ *@copyright 2017 Sabrina Markon, PHPSiteScripts.com
+ *@license LICENSE.md
  **/
 class Setting
 {

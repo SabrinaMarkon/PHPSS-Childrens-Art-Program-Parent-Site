@@ -1,4 +1,11 @@
 <?php
+/**
+ *Admin can save quick notes on the main admin page when they first login.
+ *PHP 5
+ *@author Sabrina Markon
+ *@copyright 2017 Sabrina Markon, PHPSiteScripts.com
+ *@license README-LICENSE.txt
+ **/
 class AdminNote
 {
     public $adminnote;

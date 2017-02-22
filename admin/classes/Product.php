@@ -1,10 +1,10 @@
 <?php
 /**
-Handles admin adding, updating, or deleting products for sale on the website (such as classes).
-PHP 5
-@author Sabrina Markon
-@copyright 2017 Sabrina Markon, PHPSiteScripts.com
-@license README-LICENSE.txt
+ *Handles admin adding, updating, or deleting products for sale on the website (such as classes).
+ *PHP 5
+ *@author Sabrina Markon
+ *@copyright 2017 Sabrina Markon, PHPSiteScripts.com
+ *@license README-LICENSE.txt
  **/
 class Product
 {

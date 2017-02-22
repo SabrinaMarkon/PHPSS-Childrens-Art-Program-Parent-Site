@@ -113,6 +113,11 @@ if (isset($_POST['deletepage']))
     $showupdate = $delete->deletePage($id);
 }
 
+if (isset($_POST['addmember']))
+{
+    $update = new Member();
+    $showupdate = $update->addMember($settings);
+}
 if (isset($_POST['savemember']))
 {
     $update = new Member();
