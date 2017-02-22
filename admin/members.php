@@ -5,11 +5,57 @@ if (isset($showupdate))
 }
 $allmembers = new Member();
 $members = $allmembers->getAllMembers();
+$countrylist = new Countries();
 ?>
 
 <div class="container">
     <div class="row">
         <div class="col-sm-12">
+
+            <h1 class="ja-bottompadding">Add New Member</h1>
+
+            <form action="/admin/members" method="post" accept-charset="utf-8" class="form" role="form">
+
+                <div class="row">
+                    <div class="col-xs-6 col-md-6">
+                        <label class="sr-only" for="firstname">First Name</label>
+                        <input type="text" name="firstname" value="" class="form-control input-lg" placeholder="First Name">
+                    </div>
+                    <div class="col-xs-6 col-md-6">
+                        <label class="sr-only" for="lastname">Last Name</label>
+                        <input type="text" name="lastname" value="" class="form-control input-lg" placeholder="Last Name">
+                    </div>
+                </div>
+
+                <label class="sr-only" for="email">Email</label>
+                <input type="text" name="email" value="" class="form-control input-lg" placeholder="Your Email">
+
+                <label class="sr-only" for="username">Username</label>
+                <input type="text" name="username" value="" class="form-control input-lg" placeholder="Username">
+
+                <label class="sr-only" for="password">Password</label>
+                <input type="password" name="password" value="" class="form-control input-lg" placeholder="Password">
+
+                <label class="sr-only" for="confirm_password">Confirm Password</label>
+                <input type="password" name="confirm_password" value="" class="form-control input-lg" placeholder="Confirm Password">
+
+                <label class="sr-only" for="country">Country</label>
+                <select name="country" class="form-control input-lg">
+                    <option value="United States">United States</option>
+                    <option value="Canada">Canada</option>
+                    <?php
+                    $country = '';
+                    echo $countrylist->showCountries($country);
+                    ?>
+                </select>
+
+                <div class="ja-bottompadding"></div>
+
+                <button class="btn btn-lg btn-primary" type="submit" name="register">Create Account</button>
+
+            </form>
+
+            <div class="ja-bottompadding2"></div>
 
             <h1 class="ja-bottompadding">Website Members</h1>
 
@@ -88,7 +134,6 @@ $members = $allmembers->getAllMembers();
                                     <option value="United States"<?php if ($member['country'] == "United States") { echo " selected"; } ?> >United States</option>
                                     <option value="Canada"<?php if ($member['country'] === "Canada") { echo " selected"; } ?>>Canada</option>
                                     <?php
-                                    $countrylist = new Countries();
                                     echo $countrylist->showCountries($member['country']);
                                     ?>
                                 </select>
