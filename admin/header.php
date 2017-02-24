@@ -8,6 +8,7 @@
     <link href="/../css/bootstrap.min.css" rel="stylesheet" media="screen">
     <link href="/../css/bootstrap-theme.min.css" rel="stylesheet" media="screen">
     <link href="/../css/custom.css" rel="stylesheet" media="screen">
+    <link href="/../css/bootstrap-datetimepicker.min.css" rel="stylesheet" media="screen">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>

@@ -64,7 +64,7 @@ class Money
         $transaction = $_POST['transaction'];
         $description = $_POST['description'];
         $amount = $_POST['amount'];
-        $datepaid = $_POST['datepaid'];
+        $datepaid = $_POST['datepaid' . $id];
 
         $pdo = Database::connect();
         $pdo->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);

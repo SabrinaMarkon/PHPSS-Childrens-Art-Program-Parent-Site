@@ -143,7 +143,7 @@ img {
 	height:auto;
 	display:inline-block;
 }
-.form .form-control
+.form .form-control:not(.datepicker)
 {
 	margin-bottom: 10px;
 }

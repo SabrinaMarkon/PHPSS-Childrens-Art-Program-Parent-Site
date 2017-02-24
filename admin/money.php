@@ -24,15 +24,23 @@ $transactions = $alltransactions->getAllTransactions();
                 <label class="sr-only" for="description">Description</label>
                 <input type="text" name="description" value="" class="form-control input-lg" placeholder="Description">
 
-                <label class="sr-only" for="amount">Amount:</label>
-                <input type="text" name="amount" value="" class="form-control input-lg" placeholder="Amount">
+                <label class="sr-only" for="amount">Amount</label>
+                <input type="number" name="amount" value="" class="form-control input-lg" placeholder="Amount" step="0.01">
 
-                <label class="sr-only" for="datepaid">Date</label>
-                <input type="text" name="datepaid" value="" class="form-control input-lg" placeholder="Date of Transaction (YYYY-MM-DD)">
+                <div class="form-group pull-left">
+                    <label class="sr-only" for="datepaid">Date</label>
+                    <div class="input-group date form_date col-md-5" data-date="" data-date-format="yyyy-mm-dd" data-link-field="datepaid" data-link-format="yyyy-mm-dd" placeholder="Date of Transaction (YYYY-MM-DD)">
+                        <input class="form-control input-lg datepicker" size="16" type="text" value="" readonly>
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+                    </div>
+                    <div class="col-md-7"></div>
+                    <input type="hidden" name="datepaid" id="datepaid" value="" />
+                </div>
 
                 <div class="ja-bottompadding"></div>
 
-                <button class="btn btn-lg btn-primary" type="submit" name="addtransaction">Save Transaction Record</button>
+                <button class="btn btn-lg btn-primary" type="submit" name="addtransaction">Create Transaction Record</button>
 
             </form>
 
@@ -48,8 +56,8 @@ $transactions = $alltransactions->getAllTransactions();
                         <th class="text-center">UserID</th>
                         <th class="text-center">Transaction</th>
                         <th class="text-center">Description</th>
-                        <th class="text-center">Date Paid</th>
                         <th class="text-center">Amount</th>
+                        <th class="text-center">Date Paid</th>
                         <th class="text-center">Edit</th>
                         <th class="text-center">Delete</th>
                     </tr>
@@ -79,12 +87,17 @@ $transactions = $alltransactions->getAllTransactions();
                             <input type="text" name="description" value="<?php echo $transaction['description']; ?>" class="form-control input-md" size="60" placeholder="Description">
                         </td>
                         <td>
-                            <label class="sr-only" for="datepaid">Date Paid:</label>
-                            <input type="text" name="datepaid" value="<?php echo $datepaid ?>" class="form-control input-md" size="50" placeholder="Date Paid">
+                            <label class="sr-only" for="amount">Amount:</label>
+                            <input type="number" name="amount" value="<?php echo $transaction['amount']; ?>" class="form-control input-md" placeholder="Amount" step="0.01">
                         </td>
                         <td>
-                            <label class="sr-only" for="amount">Amount:</label>
-                            <input type="text" name="amount" value="<?php echo $transaction['amount']; ?>" class="form-control input-md" placeholder="Amount">
+                            <div class="form-group">
+                                <div class="input-group date form_date_existing_edit" data-date="" data-date-format="yyyy-mm-dd" data-link-field="datepaid<?php echo $transaction['id']; ?>" data-link-format="yyyy-mm-dd" placeholder="Date of Transaction (YYYY-MM-DD)">
+                                    <input class="form-control input-md datepicker" size="16" type="text" placeholder="<?php echo $datepaid ?>" readonly>
+                                    <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+                                </div>
+                                <input type="hidden" name="datepaid<?php echo $transaction['id']; ?>" id="datepaid<?php echo $transaction['id']; ?>" value="<?php echo $transaction['datepaid']; ?>" />
+                            </div>
                         </td>
                         <td>
                             <input type="hidden" name="_method" value="PATCH">
