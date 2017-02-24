@@ -129,6 +129,11 @@ if (isset($_POST['deletemember']))
     $showupdate = $delete->deleteMember($id);
 }
 
+if (isset($_POST['addtransaction']))
+{
+    $update = new Money();
+    $showupdate = $update->addTransaction();
+}
 if (isset($_POST['savetransaction']))
 {
     $update = new Money();

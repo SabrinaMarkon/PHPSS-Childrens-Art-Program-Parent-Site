@@ -11,6 +11,33 @@ $transactions = $alltransactions->getAllTransactions();
     <div class="row">
         <div class="col-md-12">
 
+            <h1 class="ja-bottompadding">Add New Transaction Record</h1>
+
+            <form action="/admin/money" method="post" accept-charset="utf-8" class="form" role="form">
+
+                <label class="sr-only" for="username">Username</label>
+                <input type="text" name="username" value="" class="form-control input-lg" placeholder="Username">
+
+                <label class="sr-only" for="transaction">Transaction</label>
+                <input type="text" name="transaction" value="" class="form-control input-lg" placeholder="Transaction ID">
+
+                <label class="sr-only" for="description">Description</label>
+                <input type="text" name="description" value="" class="form-control input-lg" placeholder="Description">
+
+                <label class="sr-only" for="amount">Amount:</label>
+                <input type="text" name="amount" value="" class="form-control input-lg" placeholder="Amount">
+
+                <label class="sr-only" for="datepaid">Date</label>
+                <input type="text" name="datepaid" value="" class="form-control input-lg" placeholder="Date of Transaction (YYYY-MM-DD)">
+
+                <div class="ja-bottompadding"></div>
+
+                <button class="btn btn-lg btn-primary" type="submit" name="addtransaction">Save Transaction Record</button>
+
+            </form>
+
+            <div class="ja-bottompadding2"></div>
+
             <h1 class="ja-bottompadding">Transaction Records</h1>
 
             <div class="table-responsive">

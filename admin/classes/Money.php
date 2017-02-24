@@ -30,6 +30,34 @@ class Money
 
     }
 
+    public function addTransaction() {
+
+        $username = $_POST['username'];
+        $transaction = $_POST['transaction'];
+        $description = $_POST['description'];
+        $datepaid = $_POST['datepaid'];
+        $amount = $_POST['amount'];
+
+        # error checking. - do with ajax so it looks cool ?
+        # make sure fields filled in. Make sure email is valid. Make sure passwords match.
+        # make sure fields > x chars.
+
+        $pdo = Database::connect();
+        $pdo->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
+        $sql = "select * from members where username=?";
+        $q = $pdo->prepare($sql);
+        $q->execute(array($username));
+        $q->setFetchMode(PDO::FETCH_ASSOC);
+        $data = $q->fetch();
+
+            $sql = "insert into transactions (username,transaction,description,datepaid,amount) values (?,?,?,?,?)";
+            $q = $pdo->prepare($sql);
+            $q->execute(array($username,$transaction,$description,$datepaid,$amount));
+            Database::disconnect();
+            return "<center><div class=\"alert alert-success\" style=\"width:75%;\"><strong>New Transaction " . $transaction . " was Added!</strong></div>";
+
+    }
+
     public function saveTransaction($id) {
 
         $username = $_POST['username'];

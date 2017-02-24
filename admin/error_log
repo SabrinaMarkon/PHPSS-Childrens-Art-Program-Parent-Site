@@ -46,3 +46,15 @@ Stack trace:
 #2 /home/juniorartists/public_html/admin/index.php(198): include('/home/juniorart...')
 #3 {main}
   thrown in /home/juniorartists/public_html/admin/classes/Referid.php on line 23
+[24-Feb-2017 06:44:13 UTC] PHP Notice:  Undefined index: password in /home/juniorartists/public_html/admin/classes/Member.php on line 35
+[24-Feb-2017 06:44:13 UTC] PHP Notice:  Undefined index: firstname in /home/juniorartists/public_html/admin/classes/Member.php on line 37
+[24-Feb-2017 06:44:13 UTC] PHP Notice:  Undefined index: lastname in /home/juniorartists/public_html/admin/classes/Member.php on line 38
+[24-Feb-2017 06:44:13 UTC] PHP Notice:  Undefined index: email in /home/juniorartists/public_html/admin/classes/Member.php on line 39
+[24-Feb-2017 06:44:13 UTC] PHP Notice:  Undefined index: country in /home/juniorartists/public_html/admin/classes/Member.php on line 40
+[24-Feb-2017 06:44:13 UTC] PHP Notice:  Undefined index: referid in /home/juniorartists/public_html/admin/classes/Member.php on line 42
+[24-Feb-2017 06:45:05 UTC] PHP Notice:  Undefined index: password in /home/juniorartists/public_html/admin/classes/Member.php on line 35
+[24-Feb-2017 06:45:05 UTC] PHP Notice:  Undefined index: firstname in /home/juniorartists/public_html/admin/classes/Member.php on line 37
+[24-Feb-2017 06:45:05 UTC] PHP Notice:  Undefined index: lastname in /home/juniorartists/public_html/admin/classes/Member.php on line 38
+[24-Feb-2017 06:45:05 UTC] PHP Notice:  Undefined index: email in /home/juniorartists/public_html/admin/classes/Member.php on line 39
+[24-Feb-2017 06:45:05 UTC] PHP Notice:  Undefined index: country in /home/juniorartists/public_html/admin/classes/Member.php on line 40
+[24-Feb-2017 06:45:05 UTC] PHP Notice:  Undefined index: referid in /home/juniorartists/public_html/admin/classes/Member.php on line 42
