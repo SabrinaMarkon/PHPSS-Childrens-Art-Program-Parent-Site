@@ -85,6 +85,7 @@ $referidlist = new Referid();
                         <th class="text-center small">Signup Date</th>
                         <th class="text-center small">Signup IP</th>
                         <th class="text-center small">Last Login</th>
+                        <th class="text-center small">Commission</th>
                         <th class="text-center small">Sponsor</th>
                         <th class="text-center small">Edit</th>
                         <th class="text-center small">Delete</th>
@@ -157,6 +158,10 @@ $referidlist = new Referid();
                             </td>
                             <td class="small">
                                 <?php echo $datelastlogin ?>
+                            </td>
+                            <td>
+                                <label class="sr-only" for="commission">Commission:</label>
+                                <input type="number" name="commission" value="<?php echo $member['commission']; ?>" class="form-control input-sm small" size="12" placeholder="Commission" min="0.00" step="0.01">
                             </td>
                             <td>
                                 <label class="sr-only" for="referid">Sponsor:</label>

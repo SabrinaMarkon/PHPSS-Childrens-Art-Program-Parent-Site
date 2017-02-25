@@ -38,7 +38,7 @@ $transactions = $alltransactions->getAllTransactions();
                     <input type="hidden" name="datepaid" id="datepaid" value="" />
                 </div>
 
-                <div class="ja-bottompadding"></div>
+                <div class="ja-bottompadding2"></div>
 
                 <button class="btn btn-lg btn-primary" type="submit" name="addtransaction">Create Transaction Record</button>
 

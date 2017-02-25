@@ -63,7 +63,8 @@ signupip varchar(255) not null,
 verified varchar(4) not null default 'no',
 verifieddate datetime not null,
 referid varchar(255) not null,
-lastlogin datetime not null
+lastlogin datetime not null,
+commission decimal(9,2) not null
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1;
 
 CREATE TABLE `pages` (

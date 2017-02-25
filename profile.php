@@ -25,6 +25,8 @@ echo $showcontent->showPage('Members Area Profile Page');
 
 					<form action="/profile" method="post" accept-charset="utf-8" class="form" role="form">
 
+						<div class="pull-left ja-bottompadding">Earnings: $<?php echo $commission ?></div>
+
 						<label class="sr-only" for="firstname">First Name</label>
 						<input type="text" name="firstname" value="<?php echo $firstname ?>" class="form-control input-lg" placeholder="First Name">
 

@@ -94,12 +94,13 @@ class Member
         $email = $_POST['email'];
         $signupip = $_POST['signupip'];
         $verified = $_POST['verified'];
+        $commission = $_POST['commission'];
         $referid = $_POST['referid'];
         $pdo = Database::connect();
         $pdo->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
-        $sql = "update `members` set username=?, password=?, firstname=?, lastname=?, country=?, email=?, signupip=?, verified=?, referid=? where id=?";
+        $sql = "update `members` set username=?, password=?, firstname=?, lastname=?, country=?, email=?, signupip=?, verified=?, commission=?, referid=? where id=?";
         $q = $pdo->prepare($sql);
-        $q->execute(array($username, $password, $firstname, $lastname, $country, $email, $signupip, $verified, $referid, $id));
+        $q->execute(array($username, $password, $firstname, $lastname, $country, $email, $signupip, $verified, $commission, $referid, $id));
 
 //        if (!$q->execute(array($id, $username, $password, $firstname, $lastname, $country, $email, $signupip, $verified, $referid))) {
 //            echo "Execute failed: (" . $stmt->errno . ") " . $stmt->error;
