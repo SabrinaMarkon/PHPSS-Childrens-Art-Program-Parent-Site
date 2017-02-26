@@ -11,6 +11,7 @@
 
 <script src="//code.jquery.com/jquery.js"></script>
 <script src="/../js/bootstrap.min.js"></script>
+<script src="/../js/navigation.js"></script>
 <script type="text/javascript" src="/../js/datetimepicker/bootstrap-datetimepicker.js" charset="UTF-8"></script>
 <script type="text/javascript">
     $('.form_date').datetimepicker({

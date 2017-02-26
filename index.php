@@ -91,7 +91,7 @@ if ((!empty($_GET['page'])) and ((file_exists($_GET['page'] . ".php") and ($_GET
     include $page . ".php";
     $Layout->showFooter();
 
-} elseif ($_GET['page'] == "ipn") {
+} elseif ((!empty($_GET['page'])) and ($_GET['page'] != "index") and ($_GET['page'] == "ipn")) {
 
     // received a POST from paypal:
     $raw_post_data = file_get_contents('php://input');

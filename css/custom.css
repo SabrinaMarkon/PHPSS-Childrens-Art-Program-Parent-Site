@@ -22,6 +22,10 @@ img {
 	border: 2px solid #402659;
 	background-size:cover;
 }
+.ja-desktopnav {
+	float: left;
+	width: 100%;
+}
 .ja-navbutton {
 	font-family: Comic Sans MS;
 	font-weight: bold;
@@ -29,6 +33,9 @@ img {
 	text-shadow: 1px 1px 1px #000;
 	border-right: 1px solid #a0a0a0;
 	text-align: center;
+}
+.ja-navbutton-first {
+	border-left: 1px solid #a0a0a0;
 }
 .ja-navbutton:link {
 	color: #fff;
@@ -65,6 +72,56 @@ img {
     width: 50%; /* your width */
 }
 
+/* Hamburger Menu */
+.hamburger {
+	cursor: pointer;
+	margin-right: 10px;
+	float: right;
+}
+.hamburger .bar1, .hamburger .bar2, .hamburger .bar3 {
+	width: 25px;
+	height: 2px;
+	background-color: #fff;
+	margin: 6px 0;
+	transition: 0.4s;
+}
+.hamburger .bar1:hover, .hamburger .bar2:hover, .hamburger .bar3:hover {
+	background: #FFB772;
+}
+
+
+/* Mobile Navigation */
+.navmobile {
+	display: none;
+	background: #a78bbc;
+	box-shadow: 1px 1px 2px #000;
+	position: absolute;
+	top: 32px;
+	right: 10px;
+	width: 140px;
+	z-index: 1000;
+	font-family: Calibri, Tahoma, Arial, sans-serif;
+	font-size: 1.2em;
+}
+.navmobile ul {
+	width: 10%;
+	text-align: center;
+	margin-top: 3px;
+	margin-bottom: -1px;
+}
+.navmobile ul li {
+	display: block;
+	line-height: 30px;
+	text-align: center;
+}
+.navmobile ul li a {
+	color: #fff;
+	text-decoration: none;
+}
+.navmobile ul li a:hover {
+	color: #FFB772;
+}
+
 /* Accordions */
 .panel-group .panel-heading {
 	text-decoration: none;
@@ -76,11 +133,14 @@ img {
 	color: #000;
 }
 
+
 @media (min-width:200px)
 {
 	.ja-navbutton { font-size: 40%; border-right: 0px; }
 	.ja-content { font-size: 100%; border-right: 1px solid #a0a0a0; }
 	h1 { font-size: 120%; }
+	.hamburger { visibility: visible; display: block; }
+	.ja-navbutton { visibility: hidden; display: none; }
 }
 @media (min-width:700px)
 {
@@ -101,6 +161,8 @@ img {
 	.ja-navbutton { font-size: 80%; border-right: 1px solid #a0a0a0; }
 	.ja-content { font-size: 140%; border-right: 1px solid #a0a0a0; }
 	h1 { font-size: 160%; }
+	.navmobile, .hamburger { visibility: hidden; display: none; }
+	.ja-navbutton { visibility: visible; display: inline-block; }
 }
 
 @media (min-width:1000px)

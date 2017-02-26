@@ -23,32 +23,69 @@
 	</header>
 
 	<div class="btn-group btn-group-justified ja-navgroup" role="group" aria-label="Main Navigation Menu" id="navbar">
-		
-		<?php
-		if ((isset($_SESSION['username'])) && (isset($_SESSION['password'])))
-		{
-		?>
-		<a href="/members" type="button" class="btn ja-navbutton" role="button">MAIN</a>
-		<a href="/profile" type="button" class="btn ja-navbutton" role="button">PROFILE</a>
-		<a href="/post" type="button" class="btn ja-navbutton" role="button">POST</a>
-		<a href="/products" type="button" class="btn ja-navbutton" role="button">SERVICES</a>
-		<a href="https://www.facebook.com/junior.artists.7/photos" target="_blank" type="button" class="btn ja-navbutton" role="button">GALLERY</a>
-		<a href="/contact" type="button" class="btn ja-navbutton" role="button">CONTACT</a>
-		<a href="/logout" type="button" class="btn ja-navbutton" role="button">LOGOUT</a>
-		<?php
-		}
-		else
-		{
-		?>
-		<a href="/" type="button" class="btn ja-navbutton" role="button">HOME</a>
-		<a href="/login" type="button" class="btn ja-navbutton" role="button">LOGIN</a>
-		<a href="/register" type="button" class="btn ja-navbutton" role="button">REGISTER</a>
-		<a href="https://www.facebook.com/junior.artists.7/photos" target="_blank" type="button" class="btn ja-navbutton" role="button">GALLERY</a>
-		<a href="/aboutus" type="button" class="btn ja-navbutton" role="button">ABOUT</a>
-		<a href="/contact" type="button" class="btn ja-navbutton" role="button">CONTACT</a>
-		<?php
-		}
-		?>
+
+		<div class="ja-desktopnav">
+			<?php
+			if ((isset($_SESSION['username'])) && (isset($_SESSION['password'])))
+			{
+			?>
+			<a href="/members" type="button" class="btn ja-navbutton ja-navbutton-first" role="button">MAIN</a>
+			<a href="/profile" type="button" class="btn ja-navbutton" role="button">PROFILE</a>
+			<a href="/post" type="button" class="btn ja-navbutton" role="button">POST</a>
+			<a href="/products" type="button" class="btn ja-navbutton" role="button">SERVICES</a>
+			<a href="https://www.facebook.com/junior.artists.7/photos" target="_blank" type="button" class="btn ja-navbutton" role="button">GALLERY</a>
+			<a href="/contact" type="button" class="btn ja-navbutton" role="button">CONTACT</a>
+			<a href="/logout" type="button" class="btn ja-navbutton" role="button">LOGOUT</a>
+			<?php
+			}
+			else
+			{
+			?>
+			<a href="/" type="button" class="btn ja-navbutton ja-navbutton-first" role="button">HOME</a>
+			<a href="/login" type="button" class="btn ja-navbutton" role="button">LOGIN</a>
+			<a href="/register" type="button" class="btn ja-navbutton" role="button">REGISTER</a>
+			<a href="https://www.facebook.com/junior.artists.7/photos" target="_blank" type="button" class="btn ja-navbutton" role="button">GALLERY</a>
+			<a href="/aboutus" type="button" class="btn ja-navbutton" role="button">ABOUT</a>
+			<a href="/contact" type="button" class="btn ja-navbutton" role="button">CONTACT</a>
+			<?php
+			}
+			?>
+		</div>
+
+		<div class="hamburger" onclick="toggleMenu(this)">
+			<div class="bar1"></div>
+			<div class="bar2"></div>
+			<div class="bar3"></div>
+		</div>
+
+		<div class="navmobile">
+			<ul>
+				<?php
+				if ((isset($_SESSION['username'])) && (isset($_SESSION['password']))) {
+					?>
+					<li class="list-item navmobilelink"><a href="/members">MAIN</a></li>
+					<li class="list-item navmobilelink"><a href="/profile">PROFILE</a></li>
+					<li class="list-item navmobilelink"><a href="/post">POST</a></li>
+					<li class="list-item navmobilelink"><a href="/products">SERVICES</a></li>
+					<li class="list-item navmobilelink"><a href="https://www.facebook.com/junior.artists.7/photos" target="_blank">GALLERY</a></li>
+					<li class="list-item navmobilelink"><a href="/contact">CONTACT</a></li>
+					<li class="list-item navmobilelink"><a href="/logout">LOGOUT</a></li>
+					<?php
+				}
+				else {
+					?>
+					<li class="list-item navmobilelink"><a href="/">HOME</a></li>
+					<li class="list-item navmobilelink"><a href="/login">LOGIN</a></li>
+					<li class="list-item navmobilelink"><a href="/register">REGISTER</a></li>
+					<li class="list-item navmobilelink"><a href="https://www.facebook.com/junior.artists.7/photos" target="_blank">GALLERY</a></li>
+					<li class="list-item navmobilelink"><a href="/aboutus">ABOUT</a></li>
+					<li class="list-item navmobilelink"><a href="/contact">CONTACT</a></li>
+					<?php
+				}
+				?>
+			</ul>
+		</div>
+
 	</div>
 
 	<div class="ja-content">

@@ -25,43 +25,93 @@
 
     <div class="btn-group btn-group-justified ja-navgroup" role="group" aria-label="Main Navigation Menu" id="navbar">
 
-        <?php
-        if ((isset($_SESSION['username'])) && (isset($_SESSION['password'])))
-        {
-            ?>
-            <a href="/../" type="button" class="btn ja-navbutton" role="button" target="_blank">SITE</a>
-            <a href="/admin/main" type="button" class="btn ja-navbutton" role="button">MAIN</a>
-            <a href="/admin/settings" type="button" class="btn ja-navbutton" role="button">SETTINGS</a>
-            <a href="/admin/members" type="button" class="btn ja-navbutton" role="button">MEMBERS</a>
-            <a href="/admin/mail" type="button" class="btn ja-navbutton" role="button">MAIL</a>
-            <a href="/admin/money" type="button" class="btn ja-navbutton" role="button">MONEY</a>
-            <a href="/admin/products" type="button" class="btn ja-navbutton" role="button">SELL</a>
-            <a href="/admin/pages" type="button" class="btn ja-navbutton" role="button">PAGES</a>
-            <a href="/admin/logout" type="button" class="btn ja-navbutton" role="button">LOGOUT</a>
+        <div class="ja-desktopnav">
             <?php
-        }
-        else
-        {
+            if ((isset($_SESSION['username'])) && (isset($_SESSION['password'])))
+            {
+                ?>
+                <a href="/../" type="button" class="btn ja-navbutton ja-navbutton-first" role="button" target="_blank">SITE</a>
+                <a href="/admin/main" type="button" class="btn ja-navbutton" role="button">MAIN</a>
+                <a href="/admin/settings" type="button" class="btn ja-navbutton" role="button">SETTINGS</a>
+                <a href="/admin/members" type="button" class="btn ja-navbutton" role="button">MEMBERS</a>
+                <a href="/admin/mail" type="button" class="btn ja-navbutton" role="button">MAIL</a>
+                <a href="/admin/money" type="button" class="btn ja-navbutton" role="button">MONEY</a>
+                <a href="/admin/products" type="button" class="btn ja-navbutton" role="button">SELL</a>
+                <a href="/admin/pages" type="button" class="btn ja-navbutton" role="button">PAGES</a>
+                <a href="/admin/logout" type="button" class="btn ja-navbutton" role="button">LOGOUT</a>
+                <?php
+            }
+            else
+            {
+                ?>
+    <!--            UNCOMMENT WHEN ADMIN AUTH IS SET UP-->
+    <!--            <a href="/../" type="button" class="btn ja-navbutton ja-navbutton-first" role="button">HOME</a>-->
+    <!--            <a href="/login" type="button" class="btn ja-navbutton" role="button">LOGIN</a>-->
+    <!--            <a href="/register" type="button" class="btn ja-navbutton" role="button">REGISTER</a>-->
+    <!--            <a href="https://www.facebook.com/junior.artists.7/photos" target="_blank" type="button" class="btn ja-navbutton" role="button">GALLERY</a>-->
+    <!--            <a href="/aboutus" type="button" class="btn ja-navbutton" role="button">ABOUT</a>-->
+    <!--            <a href="/contact" type="button" class="btn ja-navbutton" role="button">CONTACT</a>-->
+                <a href="/../" type="button" class="btn ja-navbutton ja-navbutton-first" role="button" target="_blank">SITE</a>
+                <a href="/admin/main" type="button" class="btn ja-navbutton" role="button">MAIN</a>
+                <a href="/admin/settings" type="button" class="btn ja-navbutton" role="button">SETTINGS</a>
+                <a href="/admin/members" type="button" class="btn ja-navbutton" role="button">MEMBERS</a>
+                <a href="/admin/mail" type="button" class="btn ja-navbutton" role="button">MAIL</a>
+                <a href="/admin/money" type="button" class="btn ja-navbutton" role="button">MONEY</a>
+                <a href="/admin/products" type="button" class="btn ja-navbutton" role="button">SELL</a>
+                <a href="/admin/pages" type="button" class="btn ja-navbutton" role="button">PAGES</a>
+                <a href="/admin/logout" type="button" class="btn ja-navbutton" role="button">LOGOUT</a>
+                <?php
+            }
             ?>
-<!--            UNCOMMENT WHEN ADMIN AUTH IS SET UP-->
-<!--            <a href="/" type="button" class="btn ja-navbutton" role="button">HOME</a>-->
-<!--            <a href="/login" type="button" class="btn ja-navbutton" role="button">LOGIN</a>-->
-<!--            <a href="/register" type="button" class="btn ja-navbutton" role="button">REGISTER</a>-->
-<!--            <a href="https://www.facebook.com/junior.artists.7/photos" target="_blank" type="button" class="btn ja-navbutton" role="button">GALLERY</a>-->
-<!--            <a href="/aboutus" type="button" class="btn ja-navbutton" role="button">ABOUT</a>-->
-<!--            <a href="/contact" type="button" class="btn ja-navbutton" role="button">CONTACT</a>-->
-            <a href="/../" type="button" class="btn ja-navbutton" role="button" target="_blank">SITE</a>
-            <a href="/admin/main" type="button" class="btn ja-navbutton" role="button">MAIN</a>
-            <a href="/admin/settings" type="button" class="btn ja-navbutton" role="button">SETTINGS</a>
-            <a href="/admin/members" type="button" class="btn ja-navbutton" role="button">MEMBERS</a>
-            <a href="/admin/mail" type="button" class="btn ja-navbutton" role="button">MAIL</a>
-            <a href="/admin/money" type="button" class="btn ja-navbutton" role="button">MONEY</a>
-            <a href="/admin/products" type="button" class="btn ja-navbutton" role="button">SELL</a>
-            <a href="/admin/pages" type="button" class="btn ja-navbutton" role="button">PAGES</a>
-            <a href="/admin/logout" type="button" class="btn ja-navbutton" role="button">LOGOUT</a>
-            <?php
-        }
-        ?>
+        </div>
+
+        <div class="hamburger" onclick="toggleMenu(this)">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+        </div>
+
+        <div class="navmobile">
+            <ul>
+                <?php
+                if ((isset($_SESSION['username'])) && (isset($_SESSION['password']))) {
+                    ?>
+                    <li class="list-item navmobilelink"><a href="/../" target="_blank">SITE</a></li>
+                    <li class="list-item navmobilelink"><a href="/admin/main">MAIN</a></li>
+                    <li class="list-item navmobilelink"><a href="/admin/settings">SETTINGS</a></li>
+                    <li class="list-item navmobilelink"><a href="/admin/members">MEMBERS</a>
+                    <li class="list-item navmobilelink"><a href="/admin/mail">MAIL</a></li>
+                    <li class="list-item navmobilelink"><a href="/admin/money">MONEY</a></li>
+                    <li class="list-item navmobilelink"><a href="/admin/products">SELL</a></li>
+                    <li class="list-item navmobilelink"><a href="/admin/pages">PAGES</a></li>
+                    <li class="list-item navmobilelink"><a href="/admin/logout">LOGOUT</a></li>
+                    <?php
+                }
+                else {
+                    ?>
+<!--                    <li class="list-item navmobilelink"><a href="/../">HOME</a></li>-->
+<!--                    <li class="list-item navmobilelink"><a href="/login">LOGIN</a></li>-->
+<!--                    <li class="list-item navmobilelink"><a href="/register">REGISTER</a></li>-->
+<!--                    <li class="list-item navmobilelink"><a href="https://www.facebook.com/junior.artists.7/photos" target="_blank">GALLERY</a></li>-->
+<!--                    <li class="list-item navmobilelink"><a href="/aboutus">ABOUT</a></li>-->
+<!--                    <li class="list-item navmobilelink"><a href="/contact">CONTACT</a></li>-->
+
+
+                    <li class="list-item navmobilelink"><a href="/../" target="_blank">SITE</a></li>
+                    <li class="list-item navmobilelink"><a href="/admin/main">MAIN</a></li>
+                    <li class="list-item navmobilelink"><a href="/admin/settings">SETTINGS</a></li>
+                    <li class="list-item navmobilelink"><a href="/admin/members">MEMBERS</a>
+                    <li class="list-item navmobilelink"><a href="/admin/mail">MAIL</a></li>
+                    <li class="list-item navmobilelink"><a href="/admin/money">MONEY</a></li>
+                    <li class="list-item navmobilelink"><a href="/admin/products">SELL</a></li>
+                    <li class="list-item navmobilelink"><a href="/admin/pages">PAGES</a></li>
+                    <li class="list-item navmobilelink"><a href="/admin/logout">LOGOUT</a></li>
+                    <?php
+                }
+                ?>
+            </ul>
+        </div>
+
     </div>
 
     <div class="ja-content">

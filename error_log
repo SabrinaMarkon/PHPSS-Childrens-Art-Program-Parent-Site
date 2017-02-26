@@ -28,3 +28,29 @@
 [26-Feb-2017 09:35:16 UTC] PHP Fatal error:  require_once(): Failed opening required './admain/classes/Money.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/juniorartists/public_html/index.php on line 11
 [26-Feb-2017 09:35:38 UTC] PHP Parse error:  syntax error, unexpected ';', expecting identifier (T_STRING) or \\ (T_NS_SEPARATOR) or '{' in /home/juniorartists/public_html/classes/IPN.php on line 10
 [26-Feb-2017 09:37:18 UTC] PHP Fatal error:  Cannot redeclare class Database in /home/juniorartists/public_html/config/Database.php on line 3
+[26-Feb-2017 11:25:36 UTC] PHP Notice:  Undefined index: page in /home/juniorartists/public_html/index.php on line 94
+[26-Feb-2017 15:40:21 UTC] PHP Notice:  Undefined index: page in /home/juniorartists/public_html/index.php on line 94
+[26-Feb-2017 15:41:08 UTC] PHP Notice:  Undefined index: page in /home/juniorartists/public_html/index.php on line 94
+[26-Feb-2017 15:41:24 UTC] PHP Notice:  Undefined index: page in /home/juniorartists/public_html/index.php on line 94
+[26-Feb-2017 15:42:19 UTC] PHP Notice:  Undefined index: page in /home/juniorartists/public_html/index.php on line 94
+[26-Feb-2017 15:49:20 UTC] PHP Notice:  Undefined index: page in /home/juniorartists/public_html/index.php on line 94
+[26-Feb-2017 15:49:59 UTC] PHP Notice:  Undefined index: page in /home/juniorartists/public_html/index.php on line 94
+[26-Feb-2017 15:50:36 UTC] PHP Notice:  Undefined index: page in /home/juniorartists/public_html/index.php on line 94
+[26-Feb-2017 15:58:39 UTC] PHP Notice:  Undefined index: page in /home/juniorartists/public_html/index.php on line 94
+[26-Feb-2017 16:00:14 UTC] PHP Notice:  Undefined index: page in /home/juniorartists/public_html/index.php on line 94
+[26-Feb-2017 16:00:27 UTC] PHP Notice:  Undefined index: page in /home/juniorartists/public_html/index.php on line 94
+[26-Feb-2017 16:04:15 UTC] PHP Notice:  Undefined index: page in /home/juniorartists/public_html/index.php on line 94
+[26-Feb-2017 16:04:43 UTC] PHP Notice:  Undefined index: page in /home/juniorartists/public_html/index.php on line 94
+[26-Feb-2017 16:05:08 UTC] PHP Notice:  Undefined index: page in /home/juniorartists/public_html/index.php on line 94
+[26-Feb-2017 16:06:04 UTC] PHP Notice:  Undefined index: page in /home/juniorartists/public_html/index.php on line 94
+[26-Feb-2017 16:06:53 UTC] PHP Notice:  Undefined index: page in /home/juniorartists/public_html/index.php on line 94
+[26-Feb-2017 16:07:16 UTC] PHP Notice:  Undefined index: page in /home/juniorartists/public_html/index.php on line 94
+[26-Feb-2017 16:08:27 UTC] PHP Notice:  Undefined index: page in /home/juniorartists/public_html/index.php on line 94
+[26-Feb-2017 16:08:57 UTC] PHP Notice:  Undefined index: page in /home/juniorartists/public_html/index.php on line 94
+[26-Feb-2017 16:09:59 UTC] PHP Notice:  Undefined index: page in /home/juniorartists/public_html/index.php on line 94
+[26-Feb-2017 16:10:38 UTC] PHP Notice:  Undefined index: page in /home/juniorartists/public_html/index.php on line 94
+[26-Feb-2017 16:11:21 UTC] PHP Notice:  Undefined index: page in /home/juniorartists/public_html/index.php on line 94
+[26-Feb-2017 16:13:55 UTC] PHP Notice:  Undefined index: page in /home/juniorartists/public_html/index.php on line 94
+[26-Feb-2017 16:14:01 UTC] PHP Notice:  Undefined index: page in /home/juniorartists/public_html/index.php on line 94
+[26-Feb-2017 16:15:27 UTC] PHP Notice:  Undefined index: page in /home/juniorartists/public_html/index.php on line 94
+[26-Feb-2017 16:16:07 UTC] PHP Notice:  Undefined index: page in /home/juniorartists/public_html/index.php on line 94
