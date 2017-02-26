@@ -7,10 +7,8 @@ PHP 5
 @license LICENSE.md
  **/
 
-require_once "/../config/Database.php";
-require_once "/../config/Settings.php";
-require_once('/../admin/classes/Money.php');
-require_once('Email.php');
+include "admin/classes/Money.php";
+include "Email.php";
 
 class IPN
 {
