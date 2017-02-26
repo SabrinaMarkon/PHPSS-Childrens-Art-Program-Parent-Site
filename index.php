@@ -86,13 +86,20 @@ $showlogout = $logoutpage->showPage('Logout Page');
 $Layout = new Layout();
 $Layout->showHeader();
 
-if ((!empty($_GET['page'])) and ((file_exists($_GET['page'] . ".php") and ($_GET['page'] != "index"))))
-{
+if ((!empty($_GET['page'])) and ((file_exists($_GET['page'] . ".php") and ($_GET['page'] != "index")))) {
+
     $page = $_REQUEST['page'];
     include $page . ".php";
-}
-else
-{
+
+} elseif ($_POST['page'] == "ipn") {
+
+    // received a POST from paypal:
+    $raw_post_data = file_get_contents('php://input');
+    $ipn = new IPN($raw_post_data, $domain, $sitename, $adminname, $adminemail);
+
+} else {
+
     include "main.php";
+
 }
 $Layout->showFooter();

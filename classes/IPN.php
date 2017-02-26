@@ -8,14 +8,9 @@ PHP 5
  **/
 class IPN
 {
-    public function ipn(Request $request) {
+    public function __construct($raw_post_data) {
 
         // STEP 1: Read POST data
-        // Reading raw POST data from input stream from paypal is the usual approach:
-        //  $raw_post_data = file_get_contents('php://input');
-        // Normally this works but php://input can only be read ONCE and Laravel intercepts it. Therefore,
-        // we have to get the raw post data from the framework with getContent:
-        $raw_post_data = $request->getContent();
         $raw_post_array = explode('&', $raw_post_data);
         $myPost = array();
         foreach ($raw_post_array as $keyval) {
@@ -68,106 +63,55 @@ class IPN
             $receiver_email = $_POST['receiver_email'];
             $paypal = $_POST['payer_email'];
             $quantity = $_POST['quantity'];
-            $userid = $_POST['option_selection1'];
+            $username = $_POST['option_selection1'];
             $item = $_POST['item_name'];
 
             if ($payment_status === "Completed") {
 
-                $user = Member::where('userid', '=', $userid)->first();
-                if ($user) {
-                    $referid = $user->referid;
-                } else {
-                    // user not found.
-                    exit;
-                }
+                $pdo = Database::connect();
+                $pdo->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
+                $sql = "select * from members where username=?";
+                $q = $pdo->prepare($sql);
+                $q->execute(array($username));
+                $userexists = $q->rowCount();
 
-                // User purchased License upgrade.
-                if ($item === $request->get('sitename') . ' - White Label Banner License') {
-                    $licensetype = $_POST["option_selection2"];
-                    // create new license.
-                    $license = new License;
-                    $license->userid = $userid;
-                    $licensepaiddate = new DateTime();
-                    $licensepaiddate = $licensepaiddate->format('Y-m-d');
-                    $license->licensepaiddate = $licensepaiddate;
-                    $license->licensestartdate = $licensepaiddate;
-                    $licenseenddate = new DateTime();
-                    if ($licensetype === 'monthly') {
-                        $licensecommission = $request->get('licensecommissionmonthly');
-                        $interval = new DateInterval('P1M');
-                        $licenseenddate->add($interval);
-                        $licenseenddate->format('Y-m-d');
-                    } else if ($licensetype === 'annually') {
-                        $licensecommission = $request->get('licensecommissionannually');
-                        $interval = new DateInterval('P1Y');
-                        $licenseenddate->add($interval);
-                        $licenseenddate->format('Y-m-d');
-                    } else {
-                        $licensecommission = $request->get('licensecommissionlifetime');
-                        // licenseenddate should be null if lifeitme.
-                        $licenseenddate = '';
-                    }
-                    $license->licenseenddate = $licenseenddate;
-                    $license->save();
+                if($userexists > 0) {
 
-                    // assign commission.
-                    $commission = Member::where('referid', $referid)->increment('commission', $licensecommission);
+                    // username exists.
+                    $q->setFetchMode(PDO::FETCH_ASSOC);
+                    $userdetails = $q->fetch();
+                    // get sponsor.
+                    $referid = $userdetails->referid;
 
-                    // add transaction.
-                    $transaction = new Transaction;
-                    $transaction->userid = $userid;
-                    $transaction->transaction = $txn_id;
-                    $transaction->description = 'White Label Banner License';
-                    $transaction->datepaid = $licensepaiddate;
-                    $transaction->amount = $amount;
-
-                    // remove watermark from existing banners:
-                    $banners = Banner::where('userid', '=', $userid)->get();
-                    foreach ($banners as $banner) {
-                        $bannercode = $banner->htmlcode;
-                        // remove watermark:
-                        $bannercode = preg_replace('#<div id="watermark"(.*?)</div>#', ' ', $bannercode);
-                        // update file:
-
-                        //
-                        //
-                        //
-                        //
-
-                        // update database with new html and new file name:
-                        Banner::where('id', $banner-id)->update('htmlcode', $bannercode);
-                    }
-
-                    // email admin.
-                    $html = "Dear " . $request->get('adminname') . ",<br><br>"
-                        . "A new " . $request->get('sitename') . " license was purchased!<br><br>"
-                        . "UserID: " . $userid . "<br>"
-                        . "Amount: " . $amount . " " . $licensetype . "<br>"
-                        . "Transaction ID: " . $txn_id . "<br>"
-                        . "Sponsor: " . $referid . "<br>"
-                        . "Commission: " . $licensecommission . "<br><br>"
-                        . "" . $request->get('domain') . "<br><br><br>";
-                    \Mail::send(array(), array(), function ($message) use ($html, $request) {
-                        $message->to($request->get('adminemail'), $request->get('adminname'))
-                            ->subject($request->get('sitename') . ' License Upgrade Notification')
-                            ->from($request->get('adminemail'), $request->get('adminname'))
-                            ->setBody($html, 'text/html');
-                    });
-                }
-                // User purchased a product the admin has set up for sale:
-                else {
+                    // get the product information from the product ID passed back from paypal:
                     $productid = $_POST["option_selection2"];
-                    $product = Product::find($productid);
-                    if ($product !== null) {
 
-                        // assign commission.
-                        $commission = Member::where('referid', $referid)->increment('commission', $product->commission);
+                    $sql = "select * from products where id=?";
+                    $q = $pdo->prepare($sql);
+                    $q->execute(array($productid));
+                    $productexists = $q->rowCount();
+
+                    if ($productexists > 0) {
+
+                        // product exists.
+                        $q->setFetchMode(PDO::FETCH_ASSOC);
+                        $productdetails = $q->fetch();
+                        // get commission amount.
+                        $commission = $productdetails->commission;
+
+                        if ($commission > 0) {
+                            // credit commissions (will only work if the sponsor exists and commission is > 0)
+                            $sql = "update members set commission=commission+? where username=?";
+                            $q = $pdo->prepare($sql);
+                            $q->execute(array($commission, $referid));
+                        }
+
 
                         // add transaction.
                         $datepaid = new DateTime();
                         $datepaid = $datepaid->format('Y-m-d');
                         $transaction = new Transaction;
-                        $transaction->userid = $userid;
+                        $transaction->userid = $username;
                         $transaction->transaction = $txn_id;
                         $transaction->description = $product->name;
                         $transaction->datepaid = $datepaid;
@@ -177,7 +121,7 @@ class IPN
                         $html = "Dear " . $request->get('adminname') . ",<br><br>"
                             . "A new " . $request->get('sitename') . " product was purchased!<br>"
                             . "** You will need to now fulfill the order for the customer! **<br>"
-                            . "UserID: " . $userid . "<br>"
+                            . "UserID: " . $username . "<br>"
                             . "Product: " . $product->name . "<br>"
                             . "Quantity: " . $product->quantity . "<br>"
                             . "Amount: " . $amount . "<br>"
@@ -192,8 +136,18 @@ class IPN
                                 ->setBody($html, 'text/html');
                         });
 
+                    } else {
+                        // product ID doesn't exist.
+                        exit;
                     }
+
+                } else {
+                    // user not found.
+                    exit;
                 }
+
+                Database::disconnect();
+
             } else {
                 // status is not completed, so see if it is a cancellation.
 
@@ -203,8 +157,7 @@ class IPN
             //  echo "Invalid";
             exit;
         }
-        // no view.
+        // no view needed.
     }
-
 
 }

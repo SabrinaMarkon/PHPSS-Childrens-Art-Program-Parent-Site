@@ -109,3 +109,13 @@
 [20-Feb-2017 13:49:26 UTC] PHP Notice:  Undefined variable: username in /home/juniorartists/public_html/products.php on line 34
 [21-Feb-2017 10:33:49 UTC] PHP Notice:  Undefined variable: username in /home/juniorartists/public_html/products.php on line 34
 [21-Feb-2017 10:33:49 UTC] PHP Notice:  Undefined variable: username in /home/juniorartists/public_html/products.php on line 34
+[25-Feb-2017 05:33:03 UTC] PHP Notice:  Undefined variable: username in /home/juniorartists/public_html/products.php on line 34
+[25-Feb-2017 05:33:03 UTC] PHP Notice:  Undefined variable: username in /home/juniorartists/public_html/products.php on line 34
+[26-Feb-2017 07:51:12 UTC] PHP Fatal error:  Class 'PageContent' not found in /home/juniorartists/public_html/main.php on line 2
+[26-Feb-2017 08:35:35 UTC] PHP Notice:  Undefined index: page in /home/juniorartists/public_html/index.php on line 94
+[26-Feb-2017 08:37:01 UTC] PHP Notice:  Undefined index: page in /home/juniorartists/public_html/index.php on line 94
+[26-Feb-2017 08:37:04 UTC] PHP Notice:  Undefined variable: username in /home/juniorartists/public_html/products.php on line 34
+[26-Feb-2017 08:37:04 UTC] PHP Notice:  Undefined variable: username in /home/juniorartists/public_html/products.php on line 34
+[26-Feb-2017 08:37:22 UTC] PHP Notice:  Undefined variable: username in /home/juniorartists/public_html/products.php on line 34
+[26-Feb-2017 08:37:22 UTC] PHP Notice:  Undefined variable: username in /home/juniorartists/public_html/products.php on line 34
+[26-Feb-2017 08:38:36 UTC] PHP Notice:  Undefined index: page in /home/juniorartists/public_html/index.php on line 94
