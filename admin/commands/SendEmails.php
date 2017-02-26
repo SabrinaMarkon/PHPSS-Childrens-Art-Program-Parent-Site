@@ -14,6 +14,7 @@
 require_once('../../config/Database.php');
 require_once('../../config/Settings.php');
 require_once('../../classes/Email.php');
+
 class SendEmails
 {
     private $email;
@@ -22,6 +23,10 @@ class SendEmails
     private $message;
     private $headers;
     private $pdo;
+    public $domain;
+    public $sitename;
+    public $adminname;
+    public $adminemail;
 
     public function getMails($domain, $sitename, $adminemail, $adminname)
     {

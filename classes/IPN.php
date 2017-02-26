@@ -6,9 +6,21 @@ PHP 5
 @copyright 2017 Sabrina Markon, PHPSiteScripts.com
 @license LICENSE.md
  **/
+
+require_once "/../config/Database.php";
+require_once "/../config/Settings.php";
+require_once('/../admin/classes/Money.php');
+require_once('Email.php');
+
 class IPN
 {
-    public function __construct($raw_post_data) {
+    private $raw_post_data;
+    public $domain;
+    public $sitename;
+    public $adminname;
+    public $adminemail;
+
+    public function __construct($raw_post_data, $domain, $sitename, $adminname, $adminemail) {
 
         // STEP 1: Read POST data
         $raw_post_array = explode('&', $raw_post_data);
@@ -110,31 +122,30 @@ class IPN
                         // add transaction.
                         $datepaid = new DateTime();
                         $datepaid = $datepaid->format('Y-m-d');
-                        $transaction = new Transaction;
-                        $transaction->userid = $username;
+                        $transaction = new Money();
+                        $transaction->username = $username;
                         $transaction->transaction = $txn_id;
-                        $transaction->description = $product->name;
+                        $transaction->description = $productdetails->name;
                         $transaction->datepaid = $datepaid;
                         $transaction->amount = $amount;
 
                         // email admin.
-                        $html = "Dear " . $request->get('adminname') . ",<br><br>"
-                            . "A new " . $request->get('sitename') . " product was purchased!<br>"
-                            . "** You will need to now fulfill the order for the customer! **<br>"
-                            . "UserID: " . $username . "<br>"
-                            . "Product: " . $product->name . "<br>"
-                            . "Quantity: " . $product->quantity . "<br>"
-                            . "Amount: " . $amount . "<br>"
-                            . "Transaction ID: " . $txn_id . "<br>"
-                            . "Sponsor: " . $referid . "<br>"
-                            . "Commission: " . $product->commission . "<br><br>"
-                            . "" . $request->get('domain') . "<br><br><br>";
-                        \Mail::send(array(), array(), function ($message) use ($html, $request) {
-                            $message->to($request->get('adminemail'), $request->get('adminname'))
-                                ->subject($request->get('sitename') . ' Product Purchase Notification')
-                                ->from($request->get('adminemail'), $request->get('adminname'))
-                                ->setBody($html, 'text/html');
-                        });
+                        $to = $adminemail;
+                        $from = $adminemail;
+                        $subject = $sitename . ' Product Purchase Notification';
+                        $message = "Dear " . $adminname . ",\n\n"
+                            . "A new " . $sitename . " product was purchased!\n"
+                            . "** You will need to now fulfill the order for the customer! **\n"
+                            . "UserID: " . $username . "\n"
+                            . "Product: " . $productdetails->name . "\n"
+                            . "Quantity: " . $productdetails->quantity . "\n"
+                            . "Amount: " . $amount . "\n"
+                            . "Transaction ID: " . $txn_id . "\n"
+                            . "Sponsor: " . $referid . "\n"
+                            . "Commission: " . $productdetails->commission . "\n\n"
+                            . "" . $domain . "\n\n\n";
+                        $sendsiteemail = new Email();
+                        $send = $sendsiteemail->sendEmail($to, $from, $subject, $message, $sitename, $adminemail, '');
 
                     } else {
                         // product ID doesn't exist.
@@ -149,7 +160,7 @@ class IPN
                 Database::disconnect();
 
             } else {
-                // status is not completed, so see if it is a cancellation.
+                // status is not completed, so could be a cancelation (if site uses subscriptions)
 
             }
         } else if (strcmp ($res, "INVALID") == 0) {
