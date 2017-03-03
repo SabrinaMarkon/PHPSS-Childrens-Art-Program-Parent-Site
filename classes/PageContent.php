@@ -21,8 +21,5 @@ HEREDOC;
 		
 		return $content;
 	}
-
-	public function deletePage() {
-
-	}
+	
 }

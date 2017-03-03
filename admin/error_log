@@ -66,3 +66,6 @@ Stack trace:
 #2 {main}
   thrown in /home/juniorartists/public_html/admin/classes/Money.php on line 55
 [24-Feb-2017 19:21:43 UTC] PHP Parse error:  syntax error, unexpected end of file, expecting '(' in /home/juniorartists/public_html/admin/classes/Money.php on line 79
+[03-Mar-2017 06:51:03 UTC] PHP Warning:  require(classes/User.php): failed to open stream: No such file or directory in /home/juniorartists/public_html/admin/index.php on line 15
+[03-Mar-2017 06:51:03 UTC] PHP Warning:  require(classes/User.php): failed to open stream: No such file or directory in /home/juniorartists/public_html/admin/index.php on line 15
+[03-Mar-2017 06:51:03 UTC] PHP Fatal error:  require(): Failed opening required 'classes/User.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/juniorartists/public_html/admin/index.php on line 15

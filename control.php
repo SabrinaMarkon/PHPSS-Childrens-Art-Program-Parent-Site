@@ -30,4 +30,3 @@ $Layout = new Layout();
 $Layout->showFooter();
 exit;
 }
-?>

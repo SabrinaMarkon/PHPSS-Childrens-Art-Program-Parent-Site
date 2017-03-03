@@ -193,17 +193,20 @@ if (isset($_GET['page']) && ($_GET['page'] == "logout"))
 }
 ######################################
 
-$Layout = new Layout();
-$Layout->showHeader();
-
 //echo $_GET['page'] . "<br>";
 if ((!empty($_GET['page'])) and ((file_exists($_GET['page'] . ".php") and ($_GET['page'] != "index"))))
 {
+    $Layout = new Layout();
+    $Layout->showHeader();
     $page = $_REQUEST['page'];
     include $page . ".php";
+    $Layout->showFooter();
+
+} else {
+
+    $Layout = new Layout();
+    $Layout->showHeader();
+    include "login.php";
+    $Layout->showFooter();
+
 }
-else
-{
-    include "main.php";
-}
-$Layout->showFooter();
