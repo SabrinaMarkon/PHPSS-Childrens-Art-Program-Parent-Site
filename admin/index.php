@@ -45,6 +45,11 @@ if (isset($_POST['login']))
         $logout->adminLogout();
     }
 }
+if (isset($_POST['forgotlogin']))
+{
+    $forgot = new Admin();
+    $showforgot = $forgot->forgotLogin($sitename,$domain,$adminemail);
+}
 if (isset($_POST['saveadminnotes']))
 {
     $update = new AdminNote();

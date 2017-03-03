@@ -10,7 +10,7 @@ if (isset($showforgot))
 
             <h1 class="ja-bottompadding">Email Password</h1>
 
-            <form action="/forgot" method="post" accept-charset="utf-8" class="form" role="form">
+            <form action="forgot" method="post" accept-charset="utf-8" class="form" role="form">
 
                 <label class="sr-only" for="usernameoremail">Your Username or Email Address</label>
                 <input type="text" name="usernameoremail" value="" class="form-control input-lg" placeholder="Your Username or Email Address">
