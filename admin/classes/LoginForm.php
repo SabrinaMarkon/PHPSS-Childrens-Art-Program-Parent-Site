@@ -25,7 +25,7 @@ class LoginForm
 		<div class="row">
 			<div class="col-md-6 col-md-offset-3">
 				
-			<h1 class="ja-bottompadding">Login</h1>
+			<h1 class="ja-bottompadding">Admin Login</h1>
 
 			<form action="main" method="post" accept-charset="utf-8" class="form" role="form">
 

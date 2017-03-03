@@ -103,5 +103,5 @@ if ((!empty($_GET['page'])) and ((file_exists($_GET['page'] . ".php") and ($_GET
     $Layout->showHeader();
     include "main.php";
     $Layout->showFooter();
-    
+
 }

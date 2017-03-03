@@ -37,22 +37,12 @@ if (isset($_POST['login']))
 {
     $_SESSION['username'] = $_REQUEST['username'];
     $_SESSION['password'] = $_REQUEST['password'];
-    $logincheck = new User();
-    $newlogin = $logincheck->userLogin($_SESSION['username'],$_SESSION['password']);
+    $logincheck = new Admin();
+    $newlogin = $logincheck->adminLogin($_SESSION['username'],$_SESSION['password']);
     if ($newlogin === false)
     {
-        $logout = new User();
-        $logout->userLogout();
-    }
-    else
-    {
-        # returned member details.
-        foreach ($newlogin as $key => $value)
-        {
-            $$key = $value;
-            $_SESSION[$key] = $value;
-        }
-        $showgravatar = $logincheck->getGravatar($_SESSION['username'],$_SESSION['email']);
+        $logout = new Admin();
+        $logout->adminLogout();
     }
 }
 if (isset($_POST['saveadminnotes']))
@@ -166,7 +156,7 @@ if (isset($_POST['deleteproduct']))
     $showupdate = $delete->deleteProduct($id, $_POST['name']);
 }
 
-// REFACTOR LATER to make better routes etc.
+// REFACTOR LATER to make better routes etc. like laravel
 //if (isset($_POST['_method'])) {
 //
 //    $_method = $_POST['_method'];
@@ -186,16 +176,13 @@ if (isset($_POST['deleteproduct']))
 
 if (isset($_GET['page']) && ($_GET['page'] == "logout"))
 {
-//    $logout = new User();
-//    $logout->userLogout();
-//    $logoutpage = new PageContent();
-//    $showlogout = $logoutpage->showPage('Logout Page');
+    $logout = new Admin();
+    $logout->adminLogout();
 }
 ######################################
 
 //echo $_GET['page'] . "<br>";
-if ((!empty($_GET['page'])) and ((file_exists($_GET['page'] . ".php") and ($_GET['page'] != "index"))))
-{
+if ((!empty($_GET['page'])) and ((file_exists($_GET['page'] . ".php") and ($_GET['page'] != "index")))) {
     $Layout = new Layout();
     $Layout->showHeader();
     $page = $_REQUEST['page'];
