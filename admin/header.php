@@ -40,6 +40,7 @@
             else
             {
                 ?>
+                <a href="/../admin" type="button" class="btn ja-navbutton" role="button">ADMIN LOGIN</a>
                 <a href="/../" type="button" class="btn ja-navbutton ja-navbutton-first" role="button">HOME</a>
                 <a href="/../login" type="button" class="btn ja-navbutton" role="button">LOGIN</a>
                 <a href="/../register" type="button" class="btn ja-navbutton" role="button">REGISTER</a>
@@ -75,6 +76,7 @@
                 }
                 else {
                     ?>
+                    <li class="list-item navmobilelink"><a href="/../admin">ADMIN LOGIN</a></li>
                     <li class="list-item navmobilelink"><a href="/../" target="_blank">HOME</a></li>
                     <li class="list-item navmobilelink"><a href="/../login">LOGIN</a></li>
                     <li class="list-item navmobilelink"><a href="/../register">REGISTER</a></li>

@@ -124,4 +124,13 @@ class Member
         return "<center><div class=\"alert alert-success\" style=\"width:75%;\"><strong>Member " . $username . " was Deleted</strong></div>";
 
     }
+
+    public function getGravatar($username,$email) {
+
+        $emailhash = trim($email);
+        $emailhash = md5($emailhash);
+        $gravatarimagelg = "<img src=\"http://gravatar.com/avatar/" . $emailhash . "?s=130\" alt=\"" . $username . "\" class=\"avatar img-circle gravatar-sm\">";
+        return $gravatarimagelg;
+
+    }
 }

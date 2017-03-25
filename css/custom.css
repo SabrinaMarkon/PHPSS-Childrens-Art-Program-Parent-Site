@@ -12,6 +12,13 @@ img {
 .gravatar-lg {
 	width: 130px;
 }
+.gravatar-sm {
+	width: 50px;
+	border: 2px solid #fff;
+}
+.table > tbody > tr > td {
+	vertical-align: middle;
+}
 #ja-headerimage {
 	border: 2px solid #402659;
 	border-bottom: 0;

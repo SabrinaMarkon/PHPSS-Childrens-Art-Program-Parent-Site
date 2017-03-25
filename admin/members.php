@@ -74,6 +74,7 @@ $referidlist = new Referid();
                 <table class="table table-condensed table-bordered text-center small">
                     <thead>
                     <tr>
+                        <th class="text-center small"></th>
                         <th class="text-center small">#</th>
                         <th class="text-center small">Username</th>
                         <th class="text-center small">Password</th>
@@ -108,6 +109,13 @@ $referidlist = new Referid();
                         ?>
                         <tr>
                             <form action="/admin/members/<?php echo $member['id']; ?>" method="post" accept-charset="utf-8" class="form" role="form">
+                            <td class="small">
+                                <div class="text-center">
+                                    <?php
+                                    echo $allmembers->getGravatar($member['username'], $member['email']);
+                                    ?>
+                                </div>
+                            </td>
                             <td class="small"><?php echo $member['id']; ?>
                             </td>
                             <td>
