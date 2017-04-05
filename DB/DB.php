@@ -113,7 +113,7 @@ INSERT INTO pages (name, htmlcode, slug, core) values ('Registration Page', '', 
 INSERT INTO pages (name, htmlcode, slug, core) values ('Thank You After Purchase Page', '', 'thankyou', 'yes');
 INSERT INTO pages (name, htmlcode, slug, core) values ('Logout Page', '', 'logout', 'yes');
 INSERT INTO pages (name, htmlcode, slug, core) values ('About Us Page', '', 'aboutus', 'yes');
-
+INSERT INTO pages (name, htmlcode, slug, core) values ('Members Area Talk Page', '', 'talk', 'yes');
 
 INSERT INTO `countries` (`country_id`, `country_name`, `iso_code2`, `iso_code3`, `reserved1`) values (1, 'Afghanistan', 'AF', 'AFG', 0);
 INSERT INTO `countries` (`country_id`, `country_name`, `iso_code2`, `iso_code3`, `reserved1`) values (2, 'Albania', 'AL', 'ALB', 0);

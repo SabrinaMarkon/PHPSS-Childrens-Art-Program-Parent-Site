@@ -31,7 +31,7 @@
 			?>
 			<a href="/members" type="button" class="btn ja-navbutton ja-navbutton-first" role="button">MAIN</a>
 			<a href="/profile" type="button" class="btn ja-navbutton" role="button">PROFILE</a>
-			<a href="/post" type="button" class="btn ja-navbutton" role="button">POST</a>
+			<a href="/talk" type="button" class="btn ja-navbutton" role="button">TALK!</a>
 			<a href="/products" type="button" class="btn ja-navbutton" role="button">SERVICES</a>
 			<a href="https://www.facebook.com/junior.artists.7/photos" target="_blank" type="button" class="btn ja-navbutton" role="button">GALLERY</a>
 			<a href="/contact" type="button" class="btn ja-navbutton" role="button">CONTACT</a>
@@ -65,7 +65,7 @@
 					?>
 					<li class="list-item navmobilelink"><a href="/members">MAIN</a></li>
 					<li class="list-item navmobilelink"><a href="/profile">PROFILE</a></li>
-					<li class="list-item navmobilelink"><a href="/post">POST</a></li>
+					<li class="list-item navmobilelink"><a href="/talk">TALK!</a></li>
 					<li class="list-item navmobilelink"><a href="/products">SERVICES</a></li>
 					<li class="list-item navmobilelink"><a href="https://www.facebook.com/junior.artists.7/photos" target="_blank">GALLERY</a></li>
 					<li class="list-item navmobilelink"><a href="/contact">CONTACT</a></li>
