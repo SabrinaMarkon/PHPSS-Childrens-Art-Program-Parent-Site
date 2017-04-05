@@ -12,6 +12,35 @@ class Talk
     private $subject;
     private $message;
 
+    function getAllPosts($postid) {
+
+        $pdo = Database::connect();
+        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $sql = "select * from talk where parent_id='$postid' order by id";
+        $q = $pdo->prepare($sql);
+        $q->execute();
+        $children = $q->rowCount();
+        if ($children > 0) {
+            if ($postid !== 0) {
+                echo "<li>";
+            }
+            echo '<ul class="root_post">';
+            $q->setFetchMode(PDO::FETCH_ASSOC);
+            $posts = $q->fetchAll();
+            foreach ($posts as $post) {
+                echo "<li>" . $post['id'] . " - " . $post['subject'] . "</li>";
+                $this->getAllPosts($post['id']);
+            }
+            echo "</ul>";
+            if ($postid !== 0) {
+                echo "</li>";
+            }
+        }
+        Database::disconnect();
+//        exit;
+       // return $postsarray;
+    }
+
     function addPost($username,$neworreply) {
 
         $subject = $_POST['subject'];
@@ -30,11 +59,19 @@ class Talk
             $show = 'Reply';
         }
 
+        Database::disconnect();
+
         return "<center><div class=\"alert alert-success\" style=\"width:75%;\"><strong>Your " . $show . " Was Added!</strong></div>";
 
     }
 
+    function editPost($id) {
 
+    }
+
+    function deletePost($id) {
+
+    }
 
 
 }

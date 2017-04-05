@@ -4,6 +4,8 @@ if (isset($showupdate))
 {
 echo $showupdate;
 }
+$getposts = new Talk();
+
 $showcontent = new PageContent();
 echo $showcontent->showPage('Members Area Talk Page');
 ?>
@@ -29,4 +31,22 @@ echo $showcontent->showPage('Members Area Talk Page');
 
         </div>
     </div>
+
+    <div class="ja-bottompadding"></div>
+    
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+
+            <h1 class="ja-bottompadding">Posts</h1>
+
+            <div>
+                <?php
+                $allposts = $getposts->getAllPosts(0);
+                ?>
+            </div>
+
+        </div>
+    </div>
+
 </div>
+

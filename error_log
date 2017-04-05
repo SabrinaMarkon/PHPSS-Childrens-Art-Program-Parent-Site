@@ -1,0 +1,16 @@
+[05-Apr-2017 07:25:58 UTC] PHP Fatal error:  Call to undefined method Database::connection() in /home/juniorartists/public_html/classes/Talk.php on line 31
+[05-Apr-2017 07:27:27 UTC] PHP Fatal error:  Call to undefined function getChildPosts() in /home/juniorartists/public_html/classes/Talk.php on line 41
+[05-Apr-2017 07:28:16 UTC] PHP Fatal error:  Call to undefined function getChildPosts() in /home/juniorartists/public_html/classes/Talk.php on line 27
+[05-Apr-2017 07:28:36 UTC] PHP Fatal error:  Call to undefined function getChildPosts() in /home/juniorartists/public_html/classes/Talk.php on line 41
+[05-Apr-2017 07:29:59 UTC] PHP Fatal error:  Call to undefined method Database::connection() in /home/juniorartists/public_html/classes/Talk.php on line 16
+[05-Apr-2017 07:32:11 UTC] PHP Fatal error:  Call to undefined function getChildPosts() in /home/juniorartists/public_html/classes/Talk.php on line 25
+[05-Apr-2017 08:42:46 UTC] PHP Warning:  Missing argument 1 for Talk::getAllPosts(), called in /home/juniorartists/public_html/talk.php on line 8 and defined in /home/juniorartists/public_html/classes/Talk.php on line 35
+[05-Apr-2017 08:42:46 UTC] PHP Notice:  Undefined variable: postid in /home/juniorartists/public_html/classes/Talk.php on line 39
+[05-Apr-2017 08:42:46 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'order by id' at line 1' in /home/juniorartists/public_html/classes/Talk.php:41
+Stack trace:
+#0 /home/juniorartists/public_html/classes/Talk.php(41): PDOStatement->execute()
+#1 /home/juniorartists/public_html/talk.php(8): Talk->getAllPosts()
+#2 /home/juniorartists/public_html/index.php(96): include('/home/juniorart...')
+#3 {main}
+  thrown in /home/juniorartists/public_html/classes/Talk.php on line 41
+[05-Apr-2017 08:56:55 UTC] PHP Parse error:  syntax error, unexpected 'private' (T_PRIVATE) in /home/juniorartists/public_html/classes/Talk.php on line 37
