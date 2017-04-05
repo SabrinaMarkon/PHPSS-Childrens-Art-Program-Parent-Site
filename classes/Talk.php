@@ -21,24 +21,27 @@ class Talk
         $q->execute();
         $children = $q->rowCount();
         if ($children > 0) {
-            if ($postid !== 0) {
-                echo "<li>";
-            }
             echo '<ul class="root_post">';
             $q->setFetchMode(PDO::FETCH_ASSOC);
             $posts = $q->fetchAll();
             foreach ($posts as $post) {
-                echo "<li>" . $post['id'] . " - " . $post['subject'] . "</li>";
-                $this->getAllPosts($post['id']);
-            }
-            echo "</ul>";
-            if ($postid !== 0) {
+
+                $badge = 0;
+                $sql = "select * from talk where parent_id='" . $post['id'] . "' order by id";
+                $q = $pdo->prepare($sql);
+                $q->execute();
+                $badge = $q->rowCount();
+
+                echo "<li>" . $post['id'] . " - " . $post['subject'];
+                if ($badge > 0) {
+                    echo  " " . $badge;
+                    $this->getAllPosts($post['id']);
+                }
                 echo "</li>";
             }
+            echo "</ul>";
         }
         Database::disconnect();
-//        exit;
-       // return $postsarray;
     }
 
     function addPost($username,$neworreply) {
