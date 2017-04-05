@@ -21,7 +21,11 @@ class Talk
         $q->execute();
         $children = $q->rowCount();
         if ($children > 0) {
-            echo '<ul class="root_post">';
+            if ($postid === 0) {
+                echo '<ul class="root_post" id="top_root_post">';
+            } else {
+                echo '<ul class="root_post">';
+            }
             $q->setFetchMode(PDO::FETCH_ASSOC);
             $posts = $q->fetchAll();
             foreach ($posts as $post) {
@@ -34,7 +38,7 @@ class Talk
 
                 echo "<li>" . $post['id'] . " - " . $post['subject'];
                 if ($badge > 0) {
-                    echo  " " . $badge;
+                    echo  " <span class=\"badge\">" . $badge . "</span>";
                     $this->getAllPosts($post['id']);
                 }
                 echo "</li>";

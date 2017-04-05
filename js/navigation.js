@@ -9,3 +9,8 @@ function toggleMenu(x) {
     $('.navmobile').toggle("display");
 }
 
+$("#top_root_post li").on("click", function (e) {
+    e.stopPropagation();// stop the click from bubbling up and firing the parent events as well.
+    $(this).children().not('span:first').slideToggle(); // hide all of the clicked post's replys (children) except the first, which is its badge span of its reply count.
+});
+
