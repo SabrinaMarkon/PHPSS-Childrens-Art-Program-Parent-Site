@@ -59,6 +59,11 @@ if (isset($_POST['forgotlogin']))
 $forgot = new User();
 $showforgot = $forgot->forgotLogin($sitename,$domain,$adminemail);
 }
+if (isset($_POST['talk']))
+{
+    $talk = new Talk();
+    $showupdate = $talk->addPost($_SESSION['username'], $_POST['$neworreply']);
+}
 if (isset($_POST['contactus']))
 {
 $contact = new Contact();

@@ -87,6 +87,15 @@ CREATE TABLE `products` (
 PRIMARY KEY (`id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+CREATE TABLE `talk` (
+`id` int(10) unsigned NOT NULL AUTO_INCREMENT primary key,
+`parent_id` int(10) unsigned NOT NULL default '0',
+`username` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+`subject` varchar(255) not null,
+`message` longtext not null,
+`dateadded` datetime NOT NULL
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
 CREATE TABLE `transactions` (
 `id` int(10) unsigned NOT NULL AUTO_INCREMENT primary key,
 `username` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
