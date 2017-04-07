@@ -9,8 +9,21 @@ function toggleMenu(x) {
     $('.navmobile').toggle("display");
 }
 
+/* For the threaded post tree collapse/expand */
 $("#top_root_post li").on("click", function (e) {
     e.stopPropagation();// stop the click from bubbling up and firing the parent events as well.
-    $(this).children().not('span:first').slideToggle(); // hide all of the clicked post's replys (children) except the first, which is its badge span of its reply count.
+    whichone = 'chevron' + $(this).attr('id');
+
+    if ($('#' + whichone).hasClass('glyphicon-chevron-right')) {
+        $('#' + whichone).addClass('glyphicon-chevron-down');
+        $('#' + whichone).removeClass('glyphicon-chevron-right');
+    }
+    else {
+        $('#' + whichone).addClass('glyphicon-chevron-right');
+        $('#' + whichone).removeClass('glyphicon-chevron-down');
+    }
+
+    // hide all of the clicked post's replys (children) except the first, which is its badge span of its reply count.
+    $(this).children().not('span:first, i:first').slideToggle();
 });
 

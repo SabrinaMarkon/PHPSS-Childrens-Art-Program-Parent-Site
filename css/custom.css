@@ -143,6 +143,7 @@ img {
 /* Threaded Posts */
 .root_post {
 	text-align: left;
+	cursor: hand;
 }
 .root_post li{
 	list-style-type: none;

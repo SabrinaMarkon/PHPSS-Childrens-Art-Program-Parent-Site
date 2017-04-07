@@ -25,7 +25,8 @@ echo $showcontent->showPage('Members Area Talk Page');
 
                 <div class="ja-bottompadding"></div>
 
-                <button class="btn btn-lg btn-primary" type="submit" name="contactus">Add Topic</button>
+                <input type="hidden" name="neworreply" value="new">
+                <button class="btn btn-lg btn-primary" type="submit" name="talk">Add Topic</button>
 
             </form>
 
@@ -33,7 +34,7 @@ echo $showcontent->showPage('Members Area Talk Page');
     </div>
 
     <div class="ja-bottompadding"></div>
-    
+
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
 

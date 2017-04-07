@@ -30,13 +30,16 @@ class Talk
             $posts = $q->fetchAll();
             foreach ($posts as $post) {
 
-                $badge = 0;
                 $sql = "select * from talk where parent_id='" . $post['id'] . "' order by id";
                 $q = $pdo->prepare($sql);
                 $q->execute();
                 $badge = $q->rowCount();
-
-                echo "<li>" . $post['id'] . " - " . $post['subject'];
+                if ($badge > 0) {
+                    $chevron = "<i id=\"chevron" . $post['id'] . "\" class=\"glyphicon glyphicon-chevron-down\"></i>";
+                } else {
+                    $chevron = "";
+                }
+                echo "<li id=\"" . $post['id'] . "\">" . $chevron . $post['id'] . " - " . $post['subject'];
                 if ($badge > 0) {
                     echo  " <span class=\"badge\">" . $badge . "</span>";
                     $this->getAllPosts($post['id']);
@@ -50,9 +53,12 @@ class Talk
 
     function addPost($username,$neworreply) {
 
+
+        ///##################### Need to pass the neworreply and the parentid
+
         $subject = $_POST['subject'];
         $message = $_POST['message'];
-        $parent_id = 0;
+        $parent_id = $_POST['parent_id'];
 
         $pdo = Database::connect();
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
