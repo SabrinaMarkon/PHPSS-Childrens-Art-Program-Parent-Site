@@ -7,6 +7,7 @@
 <title>Junior Artists</title>
 <link href="/css/bootstrap.min.css" rel="stylesheet" media="screen">
 <link href="/css/bootstrap-theme.min.css" rel="stylesheet" media="screen">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" media="screen">
 <link href="/css/custom.css" rel="stylesheet" media="screen">
 <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 <!--[if lt IE 9]>

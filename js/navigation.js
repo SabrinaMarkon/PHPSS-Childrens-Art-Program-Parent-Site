@@ -12,15 +12,17 @@ function toggleMenu(x) {
 /* For the threaded post tree collapse/expand */
 $("#top_root_post li").on("click", function (e) {
     e.stopPropagation();// stop the click from bubbling up and firing the parent events as well.
+
+    // turn the chevron to the right or down depending on if the post is open.
     whichone = 'chevron' + $(this).attr('id');
 
-    if ($('#' + whichone).hasClass('glyphicon-chevron-right')) {
-        $('#' + whichone).addClass('glyphicon-chevron-down');
-        $('#' + whichone).removeClass('glyphicon-chevron-right');
+    if ($('#' + whichone).hasClass('fa-chevron-right')) {
+        $('#' + whichone).addClass('fa-chevron-down');
+        $('#' + whichone).removeClass('fa-chevron-right');
     }
     else {
-        $('#' + whichone).addClass('glyphicon-chevron-right');
-        $('#' + whichone).removeClass('glyphicon-chevron-down');
+        $('#' + whichone).addClass('fa-chevron-right');
+        $('#' + whichone).removeClass('fa-chevron-down');
     }
 
     // hide all of the clicked post's replys (children) except the first, which is its badge span of its reply count.

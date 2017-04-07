@@ -148,6 +148,13 @@ img {
 .root_post li{
 	list-style-type: none;
 }
+.fa {
+	font-size: 0.8em;
+ 	margin: 5px;
+}
+.fa.hidechevron {
+	visibility: hidden;
+}
 
 @media (min-width:200px)
 {

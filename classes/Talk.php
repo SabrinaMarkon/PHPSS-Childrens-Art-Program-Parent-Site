@@ -35,9 +35,9 @@ class Talk
                 $q->execute();
                 $badge = $q->rowCount();
                 if ($badge > 0) {
-                    $chevron = "<i id=\"chevron" . $post['id'] . "\" class=\"glyphicon glyphicon-chevron-down\"></i>";
+                    $chevron = "<i id=\"chevron" . $post['id'] . "\" class=\"fa fa-chevron-down\"></i>";
                 } else {
-                    $chevron = "";
+                    $chevron = "<i class=\"fa fa-chevron-down hidechevron\"></i>";
                 }
                 echo "<li id=\"" . $post['id'] . "\">" . $chevron . $post['id'] . " - " . $post['subject'];
                 if ($badge > 0) {
