@@ -26,6 +26,7 @@ $("#top_root_post li").on("click", function (e) {
     }
 
     // hide all of the clicked post's replys (children) except the first, which is its badge span of its reply count.
-    $(this).children().not('span:first, i:first').slideToggle();
+    //$(this).children().not('span:first, i:first').slideToggle();
+    $(this).children().not('.media').slideToggle();
 });
 

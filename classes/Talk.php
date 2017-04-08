@@ -39,7 +39,31 @@ class Talk
                 } else {
                     $chevron = "<i class=\"fa fa-chevron-down hidechevron\"></i>";
                 }
-                echo "<li id=\"" . $post['id'] . "\">" . $chevron . $post['id'] . " - " . $post['subject'];
+                //echo "<li id=\"" . $post['id'] . "\">" . $chevron . "  " . $post['subject']. "  <span class=\"whoandwhen\">" . $post['username'] . " Posted " . $post['dateadded'] . "</span>";
+                echo "<li id=\"" . $post['id'] . "\">";
+                ?>
+<div class="media">
+    <div class="media-left media-top"><?php echo $chevron ?>
+        <?php
+        $esql = "select * from members where username=?";
+        $eq = $pdo->prepare($esql);
+        $eq->execute(array($post['username']));
+        $useremail = $eq->fetch();
+        $userfound = $eq->rowCount();
+        if ($userfound > 0) {
+            $email = $useremail['email'];
+            $emailhash = trim($email);
+            $emailhash = md5($emailhash);
+            echo "<img src=\"http://gravatar.com/avatar/" . $emailhash . "?s=130\" alt=\"" . $post['username'] . "\" class=\"avatar img-circle gravatar-sm\">";
+        }
+        ?>
+    </div>
+    <div class="media-body">
+        <h4 class="media-heading"><?php echo $post['subject']; ?></h4>
+<!--        <p>--><?php //echo $post['message']; ?><!--</p>-->
+    </div>
+</div>
+<?php
                 if ($badge > 0) {
                     echo  " <span class=\"badge\">" . $badge . "</span>";
                     $this->getAllPosts($post['id']);
@@ -51,7 +75,7 @@ class Talk
         Database::disconnect();
     }
 
-    function addPost($username,$neworreply) {
+    function addPost($username,$email,$neworreply) {
 
 
         ///##################### Need to pass the neworreply and the parentid
@@ -62,9 +86,9 @@ class Talk
 
         $pdo = Database::connect();
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $sql = "insert into talk (parent_id, username, subject, message, dateadded) values (?, ?, ?, ?, NOW())";
+        $sql = "insert into talk (parent_id, username, email, subject, message, dateadded) values (?, ?, ?, ?, ?, NOW())";
         $q = $pdo->prepare($sql);
-        $q->execute(array($parent_id, $username, $subject, $message));
+        $q->execute(array($parent_id, $username, $email, $subject, $message));
 
         if ($parent_id === 0) {
             $show = 'Topic';
